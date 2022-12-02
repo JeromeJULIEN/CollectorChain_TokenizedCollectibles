@@ -1,12 +1,13 @@
-import { ADD_COLLECTION, DELETE_ALL_COLLECTIONS } from "../actions/collections";
+import { ADD_COLLECTION, DELETE_ALL_COLLECTIONS, SET_COLLECTION } from "../actions/collections";
 
 const initialState = {
     collections:[],
     currentCollection:{
-        id:"",
-        name:"",
-        propertyContractAddress:"",
-        digitalContractAddress:""
+        artifact: null,
+        web3: null,
+        accounts: null,
+        networkID: null,
+        contract: null
     }
 };
 
@@ -29,6 +30,18 @@ const collectionsReducer = (state = initialState, action={})=> {
             return{
                 ...state,
                 collections:[]
+            }
+        }
+        case SET_COLLECTION:{
+            return{
+                ...state,
+                currentCollection:{
+                    artifact: action.artifact,
+                    web3:action.web3,
+                    accounts: action.accounts,
+                    networkID: action.networkID,
+                    contract:action.contract
+                }
             }
         }
         default:

@@ -2,20 +2,21 @@ import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {setValue } from '../../store/actions/app';
 import { useState } from 'react';
-import { addCollection, deleteAllCollections } from '../../store/actions/collections';
+import { addCollection, deleteAllCollections, setCollection  } from '../../store/actions/collections';
+import {Link} from 'react-router-dom';
+
+
+import Web3 from 'web3';
 import "./styles.scss"
 
 
 
 
-const Main = () => {
+const Marketplace = () => {
 
-    
-    const value = useSelector(state => state.app.value);
-    const marketplace = useSelector(state => state.marketplace)
     const factoryContract = useSelector(state => state.factory.contract);
     const accounts = useSelector(state => state.marketplace.accounts)
-    const collections = useSelector(state => state.collections.collections)
+    const collectionsList = useSelector(state => state.collections.collections)
     const [newValue,setNewValue] = useState("");
     const [collectionCount, setCollectionCount] = useState(0);
     
@@ -37,6 +38,7 @@ const Main = () => {
 
     const [collectionCreationEvents, setCollectionCreationEvents] = useState([]);
 
+    //! :::: GESTION EVENT COLLECTION CREATED :::::
     useEffect(()=> {
         if(factoryContract !== null){
             (async () => {
@@ -66,8 +68,29 @@ const Main = () => {
         };
 
     }, 
-    [collectionCount, marketplace]
+    [collectionCount, factoryContract]
     )
+
+    const setCurrentCollection = async(event) => {
+        var artifact = require("../../contracts/NftProperty.json");
+        if (artifact) {
+            const propertyContractAddress = collectionsList[event.target.value].propertyContractAddress;
+            const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+            const { abi } = artifact;
+            let contract;
+            try {
+            // address = daoArtifact.networks[networkID].address;
+            contract = new web3.eth.Contract(abi, propertyContractAddress);
+            // owner = await contract.methods.owner().call()
+            // console.log("owner =>",owner);
+            console.log("contract =>", contract)
+            } catch (err) {
+            console.error(err);
+            }
+            dispatch(setCollection(contract));
+    
+        }
+    }
 
     
     
@@ -81,11 +104,11 @@ const Main = () => {
                 <button onClick={createCollection}>send</button>
             </div>
             <div className='collectionList'>
-                {collections.map(collection=> <button>{collection.name}</button> )}
+                {collectionsList.map((collection, index)=> <button onClick={setCurrentCollection} value={index} key={index}><Link to={`/collection/${index}`}>{collection.name}</Link></button> )}
             </div>
             
         </div>
     )
 }
 
-export default Main
+export default Marketplace

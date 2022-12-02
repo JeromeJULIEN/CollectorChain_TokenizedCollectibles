@@ -1,12 +1,15 @@
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
-import Main from './components/Main';
+import Marketplace from './components/Marketplace';
 import Web3 from 'web3';
 import { initMarketplace } from './store/actions/marketplace';
 import Menu from './components/Menu';
 import { initFactory } from './store/actions/factory';
 import { initDAO } from './store/actions/dao';
+import {Routes, Route} from 'react-router-dom';
+import Collection from './components/Collection';
+import Home from './components/HomePage';
 
 function App() {
 
@@ -83,14 +86,11 @@ function App() {
   useEffect(() => {
     const tryInit = async () => {
       try {
-        console.log("before init marketplace");
         var artifact = require("./contracts/MarketPlace.json");
         initMarketplaceContract(artifact);
-        console.log("before init factory");
 
         artifact = require("./contracts/Factory.json");
         initFactoryContract(artifact);
-        console.log("before init dao");
 
         artifact = require("./contracts/CollectorsDAO.json");
         initDaoContract(artifact);
@@ -121,7 +121,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Menu />
-        <Main />
+        <Routes>
+          <Route path="/" element={<Home />}/> 
+          <Route path="/marketplace" element={<Marketplace />}/> 
+          <Route path="/collection/:id" element={<Collection />}/> 
+        </Routes>
       </header>
     </div>
   );
