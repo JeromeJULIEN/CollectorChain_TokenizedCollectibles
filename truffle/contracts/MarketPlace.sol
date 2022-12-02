@@ -83,8 +83,8 @@ contract MarketPlace {
             "you have to send the exact amount"
         );
         // transfer of ETH
-        uint256 amountToSeller = msg.value * (1 - (platformFee / 1000));
-        uint256 amountToPlatform = msg.value * (platformFee / 1000);
+        uint256 amountToSeller = (msg.value * (1000 - (platformFee))) / 1000;
+        uint256 amountToPlatform = (msg.value * (platformFee)) / 1000;
         (bool sentToSeller, ) = payable(_seller).call{value: amountToSeller}(
             ""
         );

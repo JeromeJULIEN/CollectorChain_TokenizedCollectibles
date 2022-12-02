@@ -1,4 +1,4 @@
-import { INIT_WEB3 } from "../actions/web3";
+import { INIT_MARKETPLACE } from "../actions/marketplace";
 
 const initialState = {
     artifact: null,
@@ -8,9 +8,9 @@ const initialState = {
     contract: null
   };
 
-const web3Reducer = (state = initialState,action={})=>{
+const marketplaceReducer = (state = initialState,action={})=>{
     switch (action.type){
-        case INIT_WEB3 :{
+        case INIT_MARKETPLACE :{
             return {
                 ...state,
                 artifact: action.artifact,
@@ -25,4 +25,4 @@ const web3Reducer = (state = initialState,action={})=>{
     }
 };
 
-export default web3Reducer;
+export default marketplaceReducer;

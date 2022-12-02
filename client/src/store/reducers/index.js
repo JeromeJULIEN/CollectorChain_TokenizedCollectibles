@@ -2,12 +2,18 @@ import { combineReducers } from "redux";
 
 
 import appReducer from "./app";
-import web3Reducer from "./web3";
+import collectionsReducer from "./collections";
+import daoReducer from "./dao";
+import factoryReducer from "./factory";
+import marketplaceReducer from "./marketplace";
 
 
 const rootReducer = combineReducers({
-    web3 : web3Reducer,
-    app: appReducer
+    marketplace : marketplaceReducer,
+    dao : daoReducer,
+    factory : factoryReducer,
+    app: appReducer,
+    collections : collectionsReducer
 });
 
 export default rootReducer;
