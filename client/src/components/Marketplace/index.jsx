@@ -71,26 +71,26 @@ const Marketplace = () => {
     [collectionCount, factoryContract]
     )
 
-    const setCurrentCollection = async(event) => {
-        var artifact = require("../../contracts/NftProperty.json");
-        if (artifact) {
-            const propertyContractAddress = collectionsList[event.target.value].propertyContractAddress;
-            const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-            const { abi } = artifact;
-            let contract;
-            try {
-            // address = daoArtifact.networks[networkID].address;
-            contract = new web3.eth.Contract(abi, propertyContractAddress);
-            // owner = await contract.methods.owner().call()
-            // console.log("owner =>",owner);
-            console.log("contract =>", contract)
-            } catch (err) {
-            console.error(err);
-            }
-            dispatch(setCollection(contract));
+    // const setCurrentCollection = async(event) => {
+    //     var artifact = require("../../contracts/NftProperty.json");
+    //     if (artifact) {
+    //         const propertyContractAddress = collectionsList[event.target.value].propertyContractAddress;
+    //         const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+    //         const { abi } = artifact;
+    //         let contract;
+    //         try {
+    //         // address = daoArtifact.networks[networkID].address;
+    //         contract = new web3.eth.Contract(abi, propertyContractAddress);
+    //         // owner = await contract.methods.owner().call()
+    //         // console.log("owner =>",owner);
+    //         console.log("contract =>", contract)
+    //         } catch (err) {
+    //         console.error(err);
+    //         }
+    //         dispatch(setCollection(contract));
     
-        }
-    }
+    //     }
+    // }
 
     
     
@@ -104,7 +104,7 @@ const Marketplace = () => {
                 <button onClick={createCollection}>send</button>
             </div>
             <div className='collectionList'>
-                {collectionsList.map((collection, index)=> <button onClick={setCurrentCollection} value={index} key={index}><Link to={`/collection/${index}`}>{collection.name}</Link></button> )}
+                {collectionsList.map((collection, index)=> <button /*onClick={setCurrentCollection}*/ value={index} key={index}><Link to={`/collection/${index}`}>{collection.name}</Link></button> )}
             </div>
             
         </div>

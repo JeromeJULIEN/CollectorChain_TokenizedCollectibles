@@ -36,10 +36,6 @@ const collectionsReducer = (state = initialState, action={})=> {
             return{
                 ...state,
                 currentCollection:{
-                    artifact: action.artifact,
-                    web3:action.web3,
-                    accounts: action.accounts,
-                    networkID: action.networkID,
                     contract:action.contract
                 }
             }
