@@ -5,11 +5,21 @@
     background-color: black;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    // align-items: baseline;
     height: 50px;
     font-size: 1rem;
     width: 100%;
     padding: 1rem;
+
+    &__navBar {
+        height: 50px;
+
+        &--item {
+            vertical-align: middle;
+            color: white;
+
+        }
+    }
 
     .logo {}
 

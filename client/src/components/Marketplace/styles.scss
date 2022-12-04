@@ -1,12 +1,26 @@
-#root {
-    color: black;
-}
+@use '../../../styles/vars';
+
+
 
 .collectionList {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    font-size: vars.$fontSize_normal ;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 30px;
+    padding: 0 1rem;
+    background-color: vars.$color_callToAction;
 
-    color: black
+    color: white;
+
+    &__collection {
+        background-color: transparent;
+        width: 10%;
+
+        &--navLink {
+            color: white;
+            text-decoration: none;
+
+        }
+    }
 }

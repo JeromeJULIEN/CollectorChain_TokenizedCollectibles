@@ -4,12 +4,12 @@ import './App.scss';
 import Marketplace from './components/Marketplace';
 import Web3 from 'web3';
 import { initMarketplace } from './store/actions/marketplace';
-import Menu from './components/Menu';
 import { initFactory } from './store/actions/factory';
 import { initDAO } from './store/actions/dao';
 import {Routes, Route} from 'react-router-dom';
 import Collection from './components/Collection';
 import Home from './components/HomePage';
+import MenuMain from './components/Menu/MenuMain';
 
 function App() {
 
@@ -120,7 +120,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu />
+        <MenuMain />
         <Routes>
           <Route path="/" element={<Home />}/> 
           <Route path="/marketplace" element={<Marketplace />}/> 

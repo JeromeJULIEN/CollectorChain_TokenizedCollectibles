@@ -10,8 +10,6 @@ import Web3 from 'web3';
 import "./styles.scss"
 
 
-
-
 const Marketplace = () => {
 
     const factoryContract = useSelector(state => state.factory.contract);
@@ -94,17 +92,24 @@ const Marketplace = () => {
 
     
     
+    
+    
 
     return (
         <div>
+            <div className='collectionList'>
+                our collections -
+                {collectionsList.map((collection, index)=> 
+                    <button className='collectionList__collection' value={index} key={index}>
+                        <Link className='collectionList__collection--navLink' to={`/collection/${index}`}>{collection.name}</Link>
+                    </button> )}
+        
+            </div>
             
             <div>
                 <p>create collection :</p>
                 <input type="text" placeholder='number ?' value={newValue} onChange={handleValueChange}/>
                 <button onClick={createCollection}>send</button>
-            </div>
-            <div className='collectionList'>
-                {collectionsList.map((collection, index)=> <button /*onClick={setCurrentCollection}*/ value={index} key={index}><Link to={`/collection/${index}`}>{collection.name}</Link></button> )}
             </div>
             
         </div>
