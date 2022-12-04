@@ -3,7 +3,8 @@ const CollectorsDAO = artifacts.require("CollectorsDAO");
 const MarketPlace = artifacts.require("MarketPlace")
 
 module.exports = function (deployer) {
-  deployer.deploy(Factory);
-  deployer.deploy(CollectorsDAO);
+  deployer.deploy(CollectorsDAO).then(function() {
+    return deployer.deploy(Factory, CollectorsDAO.address);
+  });
   deployer.deploy(MarketPlace);
 };

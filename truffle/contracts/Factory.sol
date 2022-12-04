@@ -34,8 +34,8 @@ contract Factory {
     /// @dev mapping collectionName => collectionAddress
     mapping(string => address) public collectionsAddress;
 
-    function setDaoAddres(address _addr) public {
-        collectorsDAO = ICollectorsDAO(_addr);
+    constructor(address daoAddress_) {
+        collectorsDAO = ICollectorsDAO(daoAddress_);
     }
 
     function createCollection(
