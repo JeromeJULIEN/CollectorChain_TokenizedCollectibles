@@ -2,6 +2,7 @@
 pragma solidity 0.8.17;
 
 // import "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
 interface NftProperty {
     function safeTransferFrom(
@@ -20,7 +21,7 @@ interface NftProperty {
     function setApprovalForAll(address operator, bool approved) external;
 }
 
-contract MarketPlace {
+contract MarketPlace is Ownable {
     /// @notice fees collected by the platform on each sale. To be devided by 1000 to get the percentage
     uint256 public platformFee = 25;
 

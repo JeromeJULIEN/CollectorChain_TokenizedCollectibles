@@ -1,16 +1,23 @@
-import {  SET_VALUE } from "../actions/app";
+import { LOGIN, SET_ADMIN } from "../actions/app";
 
 export const initialState = {
-    value:666
+    isLogged : false,
+    isAdmin : false,
 };
 
 
 const appReducer = (state = initialState,action={}) =>{
     switch(action.type){
-        case SET_VALUE:{
+        case LOGIN:{
             return {
                 ...state,
-                value:action.payload
+                isLogged : action.payload
+            }
+        }
+        case SET_ADMIN:{
+            return {
+                ...state,
+                isAdmin : action.payload
             }
         }
         default:

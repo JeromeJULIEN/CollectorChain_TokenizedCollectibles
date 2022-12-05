@@ -10,6 +10,13 @@ import {Routes, Route} from 'react-router-dom';
 import Collection from './components/Collection';
 import Home from './components/HomePage';
 import MenuMain from './components/Menu/MenuMain';
+import { initWeb3 } from './store/actions/web3';
+import HowItWorks from './components/HowItWorks';
+import Portfolio from './components/Portfolio';
+import Dao from './components/Dao';
+import Mint from './components/Mint';
+import Admin from './components/Admin';
+import DaoProposal from './components/DaoProposal';
 
 function App() {
 
@@ -29,12 +36,13 @@ function App() {
         try {
           address = marketplaceArtifact.networks[networkID].address;
           contract = new web3.eth.Contract(abi, address);
-          // owner = await contract.methods.owner().call()
+          owner = await contract.methods.owner().call()
           // console.log("owner =>",owner);
         } catch (err) {
           console.error(err);
         }
-        dispatch(initMarketplace(marketplaceArtifact, web3, accounts, networkID, contract,owner));
+        dispatch(initWeb3(web3, accounts, networkID))
+        dispatch(initMarketplace(marketplaceArtifact, contract, owner));
 
       }
     }, []);
@@ -44,19 +52,18 @@ function App() {
     async factoryArtifact => {
       if (factoryArtifact) {
         const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-        const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
         const { abi } = factoryArtifact;
         let address, contract, owner;
         try {
           address = factoryArtifact.networks[networkID].address;
           contract = new web3.eth.Contract(abi, address);
-          // owner = await contract.methods.owner().call()
+          owner = await contract.methods.owner().call()
           // console.log("owner =>",owner);
         } catch (err) {
           console.error(err);
         }
-        dispatch(initFactory(factoryArtifact, web3, accounts, networkID, contract,owner));
+        dispatch(initFactory(factoryArtifact, contract, owner));
 
       }
     }, []);
@@ -66,19 +73,18 @@ function App() {
     async daoArtifact => {
       if (daoArtifact) {
         const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-        const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
         const { abi } = daoArtifact;
         let address, contract, owner;
         try {
           address = daoArtifact.networks[networkID].address;
           contract = new web3.eth.Contract(abi, address);
-          // owner = await contract.methods.owner().call()
+          owner = await contract.methods.owner().call()
           // console.log("owner =>",owner);
         } catch (err) {
           console.error(err);
         }
-        dispatch(initDAO(daoArtifact, web3, accounts, networkID, contract,owner));
+        dispatch(initDAO(daoArtifact, contract, owner));
 
       }
   }, []);
@@ -125,6 +131,12 @@ function App() {
           <Route path="/" element={<Home />}/> 
           <Route path="/marketplace" element={<Marketplace />}/> 
           <Route path="/collection/:id" element={<Collection />}/> 
+          <Route path="/howitworks" element={<HowItWorks />}/> 
+          <Route path="/portfolio" element={<Portfolio />}/> 
+          <Route path="/dao" element={<Dao />}/> 
+          <Route path="/daoProposal/:id" element={<DaoProposal />}/> 
+          <Route path="/mint" element={<Mint />}/> 
+          <Route path="/admin" element={<Admin />}/> 
         </Routes>
       </header>
     </div>

@@ -3,15 +3,16 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Web3 from 'web3';
-import { login } from '../../store/actions/app';
+import { login, setAdmin } from '../../../store/actions/app';
+import './styles.scss'
+import {Off} from '@rsuite/icons';
 
 
 const ConnectBtn = () => {
     const[connectedAddress,setConnectedAddress] = useState("");
     const isLogged = useSelector(state => state.app.isLogged);
     const accounts = useSelector(state => state.web3.accounts);
-    const owner = useSelector(state => state.web3.owner);
+    const owner = useSelector(state => state.factory.owner);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     
@@ -24,16 +25,16 @@ const ConnectBtn = () => {
     const connexion = async() => {
         setConnectedAddress(formatETHAddress(accounts[0],4));
         dispatch(login(true));
-        if(accounts[0] === owner){
-            navigate("/admin");
-        } else {
-            navigate("/");
+        if(accounts[0] == owner) {
+            dispatch(setAdmin(true))
         }
     }
     
     const disconnexion = () =>{
         setConnectedAddress("");
         dispatch(login(false));
+        dispatch(setAdmin(false))
+
 
     }
     
@@ -45,11 +46,10 @@ const ConnectBtn = () => {
         <>
             {isLogged ? (
                 <div className='connectBtn'>
-                    <button onClick={disconnexion}>Disconnect</button>
-                    <p>{connectedAddress}</p> 
+                    <button className='connectBtn__btn' onClick={disconnexion} ><Off />{connectedAddress}</button>
                 </div>
             ) :(
-                <button onClick={connexion}>Connect wallet</button>
+                <button className='connectBtn__btn' onClick={connexion}>Connect wallet</button>
             )}
             
         </>

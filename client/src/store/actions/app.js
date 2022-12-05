@@ -1,6 +1,12 @@
-export const SET_VALUE = 'SET_VALUE';
+export const LOGIN = 'LOGIN';
+export const SET_ADMIN = 'SET_ADMIN';
 
-export const setValue = (payload) => ({
-  type: SET_VALUE,
+export const setAdmin = (payload) => ({
+  type: SET_ADMIN,
+  payload
+});
+
+export const login = (payload) => ({
+  type: LOGIN,
   payload
 });

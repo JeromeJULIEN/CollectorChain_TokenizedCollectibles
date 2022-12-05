@@ -2,6 +2,7 @@
 pragma solidity 0.8.17;
 
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "./NftProperty.sol";
 import "./NftDigital.sol";
 
@@ -9,7 +10,7 @@ interface ICollectorsDAO {
     function createDAO(string memory _name) external;
 }
 
-contract Factory {
+contract Factory is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
 
@@ -42,7 +43,11 @@ contract Factory {
         string memory _collectionName,
         string memory _collectionURI,
         string memory _collectionSymbol
-    ) external returns (address nftPropertyAddr, address nftDigitalAddr) {
+    )
+        external
+        onlyOwner
+        returns (address nftPropertyAddr, address nftDigitalAddr)
+    {
         require(
             bytes(_collectionName).length > 0,
             "collection name should not be null"

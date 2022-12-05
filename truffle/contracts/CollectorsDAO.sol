@@ -2,8 +2,9 @@
 pragma solidity 0.8.17;
 
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
-contract CollectorsDAO {
+contract CollectorsDAO is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
 
@@ -31,6 +32,15 @@ contract CollectorsDAO {
         bool status;
     }
 
+    event daoCreated(uint256 daoId, string daoName);
+
+    event proposalCreated(
+        uint256 daoId,
+        uint256 proposalId,
+        string proposalName,
+        string proposalDesc
+    );
+
     /// @notice list of members of each DAO : user address => daoId (ie collectionId) => member status
     mapping(address => mapping(uint256 => bool)) public daoMembers;
 
@@ -49,6 +59,8 @@ contract CollectorsDAO {
         newSubDao.proposalCount = 0;
 
         subDao.push(newSubDao);
+
+        emit daoCreated(_id.current(), _name);
 
         _id.increment();
     }
@@ -70,6 +82,9 @@ contract CollectorsDAO {
             0,
             false
         );
+
+        emit proposalCreated(_daoId, proposalId, _name, _description);
+
         subDao[_daoId].proposalCount += 1;
     }
 

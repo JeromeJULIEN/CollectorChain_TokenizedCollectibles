@@ -2,10 +2,8 @@ import { INIT_MARKETPLACE } from "../actions/marketplace";
 
 const initialState = {
     artifact: null,
-    web3: null,
-    accounts: null,
-    networkID: null,
-    contract: null
+    contract: null,
+    owner:null,
   };
 
 const marketplaceReducer = (state = initialState,action={})=>{
@@ -14,10 +12,8 @@ const marketplaceReducer = (state = initialState,action={})=>{
             return {
                 ...state,
                 artifact: action.artifact,
-                web3:action.web3,
-                accounts: action.accounts,
-                networkID: action.networkID,
-                contract:action.contract
+                contract:action.contract,
+                owner:action.owner,
             }
         }
         default :
