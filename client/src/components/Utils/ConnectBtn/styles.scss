@@ -1,8 +1,14 @@
+@use '../../../../styles/vars';
+
 .connectBtn {
     display: flex;
+    align-items: flex-end;
 
     &__btn {
         background-color: transparent;
+    }
 
+    &__logo {
+        color: vars.$color_callToAction
     }
 }

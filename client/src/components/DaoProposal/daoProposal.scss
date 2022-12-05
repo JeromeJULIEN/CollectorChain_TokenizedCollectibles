@@ -11,6 +11,8 @@
         border-bottom: solid .1rem grey;
     }
 
+
+
     &__panel {
         // height: 100%;
         display: flex;
@@ -107,12 +109,23 @@
             margin-top: 1rem;
 
             &--accepted {
-                color: green;
+                color: vars.$color_callToAction;
             }
 
             &--refused {
                 color: rgb(181, 14, 14);
             }
+        }
+
+        &__btn {
+            background-color: vars.$color_callToAction;
+            font-size: vars.$fontSize_dig;
+            color: white;
+            font-weight: bold;
+            height: 3rem;
+            width: 100%;
+            border-radius: .5rem;
+            margin-top: 1rem;
         }
     }
 
@@ -140,10 +153,14 @@
         height: 50%;
         padding: 1rem;
         margin: .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         &--title {
             font-weight: bold;
             border-bottom: solid .1rem rgb(99, 99, 99);
+            width: 100%;
         }
     }
 

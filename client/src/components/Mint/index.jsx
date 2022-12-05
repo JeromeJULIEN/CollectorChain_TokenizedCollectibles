@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addDao, addProposal, deleteDao, deleteProposal, updateProposal } from '../../store/actions/dao';
 import {Link} from 'react-router-dom';
 import PlusRoundIcon from '@rsuite/icons/PlusRound';
+import {InputPicker} from 'rsuite';
 import './styles.scss'
 
 
 const Mint = () => {
     const daoContract = useSelector(state => state.dao.contract)
+    const propertyContract = useSelector(state => state.collections.currentCollection.propertyContract)
+    const digitalContract = useSelector(state => state.collections.currentCollection.digitalContract)
     const accounts = useSelector(state => state.web3.accounts)
     const web3 = useSelector(state => state.web3.web3)
     const daoList = useSelector(state => state.dao.daoList)
@@ -17,6 +20,8 @@ const Mint = () => {
     const [mintTitle, setMintTitle] = useState('');
     const [mintDesc, setMintDesc] = useState('');
     const [mintValue, setMintValue] = useState('');
+
+    const daoNameList = daoList.map(item => ({label:item.name, value:item.id}));
 
     const dispatch = useDispatch();
 
@@ -35,7 +40,6 @@ const Mint = () => {
     
     const askMint = async() => {
         try{
-            console.log(mintCollection);
             await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).call({from:accounts[0]})
             await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).send({from:accounts[0]})
         } catch (error) {
@@ -126,7 +130,7 @@ const Mint = () => {
                 <div className="panelLeft">
                     <div className="panelLeft__item">
                         <p>Collection</p>
-                        <input type="text" id='collection' name='collection' required value={mintCollection} onChange={handleChangeMintCollection}/>
+                        <InputPicker className='panelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection}/>
 
                     </div>
                     <div className="panelLeft__item">

@@ -1,9 +1,15 @@
 export const ADD_COLLECTION = 'ADD_COLLECTION';
 export const DELETE_ALL_COLLECTIONS = 'DELETE_ALL_COLLECTIONS';
-export const SET_COLLECTION = 'SET_COLLECTION';
+export const SET_PROPERTY_COLLECTION = 'SET_PROPERTY_COLLECTION';
+export const SET_DIGITAL_COLLECTION = 'SET_DIGITAL_COLLECTION';
 
-export const setCollection = (contract) => ({
-  type: SET_COLLECTION,
+export const setDigitalCollection = (contract) => ({
+  type: SET_DIGITAL_COLLECTION,
+  contract
+});
+
+export const setPropertyCollection = (contract) => ({
+  type: SET_PROPERTY_COLLECTION,
   contract
 });
 

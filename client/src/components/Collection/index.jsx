@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Navigate} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
-import { setCollection } from '../../store/actions/collections';
+import { setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
 import Web3 from 'web3';
 import { useState } from 'react';
 
@@ -12,10 +12,9 @@ const Collection = () => {
 
     const dispatch = useDispatch();
 
-    const accounts = useSelector(state => state.marketplace.accounts)
     const collectionsList = useSelector(state => state.collections.collections)
-    const contract = useSelector(state => state.collections.currentCollection.contract)
     let propertyContractAddress = "";
+    let digitalContractAddress= "";
     const [name, setName] = useState();
     
     
@@ -24,38 +23,45 @@ const Collection = () => {
         if (typeof collectionsList[id] !== 'undefined') {
             propertyContractAddress = collectionsList[id].propertyContractAddress;
             const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-            const { abi } = artifact;
+            const abiProperty = artifact.abi;
             
             try {
             // address = daoArtifact.networks[networkID].address;
-            let newContract = new web3.eth.Contract(abi, propertyContractAddress);
+            let newContract = new web3.eth.Contract(abiProperty, propertyContractAddress);
             // owner = await contract.methods.owner().call()
             // console.log("owner =>",owner);
-            dispatch(setCollection(newContract));
-            console.log("contract =>", newContract)
+            dispatch(setPropertyCollection(newContract));
+            
             } catch (err) {
-            console.error(err);
+                console.error(err);
             }
+            digitalContractAddress = collectionsList[id].digitalContractAddress
+            artifact = require('../../contracts/NftDigital.json');
+            const abiDigital = artifact.abi;
+            try {
+                // address = daoArtifact.networks[networkID].address;
+                let newContract = new web3.eth.Contract(abiDigital, digitalContractAddress);
+                // owner = await contract.methods.owner().call()
+                // console.log("owner =>",owner);
+                dispatch(setDigitalCollection(newContract));
+                
+                } catch (err) {
+                    console.error(err);
+                }
            
     
         } 
         else {}
             
         
-    }, [propertyContractAddress])
+    }, [propertyContractAddress, digitalContractAddress])
 
-    const mint = async() =>{
-        console.log('contract form min()=>', contract);
-        const newName = await contract.methods.collectionName().call({from:accounts[0]})
-        setName(newName);
-        console.log('result new name =>', newName);
-    } 
+
 
 
     return (
         <>
             <div>Collection {id} {name}</div>
-            <button onClick={mint}>Mint</button>
         </>
     )
 }

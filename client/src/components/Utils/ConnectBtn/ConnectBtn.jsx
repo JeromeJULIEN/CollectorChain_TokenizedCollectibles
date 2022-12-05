@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login, setAdmin } from '../../../store/actions/app';
 import './styles.scss'
-import {Off} from '@rsuite/icons';
+import {OffRound} from '@rsuite/icons';
 
 
 const ConnectBtn = () => {
@@ -46,7 +46,7 @@ const ConnectBtn = () => {
         <>
             {isLogged ? (
                 <div className='connectBtn'>
-                    <button className='connectBtn__btn' onClick={disconnexion} ><Off />{connectedAddress}</button>
+                    <button className='connectBtn__btn' onClick={disconnexion} ><OffRound className='connectBtn__logo'/>{connectedAddress}</button>
                 </div>
             ) :(
                 <button className='connectBtn__btn' onClick={connexion}>Connect wallet</button>
