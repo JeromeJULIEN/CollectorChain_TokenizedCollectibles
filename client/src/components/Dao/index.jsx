@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addDao, addProposal, deleteDao, deleteProposal } from '../../store/actions/dao';
+import { addDao, addProposal, deleteDao, deleteProposal, updateProposal } from '../../store/actions/dao';
 import {Link} from 'react-router-dom';
 import './styles.scss'
 
@@ -44,13 +44,32 @@ const Dao = () => {
                             collectionId : event.returnValues.daoId,
                             proposalId : event.returnValues.proposalId,
                             proposalName : event.returnValues.proposalName, 
-                            proposalDesc : event.returnValues.proposalDesc
+                            proposalDesc : event.returnValues.proposalDesc,
+                            proposalValue : event.returnValues.value
                         });
                 });
                 dispatch(deleteProposal())
                 oldProposalCreatedEvents.forEach(proposal =>{
-                    dispatch(addProposal(proposal.collectionId,proposal.proposalId,proposal.proposalName,proposal.proposalDesc))
-
+                    dispatch(addProposal(proposal.collectionId,proposal.proposalId,proposal.proposalName,proposal.proposalDesc, proposal.proposalValue))
+                })
+                // CLOSED PROPOSAL EVENT
+                let closedProposalEvents = await daoContract.getPastEvents('proposalClosed',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldClosedProposalEvents=[];
+                closedProposalEvents.forEach(event => {
+                    oldClosedProposalEvents.push(
+                        {
+                            proposalId : event.returnValues.proposalId,
+                            value : event.returnValues.finalValue, 
+                            status : event.returnValues.votingStatus,
+                        });
+                });
+                console.log(oldClosedProposalEvents);
+                oldClosedProposalEvents.forEach(proposal =>{
+                    console.log(proposal);
+                    dispatch(updateProposal(proposal.proposalId,proposal.value,proposal.status))
                 })
                 
             })()
@@ -75,7 +94,7 @@ const Dao = () => {
                 <div className="proposalList__item">
                     <p className="proposalList__item__detail">{daoList[proposal.daoId].name}</p>
                     <p className="proposalList__item__detail">{proposal.name}</p>
-                    <p className="proposalList__item__detail">{proposal.desc}</p>
+                    <p className="proposalList__item__detail">{proposal.desc.substr(0, 50)}...</p>
                     <p className="proposalList__item__detail">{proposal.status}</p>
                     <button className="proposalList__item__detail--button"><Link to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
                 </div>

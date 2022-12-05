@@ -78,6 +78,36 @@
 
             }
         }
+
+        &__closeVote {
+
+
+            button {
+                background-color: rgb(181, 14, 14);
+                width: 100%;
+                color: white;
+                font-weight: bold;
+                height: 2rem;
+                border-radius: .5rem;
+                margin-top: 1rem;
+            }
+        }
+
+        &__result {
+            font-size: vars.$fontSize_dig;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+
+            &--accepted {
+                color: green;
+            }
+
+            &--refused {
+                color: rgb(181, 14, 14);
+            }
+        }
     }
 
 }

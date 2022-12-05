@@ -1,4 +1,4 @@
-import { ADD_DAO, ADD_PROPOSAL, DELETE_DAO, DELETE_PROPOSAL, INIT_DAO } from "../actions/dao";
+import { ADD_DAO, ADD_PROPOSAL, DELETE_DAO, DELETE_PROPOSAL, INIT_DAO, UPDATE_PROPOSAL } from "../actions/dao";
 
 const initialState = {
     artifact: null,
@@ -38,7 +38,7 @@ const daoReducer = (state = initialState,action={})=>{
                 ...state,
                 proposalList:[
                     ...state.proposalList,
-                    {daoId:action.collectionId, proposalId:action.proposalId,name:action.proposalName,desc:action.proposalDesc, status:"pending"}
+                    {daoId:action.collectionId, proposalId:action.proposalId,name:action.proposalName,desc:action.proposalDesc, value:action.proposalValue ,status:"pending"}
                 ]    
             }
         }
@@ -46,6 +46,21 @@ const daoReducer = (state = initialState,action={})=>{
             return{
                 ...state,
                 proposalList:[]
+            }
+        }
+        case UPDATE_PROPOSAL:{
+            return{
+                ...state,
+                proposalList:
+                    // ...state.proposalList,
+                    state.proposalList.map(proposal => {
+                        if (proposal.proposalId == action.proposalId) {
+                            return {...proposal, value:action.finalValue, status:action.status}
+                        }
+                        return proposal;
+                    })
+                    
+                
             }
         }
         default :

@@ -7,29 +7,38 @@ import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 contract CollectorsDAO is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
+    Counters.Counter public _proposalCount;
 
     enum VotingOptions {
         Yes,
         No
     }
 
+    enum VotingStatus {
+        pending,
+        accepted,
+        refused
+    }
+
     struct SubDao {
         uint256 id;
         string name;
-        uint256 proposalCount;
     }
 
     SubDao[] public subDao;
 
     struct Proposal {
-        uint256 id;
+        uint256 daoId;
+        uint256 proposalId;
         address author;
         string name;
         string description;
+        uint256 value;
         uint256 createdAt;
         uint256 votesForYes;
         uint256 votesForNo;
         bool status;
+        string votingStatus;
     }
 
     event daoCreated(uint256 daoId, string daoName);
@@ -37,18 +46,36 @@ contract CollectorsDAO is Ownable {
     event proposalCreated(
         uint256 daoId,
         uint256 proposalId,
+        address owner,
         string proposalName,
-        string proposalDesc
+        string proposalDesc,
+        uint256 value,
+        uint256 voteForYes,
+        uint256 voteForNo,
+        bool status,
+        string votingStatus
+    );
+
+    event voteSetted(
+        uint256 proposalId,
+        address voter,
+        VotingOptions vote,
+        bool updatedProposalStatus
+    );
+
+    event proposalClosed(
+        uint256 proposalId,
+        uint256 finalValue,
+        string votingStatus
     );
 
     /// @notice list of members of each DAO : user address => daoId (ie collectionId) => member status
     mapping(address => mapping(uint256 => bool)) public daoMembers;
 
-    /// @notice store all proposals: daoId (ie CollectionId) => proposalId => proposal
-    mapping(uint256 => mapping(uint256 => Proposal)) public proposals;
-    /// @notice who already votes for who and to avoid vote twice: voter => daoId (ie collectionId) => proposalId => vote Status
-    mapping(address => mapping(uint256 => mapping(uint256 => bool)))
-        public votes;
+    /// @notice store all proposals: proposalId => proposal
+    mapping(uint256 => Proposal) public proposals;
+    /// @notice who already votes for who and to avoid vote twice: voter => proposalId => vote Status
+    mapping(address => mapping(uint256 => bool)) public votes;
 
     uint256 constant VOTING_PERIOD = 7 days;
 
@@ -56,7 +83,6 @@ contract CollectorsDAO is Ownable {
         SubDao memory newSubDao;
         newSubDao.id = _id.current();
         newSubDao.name = _name;
-        newSubDao.proposalCount = 0;
 
         subDao.push(newSubDao);
 
@@ -68,41 +94,53 @@ contract CollectorsDAO is Ownable {
     function createProposal(
         uint256 _daoId,
         string memory _name,
-        string memory _description
+        string memory _description,
+        uint256 _value
     ) external {
-        uint256 proposalId = subDao[_daoId].proposalCount;
+        uint256 proposalId = _proposalCount.current();
 
-        proposals[_daoId][proposalId] = Proposal(
+        proposals[proposalId] = Proposal(
+            _daoId,
             proposalId,
             msg.sender,
             _name,
             _description,
+            _value,
             block.timestamp,
             0,
             0,
-            false
+            false,
+            "pending"
         );
 
-        emit proposalCreated(_daoId, proposalId, _name, _description);
+        emit proposalCreated(
+            _daoId,
+            proposalId,
+            msg.sender,
+            _name,
+            _description,
+            _value,
+            0,
+            0,
+            false,
+            "pending"
+        );
 
-        subDao[_daoId].proposalCount += 1;
+        _proposalCount.increment();
     }
 
     function vote(
-        uint256 _daoId,
         uint256 _proposalId,
+        uint256 _value,
         VotingOptions _vote
     ) external {
-        Proposal storage proposal = proposals[_daoId][_proposalId];
-        require(
-            votes[msg.sender][_daoId][_proposalId] == false,
-            "already voted"
-        );
+        Proposal storage proposal = proposals[_proposalId];
+        require(votes[msg.sender][_proposalId] == false, "already voted");
         require(
             block.timestamp <= proposal.createdAt + VOTING_PERIOD,
             "Voting period is over"
         );
-        votes[msg.sender][_daoId][_proposalId] = true;
+        votes[msg.sender][_proposalId] = true;
         if (_vote == VotingOptions.Yes) {
             proposal.votesForYes += 1;
             if (
@@ -111,6 +149,9 @@ contract CollectorsDAO is Ownable {
                 50
             ) {
                 proposal.status = true;
+                proposal.value =
+                    (proposal.value * (proposal.votesForYes - 1) + _value) /
+                    proposal.votesForYes;
             }
         } else {
             proposal.votesForNo += 1;
@@ -122,14 +163,31 @@ contract CollectorsDAO is Ownable {
                 proposal.status = false;
             }
         }
+
+        emit voteSetted(_proposalId, msg.sender, _vote, proposal.status);
     }
 
-    function getProposalStatus(uint256 _daoId, uint256 _proposalId)
+    function closeProposal(uint256 _proposalId) external onlyOwner {
+        if (proposals[_proposalId].status == true) {
+            proposals[_proposalId].votingStatus = "accepted";
+        } else {
+            proposals[_proposalId].votingStatus = "refused";
+            proposals[_proposalId].value = 0;
+        }
+
+        emit proposalClosed(
+            _proposalId,
+            proposals[_proposalId].value,
+            proposals[_proposalId].votingStatus
+        );
+    }
+
+    function getProposalStatus(uint256 _proposalId)
         external
         view
         returns (bool proposalStatus)
     {
         // require(block.timestamp >= proposals[_daoId][_proposalId].createdAt + VOTING_PERIOD, "Voting period is not over");
-        return proposals[_daoId][_proposalId].status;
+        return proposals[_proposalId].status;
     }
 }

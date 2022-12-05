@@ -16,7 +16,7 @@ const Admin = () => {
         }
         const valueToSet = newValue;
         await factoryContract.methods.createCollection(valueToSet, "__", "TOKEN").send({from : accounts[0]})
-        // setCollectionCount(collectionCount+1);
+        setNewValue("");
 
     };
   

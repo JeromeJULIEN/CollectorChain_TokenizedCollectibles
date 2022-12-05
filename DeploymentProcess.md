@@ -5,7 +5,7 @@
 3 > Factory 
 
 ## manip usecase
-Factory : Ajout address DAO à contract factory
+Factory : Ajout address DAO à contract factory --> OK automatisé
 Factory : Création nouvelle collection (création collection 1155 + 721 + DAO toutes avec le meme id)
 DAO : Creation d’une proposal de mint dans une DAO 
 DAO : Vote de la proposal par une address

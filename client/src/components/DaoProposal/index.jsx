@@ -1,14 +1,47 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom';
+import { updateProposal } from '../../store/actions/dao';
 import './styles.scss';
 
 const DaoProposal = () => {
     const {id} = useParams();
 
-    const proposal = useSelector(state=> state.dao.proposalList[id])
-    const daoList = useSelector(state => state.dao.daoList)
-    console.log('proposal=>', proposal);
+    const dispatch = useDispatch();
+
+    const web3 = useSelector(state => state.web3.web3);
+    const accounts = useSelector(state => state.web3.accounts);
+    const daoContract = useSelector(state => state.dao.contract);
+    const owner = useSelector(state => state.dao.owner);
+    const proposal = useSelector(state=> state.dao.proposalList[id]);
+    const daoList = useSelector(state => state.dao.daoList);
+
+    const [value, setValue] = useState('');
+    const handleChangeValue = (event) => {
+        setValue(web3.utils.toBN(event.target.value))
+    }
+
+    const voteYes = async() => {
+        await daoContract.methods.vote(id, value, 0).call({from :accounts[0] });
+        await daoContract.methods.vote(id, value, 0).send({from :accounts[0] });
+    }
+
+    const voteNo = async() => {
+        await daoContract.methods.vote(id, 0, 1).call({from :accounts[0] });
+        await daoContract.methods.vote(id, 0, 1).send({from :accounts[0] });
+    }
+
+    const closeVote = async() => {
+        await daoContract.methods.closeProposal(id).call({from :accounts[0] });
+        await daoContract.methods.closeProposal(id).send({from :accounts[0] })
+            .on('receipt', function(receipt){
+                console.log(receipt.events.proposalClosed.returnValues);
+                const proposalData = receipt.events.proposalClosed.returnValues;
+                dispatch(updateProposal(proposalData.proposalId,proposalData.finalValue,proposalData.votingStatus))
+            });
+    }
+
 
     return (
         <div className='daoProposal'>
@@ -19,12 +52,23 @@ const DaoProposal = () => {
                     <div className="panelLeft__vote">
                         <p className="panelLeft__vote__title">Voting panel</p> 
                         <div className="panelLeft__vote__value">
-                            <p>Set the estimated value of the object</p>
-                            <input type="text" placeholder='value in ETH'/>
+                            <p>Set a value for the object (owner estimated {proposal.value} ETH)</p>
+                            <input type="text" placeholder='value in ETH' value={value} onChange={handleChangeValue}/>
                         </div>
                         <div className="panelLeft__vote__setVote">
-                            <button className='panelLeft__vote__setVote--no'>Vote no</button>
-                            <button className='panelLeft__vote__setVote--yes'>Vote yes</button>
+                            <button className='panelLeft__vote__setVote--no' onClick={voteNo}>Vote no</button>
+                            <button className='panelLeft__vote__setVote--yes' onClick={voteYes}>Vote yes</button>
+                        </div>
+                        {accounts[0] === owner ? 
+                        <div className='panelLeft__vote__closeVote'>
+                            <button  onClick={closeVote}>Close vote</button>
+                        </div>
+                        :<></>
+                        }
+                        <div className="panelLeft__vote__result">
+                            {proposal.status === "accepted" ? <div className='panelLeft__vote__result--accepted'>Proposal accepted</div> 
+                            : proposal.status === "refused" ? <div className='panelLeft__vote__result--refused'>Proposal refused</div> 
+                            : <></>}
                         </div>
                     </div>
                 </div>

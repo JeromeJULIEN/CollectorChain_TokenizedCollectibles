@@ -9,6 +9,7 @@ const Mint = () => {
     const [mintCollection, setMintCollection] = useState(0);
     const [mintTitle, setMintTitle] = useState('');
     const [mintDesc, setMintDesc] = useState('');
+    const [mintValue, setMintValue] = useState('');
 
     const handleChangeMintCollection = (event) => {
         setMintCollection(web3.utils.toBN(event.target.value))
@@ -19,12 +20,15 @@ const Mint = () => {
     const handleChangeMintDesc = (event) => {
         setMintDesc(event.target.value)
     }
+    const handleChangeMintValue = (event) => {
+        setMintValue(event.target.value)
+    }
     
     const askMint = async() => {
         try{
             console.log(mintCollection);
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc).call({from:accounts[0]})
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc).send({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).call({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).send({from:accounts[0]})
                 .on('receipt', function(receipt){
                     console.log(receipt.events.proposalCreated.returnValues)
                 })
@@ -52,7 +56,10 @@ const Mint = () => {
            <div>
                 <p>Object description</p>
                 <input type="text" id='description' name='description' required value={mintDesc} onChange={handleChangeMintDesc}/>
-
+           </div>
+           <div>
+                <p>Estimated value</p>
+                <input type="text" id='value' name='value' required value={mintValue} onChange={handleChangeMintValue}/>
            </div>
            <button onClick={askMint}>Ask for mint</button>
         </div>
