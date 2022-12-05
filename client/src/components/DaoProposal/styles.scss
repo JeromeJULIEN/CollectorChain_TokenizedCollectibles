@@ -55,6 +55,12 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
+
+            input {
+                border: none;
+                box-shadow: 0px 0px 3px vars.$color_callToAction;
+                border-radius: .5rem;
+            }
         }
 
         &__setVote {

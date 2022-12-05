@@ -38,7 +38,7 @@ const daoReducer = (state = initialState,action={})=>{
                 ...state,
                 proposalList:[
                     ...state.proposalList,
-                    {daoId:action.collectionId, proposalId:action.proposalId,name:action.proposalName,desc:action.proposalDesc, value:action.proposalValue ,status:"pending"}
+                    {daoId:action.collectionId, proposalId:action.proposalId, owner:action.proposalOwner, name:action.proposalName,desc:action.proposalDesc, value:action.proposalValue ,status:"pending"}
                 ]    
             }
         }

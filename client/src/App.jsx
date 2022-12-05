@@ -127,6 +127,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <MenuMain />
+      </header>
         <Routes>
           <Route path="/" element={<Home />}/> 
           <Route path="/marketplace" element={<Marketplace />}/> 
@@ -138,7 +139,6 @@ function App() {
           <Route path="/mint" element={<Mint />}/> 
           <Route path="/admin" element={<Admin />}/> 
         </Routes>
-      </header>
     </div>
   );
 }

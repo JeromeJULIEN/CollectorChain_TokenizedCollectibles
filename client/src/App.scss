@@ -1,9 +1,11 @@
 @use '../styles/vars';
 
-// .App {
-//   text-align: center;
-//   font-size: vars.$fontSize_normal;
-// }
+.App {
+  Link {
+    text-decoration: none;
+    color: white;
+  }
+}
 
 
 // // .App-header {

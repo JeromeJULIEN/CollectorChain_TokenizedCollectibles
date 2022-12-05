@@ -43,6 +43,7 @@ const Dao = () => {
                         {
                             collectionId : event.returnValues.daoId,
                             proposalId : event.returnValues.proposalId,
+                            proposalOwner : event.returnValues.owner,
                             proposalName : event.returnValues.proposalName, 
                             proposalDesc : event.returnValues.proposalDesc,
                             proposalValue : event.returnValues.value
@@ -50,7 +51,7 @@ const Dao = () => {
                 });
                 dispatch(deleteProposal())
                 oldProposalCreatedEvents.forEach(proposal =>{
-                    dispatch(addProposal(proposal.collectionId,proposal.proposalId,proposal.proposalName,proposal.proposalDesc, proposal.proposalValue))
+                    dispatch(addProposal(proposal.collectionId,proposal.proposalId,proposal.proposalOwner,proposal.proposalName,proposal.proposalDesc, proposal.proposalValue))
                 })
                 // CLOSED PROPOSAL EVENT
                 let closedProposalEvents = await daoContract.getPastEvents('proposalClosed',{
@@ -66,9 +67,7 @@ const Dao = () => {
                             status : event.returnValues.votingStatus,
                         });
                 });
-                console.log(oldClosedProposalEvents);
                 oldClosedProposalEvents.forEach(proposal =>{
-                    console.log(proposal);
                     dispatch(updateProposal(proposal.proposalId,proposal.value,proposal.status))
                 })
                 
@@ -96,7 +95,7 @@ const Dao = () => {
                     <p className="proposalList__item__detail">{proposal.name}</p>
                     <p className="proposalList__item__detail">{proposal.desc.substr(0, 50)}...</p>
                     <p className="proposalList__item__detail">{proposal.status}</p>
-                    <button className="proposalList__item__detail--button"><Link to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
+                    <button ><Link className="proposalList__item__detail--button" to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
                 </div>
                 ))}
             </div>
