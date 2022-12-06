@@ -6,10 +6,12 @@ import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721UR
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 interface IICollectorsDAO {
-    function getProposalStatus(uint256 _daoId, uint256 _proposalId)
+    function getProposalStatus(uint256 _proposalId)
         external
         view
         returns (bool proposalStatus);
+
+    function updateDigitalMintStatus(uint256 _proposalId) external;
 }
 
 contract NftDigital is ERC721URIStorage {
@@ -32,13 +34,11 @@ contract NftDigital is ERC721URIStorage {
     constructor(
         uint256 collectionId_,
         string memory collectionName_,
-        string memory collectionSymbol_
+        string memory collectionSymbol_,
+        address daoContractAddress_
     ) ERC721(collectionName_, collectionSymbol_) {
         collectionId = collectionId_;
-    }
-
-    function setCollectorsDAO(address _address) external {
-        collectorsDAO = IICollectorsDAO(_address);
+        collectorsDAO = IICollectorsDAO(daoContractAddress_);
     }
 
     function mintDigitalNft(
@@ -47,10 +47,7 @@ contract NftDigital is ERC721URIStorage {
         string calldata _nftURI
     ) public {
         // get the proposal status to allow the mint
-        bool proposalStatus = collectorsDAO.getProposalStatus(
-            collectionId,
-            _proposalId
-        );
+        bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
         require(proposalStatus == true, "proposal is not accepted");
 
         uint256 newDigitalNftId = _id.current();
@@ -58,5 +55,6 @@ contract NftDigital is ERC721URIStorage {
         _mint(msg.sender, newDigitalNftId);
         _setTokenURI(newDigitalNftId, _nftURI);
         _id.increment();
+        collectorsDAO.updateDigitalMintStatus(_proposalId);
     }
 }

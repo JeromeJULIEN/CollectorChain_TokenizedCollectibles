@@ -32,10 +32,13 @@ contract Factory is Ownable {
 
     ICollectorsDAO collectorsDAO;
 
+    address daoContractAddress;
+
     /// @dev mapping collectionName => collectionAddress
     mapping(string => address) public collectionsAddress;
 
     constructor(address daoAddress_) {
+        daoContractAddress = daoAddress_;
         collectorsDAO = ICollectorsDAO(daoAddress_);
     }
 
@@ -61,12 +64,14 @@ contract Factory is Ownable {
 
         NftProperty nftProperty = new NftProperty(
             _collectionId,
-            _collectionURI
+            _collectionURI,
+            daoContractAddress
         );
         NftDigital nftDigital = new NftDigital(
             _collectionId,
             _collectionName,
-            _collectionSymbol
+            _collectionSymbol,
+            daoContractAddress
         );
 
         Collection memory newCollection;

@@ -7,10 +7,12 @@ import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 // URI POUR TEST ==> "https://gateway.pinata.cloud/ipfs/QmUegKTCJ8r6td4AfT22FjJHCVMJn4fKTVCK4MH7zNM7Mn/{id}.json"
 
 interface CollectorsDAO {
-    function getProposalStatus(uint256 _daoId, uint256 _proposalId)
+    function getProposalStatus(uint256 _proposalId)
         external
         view
         returns (bool proposalStatus);
+
+    function updatePropertyMintStatus(uint256 _proposalId) external;
 }
 
 contract NftProperty is ERC1155 {
@@ -31,17 +33,18 @@ contract NftProperty is ERC1155 {
     PropertyNft[] propertyNfts;
 
     /// @notice URI structure have to be managed from the from end in order to define custom attributes for each collection
-    constructor(uint256 collectionId_, string memory collectionURI_)
+    constructor(
+        uint256 collectionId_,
+        string memory collectionURI_,
+        address daoContractAddress_
+    )
         ERC1155(
             /* URI de la collection*/
             collectionURI_
         )
     {
         collectionId = collectionId_;
-    }
-
-    function setCollectorsDAO(address _address) external {
-        collectorsDAO = CollectorsDAO(_address);
+        collectorsDAO = CollectorsDAO(daoContractAddress_);
     }
 
     /// @notice function mint() mint new NFT and send it to the owner of the object
@@ -52,15 +55,13 @@ contract NftProperty is ERC1155 {
         uint256 _numberOfItem
     ) public {
         // get the proposal status to allow the mint
-        bool proposalStatus = collectorsDAO.getProposalStatus(
-            collectionId,
-            _proposalId
-        );
+        bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
         require(proposalStatus == true, "proposal is not accepted");
 
         uint256 newPropertyNftId = _id.current();
         propertyNfts.push(PropertyNft(newPropertyNftId, _name, _value));
         _mint(msg.sender, newPropertyNftId, _numberOfItem, "");
         _id.increment();
+        collectorsDAO.updatePropertyMintStatus(_proposalId);
     }
 }

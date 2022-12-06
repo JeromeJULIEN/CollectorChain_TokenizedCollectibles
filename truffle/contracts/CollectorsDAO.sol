@@ -39,6 +39,8 @@ contract CollectorsDAO is Ownable {
         uint256 votesForNo;
         bool status;
         string votingStatus;
+        bool propertyNftMinted;
+        bool digitalNftMinted;
     }
 
     event daoCreated(uint256 daoId, string daoName);
@@ -53,7 +55,9 @@ contract CollectorsDAO is Ownable {
         uint256 voteForYes,
         uint256 voteForNo,
         bool status,
-        string votingStatus
+        string votingStatus,
+        bool propertyNftMinted,
+        bool digitalNftMinted
     );
 
     event voteSetted(
@@ -68,6 +72,9 @@ contract CollectorsDAO is Ownable {
         uint256 finalValue,
         string votingStatus
     );
+
+    event propertyMinted(uint256 proposalId, bool propertyMinted);
+    event digitalMinted(uint256 proposalId, bool digitalMinted);
 
     /// @notice list of members of each DAO : user address => daoId (ie collectionId) => member status
     mapping(address => mapping(uint256 => bool)) public daoMembers;
@@ -123,7 +130,9 @@ contract CollectorsDAO is Ownable {
             0,
             0,
             false,
-            "pending"
+            "pending",
+            false,
+            false
         );
 
         _proposalCount.increment();
@@ -189,5 +198,17 @@ contract CollectorsDAO is Ownable {
     {
         // require(block.timestamp >= proposals[_daoId][_proposalId].createdAt + VOTING_PERIOD, "Voting period is not over");
         return proposals[_proposalId].status;
+    }
+
+    function updatePropertyMintStatus(uint256 _proposalId) external {
+        proposals[_proposalId].propertyNftMinted = true;
+
+        emit propertyMinted(_proposalId, true);
+    }
+
+    function updateDigitalMintStatus(uint256 _proposalId) external {
+        proposals[_proposalId].digitalNftMinted = true;
+
+        emit digitalMinted(_proposalId, true);
     }
 }

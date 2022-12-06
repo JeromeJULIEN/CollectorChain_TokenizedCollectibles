@@ -5,10 +5,11 @@ import {useParams} from 'react-router-dom';
 import { updateProposal } from '../../store/actions/dao';
 import Web3 from 'web3';
 import './daoProposal.scss';
-import { setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
+import { addCollection, deleteAllCollections, setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
 
 const DaoProposal = () => {
     const {id} = useParams();
+    console.log('id=>',id);
 
     const dispatch = useDispatch();
 
@@ -18,7 +19,10 @@ const DaoProposal = () => {
     const owner = useSelector(state => state.dao.owner);
     const proposal = useSelector(state=> state.dao.proposalList[id]);
     const daoList = useSelector(state => state.dao.daoList);
-    const collectionsList = useSelector(state => state.collections.collections)
+    const collectionsList = useSelector(state => state.collections.collections);
+    const propertyContract = useSelector(state => state.collections.currentCollection.propertyContract);
+    const digitalContract = useSelector(state => state.collections.currentCollection.digitalContract);
+    const factoryContract = useSelector(state => state.factory.contract);
     let propertyContractAddress = "";
     let digitalContractAddress= "";
 
@@ -48,18 +52,57 @@ const DaoProposal = () => {
     }
 
     const mintProperty = async() => {
-        await propertyContractAddress.methods.mint(id,proposal.name,proposal.value,100).call({from:accounts[0]})
-        await propertyContractAddress.methods.mint(id,proposal.name,proposal.value,100).send({from:accounts[0]})
+        console.log('params=>',id,proposal.name,proposal.value);
+        var BN = web3.utils.BN;
+        await propertyContract.methods.mint(id,proposal.name,proposal.value,new BN(100)).call({from:accounts[0]})
+        await propertyContract.methods.mint(id,proposal.name,proposal.value,web3.utils.toBN(100)).send({from:accounts[0]})
             .on('receipt', function(receipt) {
                 console.log(receipt);
             })
     }
 
+    const getProposalStatus = async() => {
+        await daoContract.methods.getProposalStatus(id).send({from:accounts[0]})
+            .on('receipt', function(receipt) {
+                console.log(receipt);
+            })
+    }
+
+     //! :::: GESTION EVENT COLLECTION CREATED :::::
+     useEffect(()=> {
+        if(factoryContract !== null){
+            (async () => {
+                // VOTER REGISTRATION INFORMATION
+                let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldCollectionCreationEvent=[];
+                collectionCreationEvent.forEach(event => {
+                    oldCollectionCreationEvent.push(
+                        {
+                            collectionName : event.returnValues.collectionName,
+                            propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
+                            digitalCollectionAddress : event.returnValues.digitalCollectionAddress
+                        });
+                });
+                dispatch(deleteAllCollections());
+                oldCollectionCreationEvent.forEach(collection => {
+                    dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
+                
+
+                // console.log("event CCreated =>", collectionCreationEvents);
+            })()
+        };
+
+    }, 
+    [/*collectionCount,*/ factoryContract]
+    )
+
     useEffect(()=>{
-        console.log('entrée dans useEffect daoProposal');
         const artifactProperty = require("../../contracts/NftProperty.json");
         const artifactDigital = require("../../contracts/NftDigital.json");
-        if (typeof collectionsList[id] !== 'undefined') {
+        if (collectionsList[proposal.daoId] !== null) {
             propertyContractAddress = collectionsList[proposal.daoId].propertyContractAddress;
             const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
             const abiProperty = artifactProperty.abi;
@@ -85,9 +128,7 @@ const DaoProposal = () => {
                 
                 } catch (err) {
                     console.error(err);
-                }
-            console.log('fin du if');
-           
+                }        
     
         } 
         else {
@@ -138,6 +179,7 @@ const DaoProposal = () => {
                         <div>
                             <button className='panelLeft__vote__btn' onClick={mintProperty}>Mint your Proof of ownership</button> 
                             <button className='panelLeft__vote__btn'>Mint your Digital collectible</button> 
+                            <button className='panelLeft__vote__btn' onClick={getProposalStatus}>get status</button> 
                         </div>
                         : <></>}
                     </div>
