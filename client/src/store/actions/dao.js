@@ -4,6 +4,20 @@ export const ADD_DAO = 'ADD_DAO';
 export const ADD_PROPOSAL = 'ADD_PROPOSAL';
 export const DELETE_DAO = 'DELETE_DAO';
 export const UPDATE_PROPOSAL = 'UPDATE_PROPOSAL';
+export const UPDATE_PROPERTY_MINT_STATUS = 'UPDATE_PROPERTY_MINT_STATUS';
+export const UPDATE_DIGITAL_MINT_STATUS = 'UPDATE_DIGITAL_MINT_STATUS';
+
+export const updateDigitalMintStatus = (proposalId,digitalMintStatus) => ({
+  type: UPDATE_DIGITAL_MINT_STATUS,
+  proposalId,
+  digitalMintStatus
+});
+
+export const updatePropertyMintStatus = (proposalId,propertyMintStatus) => ({
+  type: UPDATE_PROPERTY_MINT_STATUS,
+  proposalId,
+  propertyMintStatus
+});
 
 export const updateProposal = (proposalId, finalValue, status) => ({
   type: UPDATE_PROPOSAL,

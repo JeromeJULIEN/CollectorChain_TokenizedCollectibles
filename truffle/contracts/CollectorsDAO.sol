@@ -117,7 +117,9 @@ contract CollectorsDAO is Ownable {
             0,
             0,
             false,
-            "pending"
+            "pending",
+            false,
+            false
         );
 
         emit proposalCreated(

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addDao, addProposal, deleteDao, deleteProposal, updateProposal } from '../../store/actions/dao';
+import { addDao, addProposal, deleteDao, deleteProposal, updatePropertyMintStatus, updateProposal } from '../../store/actions/dao';
 import {Link} from 'react-router-dom';
 import PlusRoundIcon from '@rsuite/icons/PlusRound';
 import {InputPicker} from 'rsuite';
@@ -20,6 +20,7 @@ const Mint = () => {
     const [mintTitle, setMintTitle] = useState('');
     const [mintDesc, setMintDesc] = useState('');
     const [mintValue, setMintValue] = useState('');
+    const[mintCount,setMintCount] =useState(0);
 
     const daoNameList = daoList.map(item => ({label:item.name, value:item.id}));
 
@@ -42,6 +43,7 @@ const Mint = () => {
         try{
             await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).call({from:accounts[0]})
             await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).send({from:accounts[0]})
+            setMintCount(mintCount +1);
         } catch (error) {
             console.error(error)
         }
@@ -106,11 +108,27 @@ const Mint = () => {
                 oldClosedProposalEvents.forEach(proposal =>{
                     dispatch(updateProposal(proposal.proposalId,proposal.value,proposal.status))
                 })
+                // PROPERTY MINT EVENT
+                let propertyMintEvents = await daoContract.getPastEvents('propertyMinted',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldPropertyMintEvents=[];
+                propertyMintEvents.forEach(event => {
+                    oldPropertyMintEvents.push(
+                        {
+                            proposalId : event.returnValues.proposalId,
+                            propertyMintStatus : event.returnValues.propertyMinted, 
+                        });
+                });
+                oldPropertyMintEvents.forEach(mint =>{
+                    dispatch(updatePropertyMintStatus(mint.proposalId,mint.propertyMintStatus))
+                })
                 
             })()
         };
 
-    }, [daoContract])
+    }, [daoContract, mintCount])
 
 
     // récupération des demande de Mint de l'utilisateur connecté :

@@ -1,4 +1,4 @@
-import { ADD_DAO, ADD_PROPOSAL, DELETE_DAO, DELETE_PROPOSAL, INIT_DAO, UPDATE_PROPOSAL } from "../actions/dao";
+import { ADD_DAO, ADD_PROPOSAL, DELETE_DAO, DELETE_PROPOSAL, INIT_DAO, UPDATE_DIGITAL_MINT_STATUS, UPDATE_PROPERTY_MINT_STATUS, UPDATE_PROPOSAL } from "../actions/dao";
 
 const initialState = {
     artifact: null,
@@ -38,7 +38,15 @@ const daoReducer = (state = initialState,action={})=>{
                 ...state,
                 proposalList:[
                     ...state.proposalList,
-                    {daoId:action.collectionId, proposalId:action.proposalId, owner:action.proposalOwner, name:action.proposalName,desc:action.proposalDesc, value:action.proposalValue ,status:"pending"}
+                    {daoId:action.collectionId, 
+                    proposalId:action.proposalId, 
+                    owner:action.proposalOwner, 
+                    name:action.proposalName,
+                    desc:action.proposalDesc, 
+                    value:action.proposalValue ,
+                    status:"pending", 
+                    propertyNftMinted:false,
+                    digitalNftMinted:false}
                 ]    
             }
         }
@@ -61,6 +69,30 @@ const daoReducer = (state = initialState,action={})=>{
                     })
                     
                 
+            }
+        }
+        case UPDATE_PROPERTY_MINT_STATUS:{
+            return{
+                ...state,
+                proposalList:
+                    state.proposalList.map(proposal => {
+                        if (proposal.proposalId == action.proposalId) {
+                            return {...proposal, propertyNftMinted:true}
+                        }
+                        return proposal;
+                    })
+            }
+        }
+        case UPDATE_DIGITAL_MINT_STATUS:{
+            return{
+                ...state,
+                proposalList:
+                    state.proposalList.map(proposal => {
+                        if (proposal.proposalId == action.proposalId) {
+                            return {...proposal, digitalNftMinted:true}
+                        }
+                        return proposal;
+                    })
             }
         }
         default :

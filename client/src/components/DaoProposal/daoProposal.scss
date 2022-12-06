@@ -127,6 +127,20 @@
             border-radius: .5rem;
             margin-top: 1rem;
         }
+
+        &__message {
+            font-size: vars.$fontSize_dig;
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            align-items: center;
+            gap: .5rem;
+
+            &--green {
+                color: green;
+            }
+        }
     }
 
 }

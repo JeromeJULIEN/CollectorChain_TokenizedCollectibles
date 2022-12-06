@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom';
-import { updateProposal } from '../../store/actions/dao';
+import { updateDigitalMintStatus, updatePropertyMintStatus, updateProposal } from '../../store/actions/dao';
 import Web3 from 'web3';
 import './daoProposal.scss';
 import { addCollection, deleteAllCollections, setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
+import CheckRoundIcon from '@rsuite/icons/CheckRound';
 
 const DaoProposal = () => {
     const {id} = useParams();
-    console.log('id=>',id);
-
+    
     const dispatch = useDispatch();
-
+    
     const web3 = useSelector(state => state.web3.web3);
     const accounts = useSelector(state => state.web3.accounts);
     const daoContract = useSelector(state => state.dao.contract);
@@ -25,6 +25,7 @@ const DaoProposal = () => {
     const factoryContract = useSelector(state => state.factory.contract);
     let propertyContractAddress = "";
     let digitalContractAddress= "";
+
 
     const [value, setValue] = useState('');
     const handleChangeValue = (event) => {
@@ -52,10 +53,14 @@ const DaoProposal = () => {
     }
 
     const mintProperty = async() => {
-        console.log('params=>',id,proposal.name,proposal.value);
         var BN = web3.utils.BN;
         await propertyContract.methods.mint(id,proposal.name,proposal.value,new BN(100)).call({from:accounts[0]})
         await propertyContract.methods.mint(id,proposal.name,proposal.value,web3.utils.toBN(100)).send({from:accounts[0]})
+    }
+
+    const mintDigital = async() => {
+        await digitalContract.methods.mintDigitalNft(id,proposal.name,"__").call({from:accounts[0]})
+        await digitalContract.methods.mintDigitalNft(id,proposal.name,'__').send({from:accounts[0]})
             .on('receipt', function(receipt) {
                 console.log(receipt);
             })
@@ -68,7 +73,7 @@ const DaoProposal = () => {
             })
     }
 
-     //! :::: GESTION EVENT COLLECTION CREATED :::::
+     //! :::: GESTION EVENT  :::::
      useEffect(()=> {
         if(factoryContract !== null){
             (async () => {
@@ -89,14 +94,44 @@ const DaoProposal = () => {
                 dispatch(deleteAllCollections());
                 oldCollectionCreationEvent.forEach(collection => {
                     dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
-                
+                // PROPERTY MINT EVENT
+                let propertyMintEvents = await daoContract.getPastEvents('propertyMinted',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldPropertyMintEvents=[];
+                propertyMintEvents.forEach(event => {
+                    oldPropertyMintEvents.push(
+                        {
+                            proposalId : event.returnValues.proposalId,
+                            propertyMintStatus : event.returnValues.propertyMinted, 
+                        });
+                });
+                oldPropertyMintEvents.forEach(mint =>{
+                    dispatch(updatePropertyMintStatus(mint.proposalId,mint.propertyMintStatus))
+                })
+                // DIGITAL MINT EVENT
+                let digitalMintEvents = await daoContract.getPastEvents('digitalMinted',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldDigitalMintEvents=[];
+                digitalMintEvents.forEach(event => {
+                    oldDigitalMintEvents.push(
+                        {
+                            proposalId : event.returnValues.proposalId,
+                            digitalMintStatus : event.returnValues.digitalMinted, 
+                        });
+                });
+                oldDigitalMintEvents.forEach(mint =>{
+                    dispatch(updateDigitalMintStatus(mint.proposalId,mint.digitalMintStatus))
+                })
 
                 // console.log("event CCreated =>", collectionCreationEvents);
             })()
         };
 
-    }, 
-    [/*collectionCount,*/ factoryContract]
+    }, [/*collectionCount,*/ factoryContract]
     )
 
     useEffect(()=>{
@@ -137,17 +172,16 @@ const DaoProposal = () => {
             
         
     }, [propertyContractAddress, digitalContractAddress])
-
+    console.log('proposal=>',proposal.digitalNftMinted);
 
     return (
         <div className='daoProposal'>
             <p className="daoProposal__title">Object {proposal.name} from {daoList[proposal.daoId].name} collection</p>
-            <p className="daoProposal__owner">owner: {proposal.owner}</p>
+            <p className="daoProposal__owner">Minter: {proposal.owner}</p>
             <div className="daoProposal__panel">
                 <div className="panelLeft">
                     <div className="panelLeft__picture">panelLeft__picture</div>
                     <div className="panelLeft__vote">
-                        <p className="panelLeft__vote__title">Voting panel</p> 
                         {proposal.status !== "pending" ? 
                         <></>
                         :
@@ -177,9 +211,12 @@ const DaoProposal = () => {
                         </div>
                         {accounts[0] === proposal.owner && proposal.status === "accepted" ? 
                         <div>
-                            <button className='panelLeft__vote__btn' onClick={mintProperty}>Mint your Proof of ownership</button> 
-                            <button className='panelLeft__vote__btn'>Mint your Digital collectible</button> 
-                            <button className='panelLeft__vote__btn' onClick={getProposalStatus}>get status</button> 
+                            {proposal.propertyNftMinted ? <div className='panelLeft__vote__message'>Proof of ownership already minted <CheckRoundIcon className='panelLeft__vote__message--green'/></div>
+                             :<button className='panelLeft__vote__btn' onClick={mintProperty}>Mint your Proof of ownership</button> 
+                             }
+                            {proposal.digitalNftMinted ? <div className='panelLeft__vote__message'>Digital collectible already minted <CheckRoundIcon className='panelLeft__vote__message--green'/></div>
+                             :<button className='panelLeft__vote__btn' onClick={mintDigital}>Mint your Digital collectible</button> 
+                             } 
                         </div>
                         : <></>}
                     </div>
