@@ -108,22 +108,7 @@ const Mint = () => {
                 oldClosedProposalEvents.forEach(proposal =>{
                     dispatch(updateProposal(proposal.proposalId,proposal.value,proposal.status))
                 })
-                // PROPERTY MINT EVENT
-                let propertyMintEvents = await daoContract.getPastEvents('propertyMinted',{
-                    fromBlock : 0,
-                    toBlock:'latest'
-                });
-                let oldPropertyMintEvents=[];
-                propertyMintEvents.forEach(event => {
-                    oldPropertyMintEvents.push(
-                        {
-                            proposalId : event.returnValues.proposalId,
-                            propertyMintStatus : event.returnValues.propertyMinted, 
-                        });
-                });
-                oldPropertyMintEvents.forEach(mint =>{
-                    dispatch(updatePropertyMintStatus(mint.proposalId,mint.propertyMintStatus))
-                })
+                
                 
             })()
         };

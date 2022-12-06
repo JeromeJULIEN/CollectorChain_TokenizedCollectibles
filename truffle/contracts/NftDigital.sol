@@ -29,7 +29,7 @@ contract NftDigital is ERC721URIStorage {
 
     IICollectorsDAO collectorsDAO;
 
-    DigitalNft[] digitalNfts;
+    DigitalNft[] public digitalNfts;
 
     constructor(
         uint256 collectionId_,
