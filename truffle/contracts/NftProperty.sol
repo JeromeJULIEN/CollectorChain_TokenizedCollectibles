@@ -30,7 +30,7 @@ contract NftProperty is ERC1155 {
 
     CollectorsDAO collectorsDAO;
 
-    PropertyNft[] propertyNfts;
+    PropertyNft[] public propertyNfts;
 
     /// @notice URI structure have to be managed from the from end in order to define custom attributes for each collection
     constructor(

@@ -38,3 +38,30 @@
     }
 
 }
+
+.nftList {
+    margin: 1rem;
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+@media (min-width: 721px) {
+    .nftList {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .nftList {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.modal {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+
+}

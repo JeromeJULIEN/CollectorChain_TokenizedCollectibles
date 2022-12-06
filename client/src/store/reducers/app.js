@@ -27,7 +27,7 @@ const appReducer = (state = initialState,action={}) =>{
                 ...state,
                 propertyNfts:[
                     ...state.propertyNfts,
-                    {name:action.payload}
+                    {name:action.nftName,balance:action.balance}
                 ]
             }
         }

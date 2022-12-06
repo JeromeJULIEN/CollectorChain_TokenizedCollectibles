@@ -1,8 +1,9 @@
+@use '../../../styles/vars';
 @import "rsuite/dist/rsuite.css";
 
 .menu {
     color: white;
-    background-color: black;
+    background-color: vars.$color_black;
     display: flex;
     justify-content: space-between;
     // align-items: baseline;
@@ -16,7 +17,7 @@
         vertical-align: middle;
 
         &--item {
-            color: white;
+            color: vars.$color_white;
             text-decoration: none;
         }
     }

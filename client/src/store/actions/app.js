@@ -13,9 +13,10 @@ export const setUserDigitalNfts = (payload) => ({
   payload
 });
 
-export const setUserPropertyNfts = (payload) => ({
+export const setUserPropertyNfts = (nftName, balance) => ({
   type: SET_USER_PROPERTY_NFTS,
-  payload
+  nftName,
+  balance
 });
 
 export const setAdmin = (payload) => ({

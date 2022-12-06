@@ -17,6 +17,7 @@ import Dao from './components/Dao';
 import Mint from './components/Mint';
 import Admin from './components/Admin';
 import DaoProposal from './components/DaoProposal';
+import { addCollection, deleteAllCollections } from './store/actions/collections';
 
 function App() {
 
@@ -121,6 +122,36 @@ function App() {
       events.forEach(e => window.ethereum.removeListener(e, handleChange));
     };
   }, [initMarketplaceContract, marketplaceArtifact, initFactoryContract, factoryArtifact, initDaoContract, daoArtifact]);
+
+   //! :::: GESTION EVENT COLLECTION CREATED :::::
+   const factoryContract=useSelector(state =>state.factory.contract)
+   useEffect(()=> {
+    if(factoryContract !== null){
+        (async () => {
+            // VOTER REGISTRATION INFORMATION
+            let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
+                fromBlock : 0,
+                toBlock:'latest'
+            });
+            let oldCollectionCreationEvent=[];
+            collectionCreationEvent.forEach(event => {
+                oldCollectionCreationEvent.push(
+                    {
+                        collectionName : event.returnValues.collectionName,
+                        propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
+                        digitalCollectionAddress : event.returnValues.digitalCollectionAddress
+                    });
+            });
+            dispatch(deleteAllCollections());
+            oldCollectionCreationEvent.forEach(collection => {
+                dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
+            
+
+            // console.log("event CCreated =>", collectionCreationEvents);
+        })()
+    };
+
+}, [/*collectionCount,*/ factoryContract])
 
 
   return (
