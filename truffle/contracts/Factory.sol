@@ -60,22 +60,20 @@ contract Factory is Ownable {
             "collection URI should not be null"
         );
 
-        uint256 _collectionId = _id.current();
-
         NftProperty nftProperty = new NftProperty(
-            _collectionId,
+            _id.current(),
             _collectionURI,
             daoContractAddress
         );
         NftDigital nftDigital = new NftDigital(
-            _collectionId,
+            _id.current(),
             _collectionName,
             _collectionSymbol,
             daoContractAddress
         );
 
         Collection memory newCollection;
-        newCollection._collectionId = _collectionId;
+        newCollection._collectionId = _id.current();
         newCollection._name = _collectionName;
         newCollection._propertyCollectionAddress = address(nftProperty);
         newCollection._digitalCollectionAddress = address(nftDigital);
@@ -84,7 +82,7 @@ contract Factory is Ownable {
         collectorsDAO.createDAO(_collectionName);
 
         emit collectionCreated(
-            _collectionId,
+            _id.current(),
             _collectionName,
             address(nftProperty),
             address(nftDigital)

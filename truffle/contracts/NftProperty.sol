@@ -20,10 +20,11 @@ contract NftProperty is ERC1155 {
     Counters.Counter public _id;
 
     string public collectionName;
-    uint256 public collectionId;
+    uint256 public _collectionId;
 
     struct PropertyNft {
-        uint256 itemId;
+        uint256 collectionId;
+        uint256 nftId;
         string name;
         uint256 value;
     }
@@ -43,12 +44,12 @@ contract NftProperty is ERC1155 {
             collectionURI_
         )
     {
-        collectionId = collectionId_;
+        _collectionId = collectionId_;
         collectorsDAO = CollectorsDAO(daoContractAddress_);
     }
 
     /// @notice function mint() mint new NFT and send it to the owner of the object
-    function mint(
+    function mintPropertyNft(
         uint256 _proposalId,
         string memory _name,
         uint256 _value,
@@ -59,7 +60,9 @@ contract NftProperty is ERC1155 {
         require(proposalStatus == true, "proposal is not accepted");
 
         uint256 newPropertyNftId = _id.current();
-        propertyNfts.push(PropertyNft(newPropertyNftId, _name, _value));
+        propertyNfts.push(
+            PropertyNft(_collectionId, newPropertyNftId, _name, _value)
+        );
         _mint(msg.sender, newPropertyNftId, _numberOfItem, "");
         _id.increment();
         collectorsDAO.updatePropertyMintStatus(_proposalId);

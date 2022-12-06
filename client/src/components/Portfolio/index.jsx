@@ -10,6 +10,7 @@ const Portfolio = () => {
     //! STORE
     const propertyNfts = useSelector(state =>state.app.propertyNfts);
     const digitalNfts = useSelector(state =>state.app.digitalNfts);
+    const marketplaceContract = useSelector(state => state.marketplace.contract);
 
 
     //! LOCAL STATE
@@ -53,7 +54,8 @@ const Portfolio = () => {
                 const owner = await digitalContract.methods.ownerOf(i).call({from:accounts[0]})
                 if(owner === accounts[0]){
                     const nft = await digitalContract.methods.digitalNfts(i).call({from:accounts[0]})
-                    dispatch(setUserDigitalNfts(nft.nftName))
+                    console.log('digital nft=>', nft);
+                    dispatch(setUserDigitalNfts(nft.collectionId,i,nft.nftName))
                 }
             }
             // loop on property subcollection
@@ -66,7 +68,7 @@ const Portfolio = () => {
                 const balance = await propertyContract.methods.balanceOf(accounts[0],i).call({from:accounts[0]})
                 if(balance > 0){
                     const nft = await propertyContract.methods.propertyNfts(i).call({from:accounts[0]})
-                    dispatch(setUserPropertyNfts(nft.name, balance))
+                    dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,balance))
                 }
             }
         });
@@ -90,7 +92,7 @@ const Portfolio = () => {
         {toggle==='digital' &&
         <div className="nftList">
             {digitalNfts.map(nft => (
-                <NftDigitalCard name={nft.name}/>
+                <NftDigitalCard name={nft.name} marketplaceContract={marketplaceContract}/>
             ))}
         </div>
         }

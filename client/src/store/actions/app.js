@@ -8,14 +8,19 @@ export const deleteAllUserNfts = () => ({
   type: DELETE_ALL_USER_NFTS
 });
 
-export const setUserDigitalNfts = (payload) => ({
+export const setUserDigitalNfts = (collectionId,nftId,name) => ({
   type: SET_USER_DIGITAL_NFTS,
-  payload
+  collectionId,
+  nftId,
+  name
 });
 
-export const setUserPropertyNfts = (nftName, balance) => ({
+export const setUserPropertyNfts = (collectionId, nftId, nftName, value,balance) => ({
   type: SET_USER_PROPERTY_NFTS,
+  collectionId,
+  nftId,
   nftName,
+  value,
   balance
 });
 

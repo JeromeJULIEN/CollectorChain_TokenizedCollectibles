@@ -54,8 +54,8 @@ const DaoProposal = () => {
 
     const mintProperty = async() => {
         var BN = web3.utils.BN;
-        await propertyContract.methods.mint(id,proposal.name,proposal.value,new BN(100)).call({from:accounts[0]})
-        await propertyContract.methods.mint(id,proposal.name,proposal.value,web3.utils.toBN(100)).send({from:accounts[0]})
+        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,new BN(100)).call({from:accounts[0]})
+        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,web3.utils.toBN(100)).send({from:accounts[0]})
     }
 
     const mintDigital = async() => {

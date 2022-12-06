@@ -27,7 +27,7 @@ const Mint = () => {
     const dispatch = useDispatch();
 
     const handleChangeMintCollection = (event) => {
-        setMintCollection(web3.utils.toBN(event.target.value))
+        setMintCollection(event)
     }
     const handleChangeMintTitle = (event) => {
         setMintTitle(event.target.value)

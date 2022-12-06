@@ -40,7 +40,8 @@ contract MarketPlace is Ownable {
     /// @notice : The function call method from the concerned collection by instantiating the good contract with the deployement address
     /// @dev require 1 ==> check if msg.sender is the owner
     /// @dev require 2 ==> check if user balance is enough
-    function putItemForSell(
+    /// @dev set an approval for the contract
+    function putPropertyForSell(
         address _collectionAddress,
         uint256 _itemId,
         uint256 _sellingPrice,
@@ -58,7 +59,7 @@ contract MarketPlace is Ownable {
         sellingPriceByIdByAddress[_collectionAddress][_itemId][msg.sender] =
             _sellingPrice *
             10**18;
-        // nftProperty.setApprovalForAll(address(this), true);
+        nftProperty.setApprovalForAll(address(this), true);
         // nftProperty.safeTransferFrom(msg.sender, address(this), _itemId, _quantityToSell,"");
     }
 
@@ -66,7 +67,7 @@ contract MarketPlace is Ownable {
     /// @dev require 1 ==> check if seller has enought item to sell
     /// @dev require 2 ==> check if buyer send the good amount of eth
     /// @dev require 3 ==> check the eth transfer to 'seller'
-    function buyItem(
+    function buyPropertyItem(
         address _collectionAddress,
         uint256 _itemId,
         uint256 _quantityToBuy,

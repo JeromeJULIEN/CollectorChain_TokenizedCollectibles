@@ -20,9 +20,10 @@ contract NftDigital is ERC721URIStorage {
 
     string collectionName;
     string collectionSymbol;
-    uint256 collectionId;
+    uint256 _collectionId;
 
     struct DigitalNft {
+        uint256 collectionId;
         uint256 nftId;
         string nftName;
     }
@@ -37,7 +38,7 @@ contract NftDigital is ERC721URIStorage {
         string memory collectionSymbol_,
         address daoContractAddress_
     ) ERC721(collectionName_, collectionSymbol_) {
-        collectionId = collectionId_;
+        _collectionId = collectionId_;
         collectorsDAO = IICollectorsDAO(daoContractAddress_);
     }
 
@@ -51,7 +52,7 @@ contract NftDigital is ERC721URIStorage {
         require(proposalStatus == true, "proposal is not accepted");
 
         uint256 newDigitalNftId = _id.current();
-        digitalNfts.push(DigitalNft(newDigitalNftId, _name));
+        digitalNfts.push(DigitalNft(_collectionId, newDigitalNftId, _name));
         _mint(msg.sender, newDigitalNftId);
         _setTokenURI(newDigitalNftId, _nftURI);
         _id.increment();
