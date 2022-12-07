@@ -46,7 +46,10 @@ const daoReducer = (state = initialState,action={})=>{
                     value:action.proposalValue ,
                     status:"pending", 
                     propertyNftMinted:false,
-                    digitalNftMinted:false}
+                    digitalNftMinted:false,
+                    docOwnership:action.docOwnership,
+                    docEstimation:action.docEstimation
+                    }
                 ]    
             }
         }

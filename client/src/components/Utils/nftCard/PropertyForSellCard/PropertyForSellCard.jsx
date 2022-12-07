@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './propertyForSellCard.scss'
 import {Modal} from 'rsuite';
 import { useSearch } from 'rsuite/esm/Picker';
-import { setPropertyCollection } from '../../../store/actions/collections';
+import { setPropertyCollection } from '../../../../store/actions/collections';
 import { useDispatch, useSelector } from 'react-redux';
 
 const PropertyForSellCard = ({
@@ -55,7 +55,7 @@ const PropertyForSellCard = ({
 
   let totalQuantity = 0
   seller.map(seller => {
-    totalQuantity = totalQuantity+ seller.quantity
+    totalQuantity = parseInt(totalQuantity) + parseInt(seller.quantity)
   })
 
   //! STORE
@@ -66,23 +66,6 @@ const PropertyForSellCard = ({
   //! EVENTS
 
   //! FUNCTIONS
-  const approveForSell = async() => {
-    console.log('mkplace address=>',marketplaceContract._address);
-    // instanciation du bon contrat pour lancer l'approval
-    var artifact = require("../../../contracts/NftProperty.json");
-    const abiProperty = artifact.abi;  
-    try {
-      let propertyContract = new web3.eth.Contract(abiProperty, propertyContractAddress);
-      dispatch(setPropertyCollection(propertyContract));
-      await propertyContract.methods.setApprovalForAll(marketplaceContract._address,true).call({from:accounts[0]})
-      await propertyContract.methods.setApprovalForAll(marketplaceContract._address,true).send({from:accounts[0]})
-      handleUpdater()
-      handleCloseBuy()
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
   const buyPropertyNft =async() =>{
     // const valueToSend = quantity*sellerPrice;
     const valueToSend = web3.utils.toWei(web3.utils.toBN((quantity*sellerPrice),'ether'));

@@ -4,10 +4,12 @@ import { addDao, addProposal, deleteDao, deleteProposal, updatePropertyMintStatu
 import {Link} from 'react-router-dom';
 import PlusRoundIcon from '@rsuite/icons/PlusRound';
 import {InputPicker} from 'rsuite';
+import Axios from 'axios';
 import './styles.scss'
 
 
 const Mint = () => {
+    //! STORE
     const daoContract = useSelector(state => state.dao.contract)
     const propertyContract = useSelector(state => state.collections.currentCollection.propertyContract)
     const digitalContract = useSelector(state => state.collections.currentCollection.digitalContract)
@@ -16,6 +18,7 @@ const Mint = () => {
     const daoList = useSelector(state => state.dao.daoList)
     const proposalList = useSelector(state => state.dao.proposalList)
 
+    //! LOCAL STATE
     const [mintCollection, setMintCollection] = useState(0);
     const [mintTitle, setMintTitle] = useState('');
     const [mintDesc, setMintDesc] = useState('');
@@ -39,17 +42,62 @@ const Mint = () => {
         setMintValue(event.target.value)
     }
     
+    //! FUNCTIONS
     const askMint = async() => {
         try{
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).call({from:accounts[0]})
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue).send({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,docEstimation).call({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,docEstimation).send({from:accounts[0]})
             setMintCount(mintCount +1);
         } catch (error) {
             console.error(error)
         }
     }
-  
 
+    // récupération des demande de Mint de l'utilisateur connecté :
+    let userMintProposal = []
+    proposalList.map(proposal => {
+        if(proposal.owner === accounts[0]) {
+            userMintProposal.push(proposal)
+        }
+    })
+
+    const [docOwnership,setDocOwnership] = useState("")
+    const uploadOwnershipImage = (event) => {
+        // setPicture(event.target.files);
+        // Il faut stocker un chemin URL pour afficher l'image
+        // dispatch(storeNftMedia(event.target.files[0]));
+        // tuto youtube : https://www.youtube.com/watch?v=Y-VgaRwWS3o
+        const formData = new FormData()
+        formData.append("file", event.target.files[0])
+        formData.append("upload_preset", "r2bx0mli")
+        Axios.post("https://api.cloudinary.com/v1_1/ddsddskey/image/upload",
+            formData
+        ).then((response) => {
+            console.log(response.data.secure_url);
+            setDocOwnership(response.data.secure_url);
+        })
+
+    };
+
+    const [docEstimation,setDocEstimation] = useState("")
+    const uploadEstimationImage = (event) => {
+        // setPicture(event.target.files);
+        // Il faut stocker un chemin URL pour afficher l'image
+        // dispatch(storeNftMedia(event.target.files[0]));
+        // tuto youtube : https://www.youtube.com/watch?v=Y-VgaRwWS3o
+        const formData = new FormData()
+        formData.append("file", event.target.files[0])
+        formData.append("upload_preset", "r2bx0mli")
+        Axios.post("https://api.cloudinary.com/v1_1/ddsddskey/image/upload",
+            formData
+        ).then((response) => {
+            console.log(response.data.secure_url);
+            setDocEstimation(response.data.secure_url);
+        })
+
+    };
+  
+    //! EVENT
     useEffect(()=> {
         if(daoContract !== null){
             (async () => {
@@ -84,12 +132,22 @@ const Mint = () => {
                             proposalOwner : event.returnValues.owner,
                             proposalName : event.returnValues.proposalName, 
                             proposalDesc : event.returnValues.proposalDesc,
-                            proposalValue : event.returnValues.value
+                            proposalValue : event.returnValues.value,
+                            docOwnership:event.returnValues.docOwnership,
+                            docEstimation:event.returnValues.docEstimation
                         });
                 });
                 dispatch(deleteProposal())
                 oldProposalCreatedEvents.forEach(proposal =>{
-                    dispatch(addProposal(proposal.collectionId,proposal.proposalId,proposal.proposalOwner,proposal.proposalName,proposal.proposalDesc, proposal.proposalValue))
+                    dispatch(addProposal(
+                        proposal.collectionId,
+                        proposal.proposalId,
+                        proposal.proposalOwner,
+                        proposal.proposalName,
+                        proposal.proposalDesc, 
+                        proposal.proposalValue,
+                        proposal.docOwnership,
+                        proposal.docEstimation))
                 })
                 // CLOSED PROPOSAL EVENT
                 let closedProposalEvents = await daoContract.getPastEvents('proposalClosed',{
@@ -116,13 +174,6 @@ const Mint = () => {
     }, [daoContract, mintCount])
 
 
-    // récupération des demande de Mint de l'utilisateur connecté :
-    let userMintProposal = []
-    proposalList.map(proposal => {
-        if(proposal.owner === accounts[0]) {
-            userMintProposal.push(proposal)
-        }
-    })
 
 
     return (
@@ -152,7 +203,10 @@ const Mint = () => {
                 </div>
                 <div className="panelRight">
                     <div className="panelRight__doc">
-                        Provide supporting documents <PlusRoundIcon className='icon'/>
+                        <p>Upload your proof of ownership</p>   
+                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadOwnershipImage} className="picture__input" id="docOwnership" />
+                        <p>Upload your proof estimation value (if exist)</p>   
+                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadEstimationImage} className="picture__input" id="docOwnership" />
                     </div>
                     <button className='panelRight__btn' onClick={askMint}>Send request</button>
                 </div>

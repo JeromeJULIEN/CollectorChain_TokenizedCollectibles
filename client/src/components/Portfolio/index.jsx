@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteAllUserNfts, setUserDigitalNfts, setUserPropertyNfts } from '../../store/actions/app';
-import NftDigitalCard from '../Utils/nftCard/NftDigitalCard';
-import NftPropertyCard from '../Utils/nftCard/NftPropertyCard';
+import NftDigitalCard from '../Utils/nftCard/NftDigitalCard/NftDigitalCard';
+import NftPropertyCard from '../Utils/nftCard/NftPropertyCard/NftPropertyCard';
 import './portfolio.scss';
 
 const Portfolio = () => {
@@ -75,7 +75,7 @@ const Portfolio = () => {
                 const balance = await propertyContract.methods.balanceOf(accounts[0],i).call({from:accounts[0]})
                 if(balance > 0){
                     const nft = await propertyContract.methods.propertyNfts(i).call({from:accounts[0]})
-                    dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,balance, approval))
+                    dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,nft.minter,balance, approval))
                 }
             }
         });

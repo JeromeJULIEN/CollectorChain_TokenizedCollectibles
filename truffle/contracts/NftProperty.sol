@@ -27,6 +27,7 @@ contract NftProperty is ERC1155 {
         uint256 nftId;
         string name;
         uint256 value;
+        address minter;
     }
 
     CollectorsDAO collectorsDAO;
@@ -53,7 +54,8 @@ contract NftProperty is ERC1155 {
         uint256 _proposalId,
         string memory _name,
         uint256 _value,
-        uint256 _numberOfItem
+        uint256 _numberOfItem,
+        address _minter
     ) public {
         // get the proposal status to allow the mint
         bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
@@ -61,7 +63,7 @@ contract NftProperty is ERC1155 {
 
         uint256 newPropertyNftId = _id.current();
         propertyNfts.push(
-            PropertyNft(_collectionId, newPropertyNftId, _name, _value)
+            PropertyNft(_collectionId, newPropertyNftId, _name, _value, _minter)
         );
         _mint(msg.sender, newPropertyNftId, _numberOfItem, "");
         _id.increment();

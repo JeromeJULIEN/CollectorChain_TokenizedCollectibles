@@ -34,13 +34,15 @@ contract CollectorsDAO is Ownable {
         string name;
         string description;
         uint256 value;
-        uint256 createdAt;
         uint256 votesForYes;
         uint256 votesForNo;
         bool status;
         string votingStatus;
         bool propertyNftMinted;
         bool digitalNftMinted;
+        string docOwnership;
+        string docEstimation;
+        string mainImage;
     }
 
     event daoCreated(uint256 daoId, string daoName);
@@ -57,7 +59,10 @@ contract CollectorsDAO is Ownable {
         bool status,
         string votingStatus,
         bool propertyNftMinted,
-        bool digitalNftMinted
+        bool digitalNftMinted,
+        string docOwnership,
+        string docEstimation,
+        string mainImage
     );
 
     event voteSetted(
@@ -102,7 +107,10 @@ contract CollectorsDAO is Ownable {
         uint256 _daoId,
         string memory _name,
         string memory _description,
-        uint256 _value
+        uint256 _value,
+        string memory _docOwnership,
+        string memory _docEstimation,
+        string memory _mainImage
     ) external {
         uint256 proposalId = _proposalCount.current();
 
@@ -113,13 +121,15 @@ contract CollectorsDAO is Ownable {
             _name,
             _description,
             _value,
-            block.timestamp,
             0,
             0,
             false,
             "pending",
             false,
-            false
+            false,
+            _docOwnership,
+            _docEstimation,
+            _mainImage
         );
 
         emit proposalCreated(
@@ -134,7 +144,10 @@ contract CollectorsDAO is Ownable {
             false,
             "pending",
             false,
-            false
+            false,
+            _docOwnership,
+            _docEstimation,
+            _mainImage
         );
 
         _proposalCount.increment();
@@ -147,10 +160,6 @@ contract CollectorsDAO is Ownable {
     ) external {
         Proposal storage proposal = proposals[_proposalId];
         require(votes[msg.sender][_proposalId] == false, "already voted");
-        require(
-            block.timestamp <= proposal.createdAt + VOTING_PERIOD,
-            "Voting period is over"
-        );
         votes[msg.sender][_proposalId] = true;
         if (_vote == VotingOptions.Yes) {
             proposal.votesForYes += 1;

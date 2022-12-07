@@ -3,7 +3,7 @@ import './nftPropertyCard.scss'
 import {Modal} from 'rsuite';
 import { useSearch } from 'rsuite/esm/Picker';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPropertyCollection } from '../../../store/actions/collections';
+import { setPropertyCollection } from '../../../../store/actions/collections';
 
 const NftPropertyCard = ({
   collectionId,
@@ -63,7 +63,7 @@ const NftPropertyCard = ({
   const approveForSell = async() => {
     console.log('mkplace address=>',marketplaceContract._address);
     // instanciation du bon contrat pour lancer l'approval
-    var artifact = require("../../../contracts/NftProperty.json");
+    var artifact = require("../../../../contracts/NftProperty.json");
     const abiProperty = artifact.abi;  
     try {
       let propertyContract = new web3.eth.Contract(abiProperty, propertyContractAddress);

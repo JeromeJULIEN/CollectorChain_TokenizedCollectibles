@@ -15,7 +15,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createDAO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Factory.sol\":\"ICollectorsDAO\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Factory.sol\":{\"keccak256\":\"0x38f074201a6b0833f03b04ac0e7385d52e57e953d2534e58267cf42684f890d6\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://0e2649df44296ec276c627d6bc3482b694fdfa4b86c8a02b634f3d989d23db4d\",\"dweb:/ipfs/QmP5MSLKxTz57zSeHgg4wAtUssjmnxpJr2e23rpfiVF3fq\"]},\"project:/contracts/NftDigital.sol\":{\"keccak256\":\"0x0e2039e7385f48dc16590b9c480b1dc80b22d0fc16d8f77490c0ba2c28bd258c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2a26c2c3881f3967fcdb0126003fb53644f9df5459814641be0336db98e8eb1f\",\"dweb:/ipfs/QmTH5PxYNRu5CgQfT5wJSXDrXMo6NjuJYuj87pkGo4riUf\"]},\"project:/contracts/NftProperty.sol\":{\"keccak256\":\"0x9e1a839dc0a6a7c6c5f5a172877c49d697ebc192d5422c9d623ac113bc094f6a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3c40c9e920b21e32124f594765384cf57ec80fe51c18273bee78dfba93b86e1e\",\"dweb:/ipfs/QmUsq3vxpEQSpeGW7zXjXab9N2ywr7UNvbUbY5mx9YBUTx\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd917747dc87f189c6779b894f367a028f9dca4be930283cccec8f312966af820\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a5e5b99830cf233f77aa3b1bd1f57561faee103beeee88e6a6f86d044817bbb\",\"dweb:/ipfs/QmREYidSDpHPig3AhxzsMHg3w2ZtMeGfRhcokXxEZyj6fC\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x6392f2cfe3a5ee802227fe7a2dfd47096d881aec89bddd214b35c5b46d3cd941\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c47a375639888e726a99da718890ba16d17d7ad9eacb0ccc892d46d1b3ee0\",\"dweb:/ipfs/Qmb41W5RUjy2sWg49A2rMnxekSeEk6SvGyJL5tyCCSr7un\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec\",\"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol\":{\"keccak256\":\"0xa66d18b9a85458d28fc3304717964502ae36f7f8a2ff35bc83f6f85d74b03574\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e46c80ea068989111d6103e5521223f9ef337e93de76deed8b03f75c6f7b2797\",\"dweb:/ipfs/QmNoSE6knNfFncdDDLTb3fGR6oSQty1srG96Vsx3E9wQdw\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xd89f3585b211fc9e3408384a4c4efdc3a93b2f877a3821046fa01c219d35be1b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ea15ef7c8980240ccd46df13809d163f749bc0a01d8bced1875660d4872da1c\",\"dweb:/ipfs/QmbDfAT9VeCSG4cnPd6tjDMp8ED85dLHbWyMyv7wbmL4CH\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xab28a56179c1db258c9bf5235b382698cb650debecb51b23d12be9e241374b68\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://daae589a9d6fa7e55f99f86c0a16796ca490f243fb3693632c3711c0646c1d56\",\"dweb:/ipfs/QmR3zpd7wNw3rcUdekwiv6FYHJqksuTCXLVioTxu6Fbxk3\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\":{\"keccak256\":\"0x5c3501c1b70fcfc64417e9da5cc6a3597191baa354781e508e1e14cc0e50a038\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://899c87a849a94c848818d0afede6961d2c87665af1dd23a5c983e78981a65691\",\"dweb:/ipfs/QmUeFDffQRDmX87FX3MRxN3bmpUxDTWpWLwPJzeAJ3yF6H\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createDAO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Factory.sol\":\"ICollectorsDAO\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Factory.sol\":{\"keccak256\":\"0x38f074201a6b0833f03b04ac0e7385d52e57e953d2534e58267cf42684f890d6\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://0e2649df44296ec276c627d6bc3482b694fdfa4b86c8a02b634f3d989d23db4d\",\"dweb:/ipfs/QmP5MSLKxTz57zSeHgg4wAtUssjmnxpJr2e23rpfiVF3fq\"]},\"project:/contracts/NftDigital.sol\":{\"keccak256\":\"0x0e2039e7385f48dc16590b9c480b1dc80b22d0fc16d8f77490c0ba2c28bd258c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2a26c2c3881f3967fcdb0126003fb53644f9df5459814641be0336db98e8eb1f\",\"dweb:/ipfs/QmTH5PxYNRu5CgQfT5wJSXDrXMo6NjuJYuj87pkGo4riUf\"]},\"project:/contracts/NftProperty.sol\":{\"keccak256\":\"0x61ad140d969038e15655772f07be99123b9d2865e13bc0b75e0f2f5a96c12c07\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://1863fe990b928c316560893d258f485e4a7c7b1060aca469f4b675790d8e7db1\",\"dweb:/ipfs/QmVgt3xWdB8NRdaPG6Xno6SwZywa5VwtX55Q9mN5E7NUtu\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd917747dc87f189c6779b894f367a028f9dca4be930283cccec8f312966af820\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a5e5b99830cf233f77aa3b1bd1f57561faee103beeee88e6a6f86d044817bbb\",\"dweb:/ipfs/QmREYidSDpHPig3AhxzsMHg3w2ZtMeGfRhcokXxEZyj6fC\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x6392f2cfe3a5ee802227fe7a2dfd47096d881aec89bddd214b35c5b46d3cd941\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c47a375639888e726a99da718890ba16d17d7ad9eacb0ccc892d46d1b3ee0\",\"dweb:/ipfs/Qmb41W5RUjy2sWg49A2rMnxekSeEk6SvGyJL5tyCCSr7un\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec\",\"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol\":{\"keccak256\":\"0xa66d18b9a85458d28fc3304717964502ae36f7f8a2ff35bc83f6f85d74b03574\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e46c80ea068989111d6103e5521223f9ef337e93de76deed8b03f75c6f7b2797\",\"dweb:/ipfs/QmNoSE6knNfFncdDDLTb3fGR6oSQty1srG96Vsx3E9wQdw\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xd89f3585b211fc9e3408384a4c4efdc3a93b2f877a3821046fa01c219d35be1b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ea15ef7c8980240ccd46df13809d163f749bc0a01d8bced1875660d4872da1c\",\"dweb:/ipfs/QmbDfAT9VeCSG4cnPd6tjDMp8ED85dLHbWyMyv7wbmL4CH\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xab28a56179c1db258c9bf5235b382698cb650debecb51b23d12be9e241374b68\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://daae589a9d6fa7e55f99f86c0a16796ca490f243fb3693632c3711c0646c1d56\",\"dweb:/ipfs/QmR3zpd7wNw3rcUdekwiv6FYHJqksuTCXLVioTxu6Fbxk3\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\":{\"keccak256\":\"0x5c3501c1b70fcfc64417e9da5cc6a3597191baa354781e508e1e14cc0e50a038\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://899c87a849a94c848818d0afede6961d2c87665af1dd23a5c983e78981a65691\",\"dweb:/ipfs/QmUeFDffQRDmX87FX3MRxN3bmpUxDTWpWLwPJzeAJ3yF6H\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -29,28 +29,28 @@
     "absolutePath": "project:/contracts/Factory.sol",
     "exportedSymbols": {
       "Address": [
-        3566
+        3571
       ],
       "CollectorsDAO": [
         366
       ],
       "Context": [
-        3588
+        3593
       ],
       "Counters": [
-        3662
+        3667
       ],
       "ERC1155": [
-        1827
+        1832
       ],
       "ERC165": [
-        3861
+        3866
       ],
       "ERC721": [
-        2950
+        2955
       ],
       "ERC721URIStorage": [
-        3209
+        3214
       ],
       "Factory": [
         213
@@ -59,43 +59,43 @@
         11
       ],
       "IERC1155": [
-        1949
+        1954
       ],
       "IERC1155MetadataURI": [
-        2005
+        2010
       ],
       "IERC1155Receiver": [
-        1990
+        1995
       ],
       "IERC165": [
-        3873
+        3878
       ],
       "IERC721": [
-        3066
+        3071
       ],
       "IERC721Metadata": [
-        3236
+        3241
       ],
       "IERC721Receiver": [
-        3084
+        3089
       ],
       "IICollectorsDAO": [
         231
       ],
       "Math": [
-        4738
+        4743
       ],
       "NftDigital": [
         349
       ],
       "NftProperty": [
-        491
+        496
       ],
       "Ownable": [
-        604
+        609
       ],
       "Strings": [
-        3837
+        3842
       ]
     },
     "id": 214,
@@ -119,7 +119,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 214,
-        "sourceUnit": 3663,
+        "sourceUnit": 3668,
         "src": "61:68:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -131,7 +131,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 214,
-        "sourceUnit": 605,
+        "sourceUnit": 610,
         "src": "130:68:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -143,7 +143,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 214,
-        "sourceUnit": 492,
+        "sourceUnit": 497,
         "src": "199:27:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -246,7 +246,7 @@
                 "359:7:0"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 604,
+              "referencedDeclaration": 609,
               "src": "359:7:0"
             },
             "id": 13,
@@ -257,15 +257,15 @@
         "canonicalName": "Factory",
         "contractDependencies": [
           349,
-          491
+          496
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 213,
         "linearizedBaseContracts": [
           213,
-          604,
-          3588
+          609,
+          3593
         ],
         "name": "Factory",
         "nameLocation": "348:7:0",
@@ -281,7 +281,7 @@
                 "379:8:0"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3662,
+              "referencedDeclaration": 3667,
               "src": "379:8:0"
             },
             "nodeType": "UsingForDirective",
@@ -297,13 +297,13 @@
                   "401:7:0"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 3594,
+                "referencedDeclaration": 3599,
                 "src": "392:16:0"
               },
-              "referencedDeclaration": 3594,
+              "referencedDeclaration": 3599,
               "src": "392:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Counter_$3594_storage_ptr",
+                "typeIdentifier": "t_struct$_Counter_$3599_storage_ptr",
                 "typeString": "struct Counters.Counter"
               }
             }
@@ -321,7 +321,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Counter_$3594_storage",
+              "typeIdentifier": "t_struct$_Counter_$3599_storage",
               "typeString": "struct Counters.Counter"
             },
             "typeName": {
@@ -335,13 +335,13 @@
                   "423:7:0"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 3594,
+                "referencedDeclaration": 3599,
                 "src": "414:16:0"
               },
-              "referencedDeclaration": 3594,
+              "referencedDeclaration": 3599,
               "src": "414:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Counter_$3594_storage_ptr",
+                "typeIdentifier": "t_struct$_Counter_$3599_storage_ptr",
                 "typeString": "struct Counters.Counter"
               }
             },
@@ -1315,7 +1315,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_NftProperty_$491",
+                        "typeIdentifier": "t_contract$_NftProperty_$496",
                         "typeString": "contract NftProperty"
                       },
                       "typeName": {
@@ -1328,13 +1328,13 @@
                             "1676:11:0"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 491,
+                          "referencedDeclaration": 496,
                           "src": "1676:11:0"
                         },
-                        "referencedDeclaration": 491,
+                        "referencedDeclaration": 496,
                         "src": "1676:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_NftProperty_$491",
+                          "typeIdentifier": "t_contract$_NftProperty_$496",
                           "typeString": "contract NftProperty"
                         }
                       },
@@ -1356,7 +1356,7 @@
                             "referencedDeclaration": 20,
                             "src": "1731:3:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Counter_$3594_storage",
+                              "typeIdentifier": "t_struct$_Counter_$3599_storage",
                               "typeString": "struct Counters.Counter storage ref"
                             }
                           },
@@ -1368,10 +1368,10 @@
                           "memberLocation": "1735:7:0",
                           "memberName": "current",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3606,
+                          "referencedDeclaration": 3611,
                           "src": "1731:11:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3594_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3594_storage_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3599_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3599_storage_ptr_$",
                             "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                           }
                         },
@@ -1439,7 +1439,7 @@
                       "nodeType": "NewExpression",
                       "src": "1702:15:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_NftProperty_$491_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_NftProperty_$496_$",
                         "typeString": "function (uint256,string memory,address) returns (contract NftProperty)"
                       },
                       "typeName": {
@@ -1452,13 +1452,13 @@
                             "1706:11:0"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 491,
+                          "referencedDeclaration": 496,
                           "src": "1706:11:0"
                         },
-                        "referencedDeclaration": 491,
+                        "referencedDeclaration": 496,
                         "src": "1706:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_NftProperty_$491",
+                          "typeIdentifier": "t_contract$_NftProperty_$496",
                           "typeString": "contract NftProperty"
                         }
                       }
@@ -1475,7 +1475,7 @@
                     "src": "1702:112:0",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_NftProperty_$491",
+                      "typeIdentifier": "t_contract$_NftProperty_$496",
                       "typeString": "contract NftProperty"
                     }
                   },
@@ -1540,7 +1540,7 @@
                             "referencedDeclaration": 20,
                             "src": "1876:3:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Counter_$3594_storage",
+                              "typeIdentifier": "t_struct$_Counter_$3599_storage",
                               "typeString": "struct Counters.Counter storage ref"
                             }
                           },
@@ -1552,10 +1552,10 @@
                           "memberLocation": "1880:7:0",
                           "memberName": "current",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3606,
+                          "referencedDeclaration": 3611,
                           "src": "1876:11:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3594_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3594_storage_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3599_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3599_storage_ptr_$",
                             "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                           }
                         },
@@ -1778,7 +1778,7 @@
                           "referencedDeclaration": 20,
                           "src": "2073:3:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Counter_$3594_storage",
+                            "typeIdentifier": "t_struct$_Counter_$3599_storage",
                             "typeString": "struct Counters.Counter storage ref"
                           }
                         },
@@ -1790,10 +1790,10 @@
                         "memberLocation": "2077:7:0",
                         "memberName": "current",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 3606,
+                        "referencedDeclaration": 3611,
                         "src": "2073:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3594_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3594_storage_ptr_$",
+                          "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3599_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3599_storage_ptr_$",
                           "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                         }
                       },
@@ -1929,7 +1929,7 @@
                           "referencedDeclaration": 108,
                           "src": "2194:11:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_NftProperty_$491",
+                            "typeIdentifier": "t_contract$_NftProperty_$496",
                             "typeString": "contract NftProperty"
                           }
                         }
@@ -1937,7 +1937,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_contract$_NftProperty_$491",
+                            "typeIdentifier": "t_contract$_NftProperty_$496",
                             "typeString": "contract NftProperty"
                           }
                         ],
@@ -2244,7 +2244,7 @@
                             "referencedDeclaration": 20,
                             "src": "2416:3:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Counter_$3594_storage",
+                              "typeIdentifier": "t_struct$_Counter_$3599_storage",
                               "typeString": "struct Counters.Counter storage ref"
                             }
                           },
@@ -2256,10 +2256,10 @@
                           "memberLocation": "2420:7:0",
                           "memberName": "current",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3606,
+                          "referencedDeclaration": 3611,
                           "src": "2416:11:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3594_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3594_storage_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3599_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3599_storage_ptr_$",
                             "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                           }
                         },
@@ -2301,7 +2301,7 @@
                             "referencedDeclaration": 108,
                             "src": "2480:11:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_NftProperty_$491",
+                              "typeIdentifier": "t_contract$_NftProperty_$496",
                               "typeString": "contract NftProperty"
                             }
                           }
@@ -2309,7 +2309,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_NftProperty_$491",
+                              "typeIdentifier": "t_contract$_NftProperty_$496",
                               "typeString": "contract NftProperty"
                             }
                           ],
@@ -2469,7 +2469,7 @@
                         "referencedDeclaration": 20,
                         "src": "2546:3:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Counter_$3594_storage",
+                          "typeIdentifier": "t_struct$_Counter_$3599_storage",
                           "typeString": "struct Counters.Counter storage ref"
                         }
                       },
@@ -2481,10 +2481,10 @@
                       "memberLocation": "2550:9:0",
                       "memberName": "increment",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3620,
+                      "referencedDeclaration": 3625,
                       "src": "2546:13:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Counter_$3594_storage_ptr_$returns$__$bound_to$_t_struct$_Counter_$3594_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Counter_$3599_storage_ptr_$returns$__$bound_to$_t_struct$_Counter_$3599_storage_ptr_$",
                         "typeString": "function (struct Counters.Counter storage pointer)"
                       }
                     },
@@ -2521,7 +2521,7 @@
                             "referencedDeclaration": 108,
                             "src": "2588:11:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_NftProperty_$491",
+                              "typeIdentifier": "t_contract$_NftProperty_$496",
                               "typeString": "contract NftProperty"
                             }
                           }
@@ -2529,7 +2529,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_NftProperty_$491",
+                              "typeIdentifier": "t_contract$_NftProperty_$496",
                               "typeString": "contract NftProperty"
                             }
                           ],
@@ -2661,7 +2661,7 @@
                     "1339:9:0"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 523,
+                  "referencedDeclaration": 528,
                   "src": "1339:9:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -2842,7 +2842,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-07T12:36:18.879Z",
+  "updatedAt": "2022-12-07T15:15:44.247Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -15,12 +15,13 @@ export const setUserDigitalNfts = (collectionId,nftId,name) => ({
   name
 });
 
-export const setUserPropertyNfts = (collectionId, nftId, nftName, value,balance, approval) => ({
+export const setUserPropertyNfts = (collectionId, nftId, nftName, value, minter,balance, approval) => ({
   type: SET_USER_PROPERTY_NFTS,
   collectionId,
   nftId,
   nftName,
   value,
+  minter,
   balance,
   approval
 });

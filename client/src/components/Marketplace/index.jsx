@@ -4,8 +4,7 @@ import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import "./marketplace.scss"
 import { addSeller, deleteAllNftsToSell, setPropertyNftsToSell } from '../../store/actions/marketplace';
-import NftPropertyCard from '../Utils/nftCard/NftPropertyCard';
-import PropertyForSellCard from '../Utils/nftCard/PropertyForSellCard';
+import PropertyForSellCard from '../Utils/nftCard/PropertyForSellCard/PropertyForSellCard';
 
 
 const Marketplace = () => {

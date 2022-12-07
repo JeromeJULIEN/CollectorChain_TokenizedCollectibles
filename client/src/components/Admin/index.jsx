@@ -17,9 +17,11 @@ const Admin = () => {
     }
     //! EVENTS
     const [ethReceived,setEthReceived] = useState(0)
+    const [transactionCount,setTransactionCount] = useState(0)
     useEffect(() => {
         // ETH RECEIVED EVENT
         const getEvents = async() => {
+            setEthReceived("0")
             let ethReceivedEvent = await marketplaceContract.getPastEvents('etherReceived',{
                 fromBlock : 0,
                 toBlock:'latest'
@@ -32,9 +34,11 @@ const Admin = () => {
                     });
             });
             console.log('oldEthReceivedEvent',oldEthReceivedEvent);
+            console.log('oldEthReceivedEvent',oldEthReceivedEvent);
             oldEthReceivedEvent.forEach(receipt => {
-                setEthReceived(ethReceived+parseInt(receipt.valueReceived))
+                setEthReceived(parseInt(ethReceived)+parseInt(receipt.valueReceived))
             })
+            setTransactionCount(oldEthReceivedEvent.length())
         }
         getEvents()
     },[])
@@ -58,6 +62,11 @@ const Admin = () => {
                     <p>create collection :</p>
                     <input type="text" placeholder='collection name' value={newValue} onChange={handleValueChange}/>
                     <button onClick={createCollection}>Create</button>
+        </div>
+        <div>
+            <p>collected fees : {web3.utils.fromWei(web3.utils.toBN(ethReceived))} eth</p> 
+            <p>number of transactions : {transactionCount} </p> 
+
         </div>
     </>
   )

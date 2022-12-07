@@ -25,7 +25,7 @@ interface NftProperty {
 
 contract MarketPlace is Ownable {
     /// @notice fees collected by the platform on each sale. To be devided by 1000 to get the percentage
-    uint256 public platformFee = 25;
+    uint256 public platformFee = 100;
 
     /// @notice give the amount of item to sell by 'id' and by owner 'address'
     /// @dev collectionAddress => tokenId => userAddress => quantity to sell
