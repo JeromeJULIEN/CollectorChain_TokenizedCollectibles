@@ -180,7 +180,9 @@ const DaoProposal = () => {
             <p className="daoProposal__owner">Minter: {proposal.owner}</p>
             <div className="daoProposal__panel">
                 <div className="panelLeft">
-                    <div className="panelLeft__picture">panelLeft__picture</div>
+                    <div className="panelLeft__picture">
+                        <img className="panelLeft__picture__image" src={proposal.mainImage} alt="ownership document" />
+                    </div>
                     <div className="panelLeft__vote">
                         {proposal.status !== "pending" ? 
                         <></>
@@ -228,11 +230,10 @@ const DaoProposal = () => {
                     </div>
                     <div className="panelRight__doc">
                         <p className="panelRight__doc--title">Supporting documents</p> 
-                        <ul>
-                            <li>document 1</li>
-                            <li>document 2</li>
-                            <li>document 3</li>
-                        </ul>
+                        <div className="panelRight__doc__image">
+                            <img className="panelRight__doc__image--picture" src={proposal.docOwnership} alt="ownership document" />
+                        
+                        </div>    
                     </div>
                 </div>
             </div>

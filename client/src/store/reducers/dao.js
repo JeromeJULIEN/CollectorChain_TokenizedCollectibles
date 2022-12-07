@@ -44,11 +44,11 @@ const daoReducer = (state = initialState,action={})=>{
                     name:action.proposalName,
                     desc:action.proposalDesc, 
                     value:action.proposalValue ,
+                    docOwnership:action.docOwnership,
+                    mainImage:action.mainImage,
                     status:"pending", 
                     propertyNftMinted:false,
                     digitalNftMinted:false,
-                    docOwnership:action.docOwnership,
-                    docEstimation:action.docEstimation
                     }
                 ]    
             }

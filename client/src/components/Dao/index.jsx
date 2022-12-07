@@ -46,12 +46,22 @@ const Dao = () => {
                             proposalOwner : event.returnValues.owner,
                             proposalName : event.returnValues.proposalName, 
                             proposalDesc : event.returnValues.proposalDesc,
-                            proposalValue : event.returnValues.value
+                            proposalValue : event.returnValues.value,
+                            docOwnership:event.returnValues.docOwnership,
+                            mainImage:event.returnValues.mainImage
                         });
                 });
                 dispatch(deleteProposal())
                 oldProposalCreatedEvents.forEach(proposal =>{
-                    dispatch(addProposal(proposal.collectionId,proposal.proposalId,proposal.proposalOwner,proposal.proposalName,proposal.proposalDesc, proposal.proposalValue))
+                    dispatch(addProposal(
+                        proposal.collectionId,
+                        proposal.proposalId,
+                        proposal.proposalOwner,
+                        proposal.proposalName,
+                        proposal.proposalDesc, 
+                        proposal.proposalValue,
+                        proposal.docOwnership,
+                        proposal.mainImage))
                 })
                 // CLOSED PROPOSAL EVENT
                 let closedProposalEvents = await daoContract.getPastEvents('proposalClosed',{

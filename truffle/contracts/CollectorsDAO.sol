@@ -41,7 +41,6 @@ contract CollectorsDAO is Ownable {
         bool propertyNftMinted;
         bool digitalNftMinted;
         string docOwnership;
-        string docEstimation;
         string mainImage;
     }
 
@@ -54,14 +53,7 @@ contract CollectorsDAO is Ownable {
         string proposalName,
         string proposalDesc,
         uint256 value,
-        uint256 voteForYes,
-        uint256 voteForNo,
-        bool status,
-        string votingStatus,
-        bool propertyNftMinted,
-        bool digitalNftMinted,
         string docOwnership,
-        string docEstimation,
         string mainImage
     );
 
@@ -109,7 +101,6 @@ contract CollectorsDAO is Ownable {
         string memory _description,
         uint256 _value,
         string memory _docOwnership,
-        string memory _docEstimation,
         string memory _mainImage
     ) external {
         uint256 proposalId = _proposalCount.current();
@@ -128,7 +119,6 @@ contract CollectorsDAO is Ownable {
             false,
             false,
             _docOwnership,
-            _docEstimation,
             _mainImage
         );
 
@@ -139,14 +129,7 @@ contract CollectorsDAO is Ownable {
             _name,
             _description,
             _value,
-            0,
-            0,
-            false,
-            "pending",
-            false,
-            false,
             _docOwnership,
-            _docEstimation,
             _mainImage
         );
 

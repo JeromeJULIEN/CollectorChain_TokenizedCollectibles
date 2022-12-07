@@ -45,8 +45,8 @@ const Mint = () => {
     //! FUNCTIONS
     const askMint = async() => {
         try{
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,docEstimation).call({from:accounts[0]})
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,docEstimation).send({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,mainImage).call({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,mainImage).send({from:accounts[0]})
             setMintCount(mintCount +1);
         } catch (error) {
             console.error(error)
@@ -79,8 +79,8 @@ const Mint = () => {
 
     };
 
-    const [docEstimation,setDocEstimation] = useState("")
-    const uploadEstimationImage = (event) => {
+    const [mainImage,setMainImage] = useState("")
+    const uploadMainImage = (event) => {
         // setPicture(event.target.files);
         // Il faut stocker un chemin URL pour afficher l'image
         // dispatch(storeNftMedia(event.target.files[0]));
@@ -92,7 +92,7 @@ const Mint = () => {
             formData
         ).then((response) => {
             console.log(response.data.secure_url);
-            setDocEstimation(response.data.secure_url);
+            setMainImage(response.data.secure_url);
         })
 
     };
@@ -134,7 +134,7 @@ const Mint = () => {
                             proposalDesc : event.returnValues.proposalDesc,
                             proposalValue : event.returnValues.value,
                             docOwnership:event.returnValues.docOwnership,
-                            docEstimation:event.returnValues.docEstimation
+                            mainImage:event.returnValues.mainImage
                         });
                 });
                 dispatch(deleteProposal())
@@ -147,7 +147,7 @@ const Mint = () => {
                         proposal.proposalDesc, 
                         proposal.proposalValue,
                         proposal.docOwnership,
-                        proposal.docEstimation))
+                        proposal.mainImage))
                 })
                 // CLOSED PROPOSAL EVENT
                 let closedProposalEvents = await daoContract.getPastEvents('proposalClosed',{
@@ -205,8 +205,8 @@ const Mint = () => {
                     <div className="panelRight__doc">
                         <p>Upload your proof of ownership</p>   
                         <input type="file" accept="image/*" name="docOwnership" onChange={uploadOwnershipImage} className="picture__input" id="docOwnership" />
-                        <p>Upload your proof estimation value (if exist)</p>   
-                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadEstimationImage} className="picture__input" id="docOwnership" />
+                        <p>Upload the main picture of the object</p>   
+                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadMainImage} className="picture__input" id="docOwnership" />
                     </div>
                     <button className='panelRight__btn' onClick={askMint}>Send request</button>
                 </div>

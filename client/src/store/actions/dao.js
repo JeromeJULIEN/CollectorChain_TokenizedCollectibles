@@ -30,7 +30,7 @@ export const deleteDao = () => ({
   type: DELETE_DAO
 });
 
-export const addProposal = (collectionId, proposalId, proposalOwner,proposalName, proposalDesc, proposalValue,docOwnership,docEstimation) => ({
+export const addProposal = (collectionId, proposalId, proposalOwner,proposalName, proposalDesc, proposalValue,docOwnership,mainImage) => ({
   type: ADD_PROPOSAL,
   collectionId,
   proposalId,
@@ -39,7 +39,7 @@ export const addProposal = (collectionId, proposalId, proposalOwner,proposalName
   proposalDesc,
   proposalValue,
   docOwnership,
-  docEstimation
+  mainImage
 });
 
 export const addDao = (daoId, daoName) => ({
