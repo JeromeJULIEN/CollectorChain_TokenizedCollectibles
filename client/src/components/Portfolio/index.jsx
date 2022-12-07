@@ -11,6 +11,7 @@ const Portfolio = () => {
     const propertyNfts = useSelector(state =>state.app.propertyNfts);
     const digitalNfts = useSelector(state =>state.app.digitalNfts);
     const marketplaceContract = useSelector(state => state.marketplace.contract);
+    console.log('marketplaceContract', marketplaceContract);
 
 
     //! LOCAL STATE
@@ -22,6 +23,11 @@ const Portfolio = () => {
         } else {
             setToggle("ownership")
         }
+    }
+
+    const [updater,setUpdater] = useState(0);
+    const handleUpdater = () => {
+        setUpdater(updater+1)
     }
 
     //! :::: GESTION EVENT ::::
@@ -65,15 +71,16 @@ const Portfolio = () => {
                 idPropertyArray.push(index)
             }
             for await (let i of idPropertyArray ) {
+                const approval = await propertyContract.methods.isApprovedForAll(accounts[0],marketplaceContract._address).call({from:accounts[0]})
                 const balance = await propertyContract.methods.balanceOf(accounts[0],i).call({from:accounts[0]})
                 if(balance > 0){
                     const nft = await propertyContract.methods.propertyNfts(i).call({from:accounts[0]})
-                    dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,balance))
+                    dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,balance, approval))
                 }
             }
         });
 
-    },[accounts[0]])
+    },[accounts[0],updater])
   
     return (
     <div className='portfolio'>
@@ -85,7 +92,15 @@ const Portfolio = () => {
         {toggle==='ownership' &&
         <div className="nftList">
             {propertyNfts.map(nft => (
-                <NftPropertyCard name={nft.name} balance={nft.balance}/>
+                <NftPropertyCard 
+                    collectionId={nft.collectionId} 
+                    nftId={nft.nftId} 
+                    name={nft.name} 
+                    balance={nft.balance} 
+                    isApproved={nft.isApproved} 
+                    marketplaceContract={marketplaceContract}
+                    updater={updater}
+                    handleUpdater={handleUpdater} />
             ))}
         </div>
         }

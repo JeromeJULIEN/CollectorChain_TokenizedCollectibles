@@ -1,0 +1,42 @@
+@use '../../../styles/vars';
+
+
+
+.title {
+    font-size: vars.$fontSize_normal ;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 30px;
+    padding: 0 1rem;
+    background-color: vars.$color_callToAction;
+
+    color: white;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    gap: .5rem;
+
+    &__item {
+        width: 15%;
+        height: 3rem;
+        border-radius: 1rem;
+        transition: background-color .5s;
+
+        &--active {
+            width: 15%;
+            background-color: vars.$color_callToAction;
+            color: white;
+            border-radius: 1rem;
+            font-weight: bold;
+            transition: background-color .5s;
+
+        }
+    }
+
+}

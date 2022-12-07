@@ -67,4 +67,8 @@ contract NftProperty is ERC1155 {
         _id.increment();
         collectorsDAO.updatePropertyMintStatus(_proposalId);
     }
+
+    function getCollectionId() external view returns (uint256) {
+        return _collectionId;
+    }
 }

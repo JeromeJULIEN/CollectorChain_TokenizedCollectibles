@@ -1,9 +1,11 @@
-import { INIT_MARKETPLACE } from "../actions/marketplace";
+import { ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL } from "../actions/marketplace";
 
 const initialState = {
     artifact: null,
     contract: null,
     owner:null,
+    propertyToSell:[],
+    digitalToSell:[]
   };
 
 const marketplaceReducer = (state = initialState,action={})=>{
@@ -14,6 +16,40 @@ const marketplaceReducer = (state = initialState,action={})=>{
                 artifact: action.artifact,
                 contract:action.contract,
                 owner:action.owner,
+            }
+        }
+        case DELETE_ALL_NFTS_TO_SELL:{
+            return {
+                ...state,
+                propertyToSell:[],
+                digitalToSell:[]
+            }
+        }
+        case SET_PROPERTY_NFTS_TO_SELL:{
+            return{
+                ...state,
+                propertyToSell:[
+                    ...state.propertyToSell,
+                    {collectionId:action.collectionId,nftId:action.nftId,name:action.name,seller:[]}
+                ]
+            }
+        }
+        case ADD_SELLER:{
+            return{
+                ...state,
+                propertyToSell:
+                    state.propertyToSell.map(nft =>{
+                        if((nft.collectionId === action.collectionId && nft.nftId === action.nftId)) {
+                            return{...nft,
+                            seller :[
+                                ...nft.seller,
+                                {seller:action.seller,quantity:action.quantity,price:action.price}
+                            ]
+                            }
+                        }
+                        return nft
+                    })
+                
             }
         }
         default :

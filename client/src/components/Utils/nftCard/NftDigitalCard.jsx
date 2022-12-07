@@ -1,7 +1,18 @@
 import React from 'react'
 import './nftDigitalCard.scss'
 
-const NftDigitalCard = ({name}) => {
+const NftDigitalCard = ({name, marketplaceContract}) => {
+
+  //! LOCAL STATE
+
+  //! STORE
+
+  //! EVENTS
+  
+  //! FUNCTION
+  const sellDigitalNft = () => {
+    
+  }
 
   return (
     <div className='nftDigitalCard'>

@@ -1,34 +1,30 @@
 import React, { useState } from 'react'
-import './nftPropertyCard.scss'
+import './propertyForSellCard.scss'
 import {Modal} from 'rsuite';
 import { useSearch } from 'rsuite/esm/Picker';
-import { useDispatch, useSelector } from 'react-redux';
 import { setPropertyCollection } from '../../../store/actions/collections';
+import { useDispatch, useSelector } from 'react-redux';
 
-const NftPropertyCard = ({
+const PropertyForSellCard = ({
   collectionId,
   nftId,
   name, 
-  balance,
-  isApproved,
+  seller,
   marketplaceContract,
   updater,
   handleUpdater}) => {
   //! LOCAL STATE
   const dispatch = useDispatch()
-  const [openSell, setOpenSell] = useState(false);
-  const handleOpenSell = () => setOpenSell(true);
-  const handleCloseSell = () => {
-    setOpenSell(false)
+  const [openBuy, setOpenBuy] = useState(false);
+  const handleOpenBuy = () => setOpenBuy(true);
+  const handleCloseBuy = () => {
+    setOpenBuy(false)
     setSimulate(false)
-    setPrice(0)
     setQuantity(0)
   };
 
   const [quantity, setQuantity] = useState("");
   const handleSetQuantity = (event) => setQuantity(event.target.value);
-  const [price, setPrice] = useState("");
-  const handleSetPrice = (event) => setPrice(event.target.value);
 
   const [simulate,setSimulate] = useState(false)
   const handleSetSimulate = () => {
@@ -40,7 +36,6 @@ const NftPropertyCard = ({
       setSimulate(true)
     } else {
       setSimulate(false)
-      setPrice(0)
       setQuantity(0)
     }
 
@@ -48,9 +43,20 @@ const NftPropertyCard = ({
 
   const handleModify = () => {
     setSimulate(false)
-      setPrice(0)
       setQuantity(0)
   }
+
+  let floorPrice = 0
+  seller.map(seller => {
+    if(seller.price > floorPrice) {
+      floorPrice = seller.price
+    };
+  })
+
+  let totalQuantity = 0
+  seller.map(seller => {
+    totalQuantity = totalQuantity+ seller.quantity
+  })
 
   //! STORE
   const propertyContractAddress = useSelector(state => state.collections.collections[collectionId].propertyContractAddress)
@@ -71,23 +77,42 @@ const NftPropertyCard = ({
       await propertyContract.methods.setApprovalForAll(marketplaceContract._address,true).call({from:accounts[0]})
       await propertyContract.methods.setApprovalForAll(marketplaceContract._address,true).send({from:accounts[0]})
       handleUpdater()
-      handleCloseSell()
+      handleCloseBuy()
     } catch (err) {
       console.error(err);
     }
   }
 
-  const sellPropertyNft =async() =>{
-    console.log(propertyContractAddress);
+  const buyPropertyNft =async() =>{
+    // const valueToSend = quantity*sellerPrice;
+    const valueToSend = web3.utils.toWei(web3.utils.toBN((quantity*sellerPrice),'ether'));
+    console.log('valuetosend=>',valueToSend);
+    // console.log('toWei=>',web3.utils.toWei(web3.utils.toBN(valueToSend) ,'ether' ));
+    console.log('toWei=>',valueToSend);
     try{
-      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity).call({from:accounts[0]});
-      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity).send({from:accounts[0]});
+      await marketplaceContract.methods.buyPropertyItem(propertyContractAddress,nftId,quantity,sellerAddress)
+      .call({from:accounts[0],value:valueToSend });
+      await marketplaceContract.methods.buyPropertyItem(propertyContractAddress,nftId,quantity,sellerAddress)
+      .send({from:accounts[0],value:valueToSend });
     } catch(error){
       console.log(error);
     }
   }
   
+  const formatETHAddress = (s, size) =>{;
+    var first = s.slice(0, size + 1);
+    var last = s.slice(-size);
+    return first + "..." + last;
+  }
 
+  const [sellerAddress,setSellerAddress] = useState()
+  const [sellerPrice,setSellerPrice] = useState()
+  const handleSetSellerAddress = (event) => {
+    console.log(event.target.id);
+    console.log(event.target.value);
+    setSellerAddress(event.target.value)
+    setSellerPrice(event.target.id)
+  }
 
   
 
@@ -98,43 +123,44 @@ const NftPropertyCard = ({
         <div className="nftPropertyCard__category">Physical ownership</div>
         <div className='nftPropertyCard__image'>image</div>
         <div className="nftPropertyCard__title">{name}</div>
-        <div className="nftPropertyCard__shares">Shares : {balance}/100</div>
+        <div className="nftPropertyCard__shares">Share floor price : {floorPrice}</div>
+        <div className="nftPropertyCard__shares">Share to sell : {totalQuantity}</div>
         <div className="nftPropertyCard__actions">
-          {isApproved ? 
-          <button className="nftPropertyCard__actions__button" onClick={handleOpenSell}>Sell</button>
-          :
-          <button className="nftPropertyCard__actions__button" onClick={approveForSell}>Approve for sell</button>
-          }
-          <button className={`nftPropertyCard__actions__button${balance == 100?"":"--inactive"}`}>Redeem</button>
+        <button className="nftPropertyCard__actions__button" onClick={handleOpenBuy}>Buy</button>
+
+          
+
         </div>
     </div>
 
     {/* :::: MODAL SELL :::: */}
-    <Modal open={openSell} onClose={handleCloseSell} className="modal">
+    <Modal open={openBuy} onClose={handleCloseBuy} className="modal">
     <Modal.Header>
-      <Modal.Title className='modal__title'>Sell your physical ownership</Modal.Title>
+      <Modal.Title className='modal__title'>Buy physical ownership</Modal.Title>
     </Modal.Header>
     <Modal.Body className='modal__body'>
-      <div>Choose the quantity to sell and the selling price per share </div>
+      <div>Choose the quantity to buy</div>
       <div className="modal__body__input">
-        <p>Quantity to sell</p>
+        <p>Quantity to buy</p>
         <input type="text" value={quantity} onChange={handleSetQuantity} placeholder="set quantity"/>
-        <p>Price per share</p>
-        <input type="text" value={price} onChange={handleSetPrice} placeholder="set price per share"/>
+        <p>Select the seller</p>
+        {seller.map(seller => (
+          <button onClick={handleSetSellerAddress} value={seller.seller} id={seller.price}>{formatETHAddress(seller.seller,2)} / Price: {seller.price} eth</button>
+        ) )}
       </div>
+
       {simulate === false && 
         <div className="modal__body__btn">
-          <button onClick={handleSetSimulate}>Simulate sell</button>
-          <button onClick={handleCloseSell} className='grey'>Cancel</button>
+          <button onClick={handleSetSimulate}>Simulate purchase</button>
+          <button onClick={handleCloseBuy} className='grey'>Cancel</button>
         </div>
       }
       {simulate === true && 
       <>
-        <p>Selling all the share at the selected price will make you earn {quantity*price} eth</p>
-        <p>note that buyers have not to buy all the share you're putting to sell</p>
+        <p>Buying will cost you {quantity*floorPrice} eth for {quantity} shares</p>
         <div className="modal__body__btn">
-          <button onClick={sellPropertyNft} appearance="primary">
-            Confirm selling
+          <button onClick={buyPropertyNft} appearance="primary">
+            Confirm purchase
           </button>
           <button onClick={handleModify} appearance="subtle" className='grey'>
             Modify
@@ -152,4 +178,4 @@ const NftPropertyCard = ({
   )
 }
 
-export default NftPropertyCard
+export default PropertyForSellCard

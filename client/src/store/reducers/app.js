@@ -27,7 +27,7 @@ const appReducer = (state = initialState,action={}) =>{
                 ...state,
                 propertyNfts:[
                     ...state.propertyNfts,
-                    {collectionId:action.collectionId, nftId: action.nftId, name:action.nftName,value:action.value,balance:action.balance}
+                    {collectionId:action.collectionId, nftId: action.nftId, name:action.nftName,value:action.value,balance:action.balance, isApproved:action.approval}
                 ]
             }
         }

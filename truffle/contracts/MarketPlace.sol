@@ -19,6 +19,8 @@ interface NftProperty {
         returns (uint256);
 
     function setApprovalForAll(address operator, bool approved) external;
+
+    function getCollectionId() external view returns (uint256);
 }
 
 contract MarketPlace is Ownable {
@@ -36,6 +38,22 @@ contract MarketPlace is Ownable {
 
     event etherReceived(uint256 valueReceived);
 
+    event propertyPutOnSell(
+        uint256 collectionId,
+        uint256 nftId,
+        string name,
+        address seller,
+        uint256 quantityOnSell,
+        uint256 price
+    );
+
+    function approvePropertyForSell(address _collectionAddress) external {
+        NftProperty nftProperty;
+        nftProperty = NftProperty(_collectionAddress);
+
+        nftProperty.setApprovalForAll(address(this), true);
+    }
+
     /// @notice : set a quantity of type 'itemId' of token in selling at a '_sellingPrice'
     /// @notice : The function call method from the concerned collection by instantiating the good contract with the deployement address
     /// @dev require 1 ==> check if msg.sender is the owner
@@ -44,6 +62,7 @@ contract MarketPlace is Ownable {
     function putPropertyForSell(
         address _collectionAddress,
         uint256 _itemId,
+        string memory _name,
         uint256 _sellingPrice,
         uint256 _quantityToSell
     ) public {
@@ -59,8 +78,17 @@ contract MarketPlace is Ownable {
         sellingPriceByIdByAddress[_collectionAddress][_itemId][msg.sender] =
             _sellingPrice *
             10**18;
-        nftProperty.setApprovalForAll(address(this), true);
-        // nftProperty.safeTransferFrom(msg.sender, address(this), _itemId, _quantityToSell,"");
+
+        uint256 collectionId = nftProperty.getCollectionId();
+
+        emit propertyPutOnSell(
+            collectionId,
+            _itemId,
+            _name,
+            msg.sender,
+            _quantityToSell,
+            _sellingPrice
+        );
     }
 
     /// @notice : but a 'quantity' of item of type 'itemId' to the 'seller'
