@@ -129,6 +129,7 @@ contract CollectorsDAO is Ownable {
         string memory _docOwnership,
         string memory _mainImage
     ) external {
+        require(_id.current() > _daoId, "this dao not exist");
         uint256 proposalId = _proposalCount.current();
 
         proposals[proposalId] = Proposal(

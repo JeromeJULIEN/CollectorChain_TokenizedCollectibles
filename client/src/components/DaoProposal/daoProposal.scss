@@ -32,6 +32,7 @@
     width: 50%;
     height: 100%;
     margin-right: .5rem;
+    color: white;
 
     &__picture {
         height: 50%;
@@ -68,6 +69,7 @@
                 border: none;
                 box-shadow: 0px 0px 3px vars.$color_callToAction;
                 border-radius: .5rem;
+                color: vars.$color_black
             }
         }
 

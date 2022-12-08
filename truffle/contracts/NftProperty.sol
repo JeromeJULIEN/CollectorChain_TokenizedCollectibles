@@ -6,7 +6,7 @@ import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 // URI POUR TEST ==> "https://gateway.pinata.cloud/ipfs/QmUegKTCJ8r6td4AfT22FjJHCVMJn4fKTVCK4MH7zNM7Mn/{id}.json"
 
-interface CollectorsDAO {
+interface IIICollectorsDAO {
     function getProposalStatus(uint256 _proposalId)
         external
         view
@@ -33,7 +33,7 @@ contract NftProperty is ERC1155URIStorage {
         string image;
     }
 
-    CollectorsDAO collectorsDAO;
+    IIICollectorsDAO collectorsDAO;
 
     PropertyNft[] public propertyNfts;
 
@@ -49,7 +49,7 @@ contract NftProperty is ERC1155URIStorage {
         )
     {
         _collectionId = collectionId_;
-        collectorsDAO = CollectorsDAO(daoContractAddress_);
+        collectorsDAO = IIICollectorsDAO(daoContractAddress_);
     }
 
     /// @notice function mint() mint new NFT and send it to the owner of the object
