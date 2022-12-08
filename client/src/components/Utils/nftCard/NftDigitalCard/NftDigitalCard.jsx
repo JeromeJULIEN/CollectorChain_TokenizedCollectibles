@@ -1,7 +1,7 @@
 import React from 'react'
 import './nftDigitalCard.scss'
 
-const NftDigitalCard = ({name, marketplaceContract}) => {
+const NftDigitalCard = ({name, image, marketplaceContract}) => {
 
   //! LOCAL STATE
 
@@ -17,7 +17,7 @@ const NftDigitalCard = ({name, marketplaceContract}) => {
   return (
     <div className='nftDigitalCard'>
         <div className="nftDigitalCard__category">Digital collectible</div>
-        <div className='nftDigitalCard__image'>image</div>
+        <img className="nftPropertyCard__image" src={image} alt="object_image" />
         <div className="nftDigitalCard__title">{name}</div>
         <div className="nftDigitalCard__actions">
           <button className="nftDigitalCard__actions__button--sell">Sell</button>

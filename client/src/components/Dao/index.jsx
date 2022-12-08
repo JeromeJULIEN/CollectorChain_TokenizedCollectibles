@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addDao, addProposal, deleteDao, deleteProposal, updateProposal } from '../../store/actions/dao';
 import {Link} from 'react-router-dom';
 import './styles.scss'
+import { addCollection, deleteAllCollections } from '../../store/actions/collections';
 
 const Dao = () => {
 
     const daoContract = useSelector(state => state.dao.contract)
+    const factoryContract = useSelector(state => state.factory.contract)
     const daoList = useSelector(state => state.dao.daoList)
     const proposalList = useSelector(state => state.dao.proposalList)
 
@@ -80,6 +82,24 @@ const Dao = () => {
                 oldClosedProposalEvents.forEach(proposal =>{
                     dispatch(updateProposal(proposal.proposalId,proposal.value,proposal.status))
                 })
+                // COLLECTION ADDED
+                let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldCollectionCreationEvent=[];
+                collectionCreationEvent.forEach(event => {
+                    oldCollectionCreationEvent.push(
+                        {
+                            collectionName : event.returnValues.collectionName,
+                            propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
+                            digitalCollectionAddress : event.returnValues.digitalCollectionAddress
+                        });
+                });
+                dispatch(deleteAllCollections());
+                console.log('oldcollectionevent', collectionCreationEvent)
+                oldCollectionCreationEvent.forEach(collection => {
+                    dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
                 
             })()
         };

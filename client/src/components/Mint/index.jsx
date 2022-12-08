@@ -6,11 +6,13 @@ import PlusRoundIcon from '@rsuite/icons/PlusRound';
 import {InputPicker} from 'rsuite';
 import Axios from 'axios';
 import './styles.scss'
+import { addCollection, deleteAllCollections } from '../../store/actions/collections';
 
 
 const Mint = () => {
     //! STORE
     const daoContract = useSelector(state => state.dao.contract)
+    const factoryContract = useSelector(state => state.factory.contract)
     const propertyContract = useSelector(state => state.collections.currentCollection.propertyContract)
     const digitalContract = useSelector(state => state.collections.currentCollection.digitalContract)
     const accounts = useSelector(state => state.web3.accounts)
@@ -166,6 +168,24 @@ const Mint = () => {
                 oldClosedProposalEvents.forEach(proposal =>{
                     dispatch(updateProposal(proposal.proposalId,proposal.value,proposal.status))
                 })
+                // COLLECTION ADDED
+                let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldCollectionCreationEvent=[];
+                collectionCreationEvent.forEach(event => {
+                    oldCollectionCreationEvent.push(
+                        {
+                            collectionName : event.returnValues.collectionName,
+                            propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
+                            digitalCollectionAddress : event.returnValues.digitalCollectionAddress
+                        });
+                });
+                dispatch(deleteAllCollections());
+                console.log('oldcollectionevent', collectionCreationEvent)
+                oldCollectionCreationEvent.forEach(collection => {
+                    dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
                 
                 
             })()

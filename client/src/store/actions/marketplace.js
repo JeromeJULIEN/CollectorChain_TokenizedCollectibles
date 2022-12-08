@@ -12,11 +12,12 @@ export const addSeller = (collectionId, nftId,seller,quantity,price) => ({
   price
 });
 
-export const setPropertyNftsToSell = (collectionId, nftId, name) => ({
+export const setPropertyNftsToSell = (collectionId, nftId, name,image) => ({
   type: SET_PROPERTY_NFTS_TO_SELL,
   collectionId,
   nftId,
-  name
+  name,
+  image
 });
 
 export const deleteAllNftsToSell = () => ({

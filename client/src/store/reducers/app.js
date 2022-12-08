@@ -27,7 +27,7 @@ const appReducer = (state = initialState,action={}) =>{
                 ...state,
                 propertyNfts:[
                     ...state.propertyNfts,
-                    {collectionId:action.collectionId, nftId: action.nftId, name:action.nftName,value:action.value,minter:action.minter,balance:action.balance, isApproved:action.approval}
+                    {collectionId:action.collectionId, nftId: action.nftId, name:action.nftName,value:action.value,minter:action.minter,balance:action.balance, isApproved:action.approval,image:action.image}
                 ]
             }
         }
@@ -36,7 +36,7 @@ const appReducer = (state = initialState,action={}) =>{
                 ...state,
                 digitalNfts:[
                     ...state.digitalNfts,
-                    {collectionId:action.collectionId, nftId: action.nftId,name:action.name}
+                    {collectionId:action.collectionId, nftId: action.nftId,name:action.name,image:action.image}
                 ]
             }
         }

@@ -74,11 +74,12 @@ const Marketplace = () => {
                             name: event.returnValues.name,
                             seller : event.returnValues.seller,
                             quantityOnSell: event.returnValues.quantityOnSell,
-                            price: event.returnValues.price
+                            price: event.returnValues.price,
+                            image: event.returnValues.image
                         });
                 });
                 oldPropertyToSellEvents.forEach(event => {
-                    dispatch(setPropertyNftsToSell(event.collectionId,event.nftId, event.name))
+                    dispatch(setPropertyNftsToSell(event.collectionId,event.nftId, event.name, event.image))
                     dispatch(addSeller(event.collectionId,event.nftId,event.seller,event.quantityOnSell,event.price))
                 // const nbOfPropertylMint = await propertyContract.methods._id().call({from:accounts[0]})
                 // let idPropertyArray =[]
@@ -116,7 +117,8 @@ const Marketplace = () => {
                     seller={nft.seller} 
                     marketplaceContract={marketplaceContract}
                     updater={updater}
-                    handleUpdater={handleUpdater} />
+                    handleUpdater={handleUpdater}
+                    image={nft.image} />
             ))}
         </div>
         }

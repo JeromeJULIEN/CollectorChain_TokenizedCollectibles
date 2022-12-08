@@ -7,12 +7,20 @@ import Web3 from 'web3';
 import './daoProposal.scss';
 import { addCollection, deleteAllCollections, setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
 import CheckRoundIcon from '@rsuite/icons/CheckRound';
+import { uploadFileToIPFS } from '../Utils/ipfs';
+import { pinFileToIPFS } from '../../pinataTest';
+// import fs from "fs";
+// require('dotenv').config()
+// const Dotenv = require('dotenv-webpack');
+// récupération des infos du .env
+
+// cconnection à pinata avec la clé
+
+// import de fs qui est un 'systeme de fichier'
 
 const DaoProposal = () => {
     const {id} = useParams();
-    
-    const dispatch = useDispatch();
-    
+    //! STORE
     const web3 = useSelector(state => state.web3.web3);
     const accounts = useSelector(state => state.web3.accounts);
     const daoContract = useSelector(state => state.dao.contract);
@@ -23,15 +31,24 @@ const DaoProposal = () => {
     const propertyContract = useSelector(state => state.collections.currentCollection.propertyContract);
     const digitalContract = useSelector(state => state.collections.currentCollection.digitalContract);
     const factoryContract = useSelector(state => state.factory.contract);
-    let propertyContractAddress = "";
-    let digitalContractAddress= "";
-
+    let propertyContractAddress = collectionsList[proposal.daoId].propertyContractAddress;
+    let digitalContractAddress= collectionsList[proposal.daoId].digitalContractAddress;
+    console.log('proposal',proposal);
+    
+    //! LOCAL STATE
+    
+    const dispatch = useDispatch();
+    const [updater,setUpdater] = useState(0);
+    const handleUpdater = () => {
+        setUpdater(updater+1)
+    }
 
     const [value, setValue] = useState('');
     const handleChangeValue = (event) => {
         setValue(web3.utils.toBN(event.target.value))
     }
 
+    //! FUNCTIONS
     const voteYes = async() => {
         await daoContract.methods.vote(id, value, 0).call({from :accounts[0] });
         await daoContract.methods.vote(id, value, 0).send({from :accounts[0] });
@@ -53,31 +70,27 @@ const DaoProposal = () => {
     }
 
     const mintProperty = async() => {
-        var BN = web3.utils.BN;
-        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,new BN(100),accounts[0]).call({from:accounts[0]})
-        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,web3.utils.toBN(100),accounts[0]).send({from:accounts[0]})
+        // pinFileToIPFS('./image.png');
+        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,web3.utils.toBN(100),accounts[0],proposal.mainImage).call({from:accounts[0]})
+        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,web3.utils.toBN(100),accounts[0],proposal.mainImage).send({from:accounts[0]})
+        handleUpdater()
     }
 
     const mintDigital = async() => {
-        await digitalContract.methods.mintDigitalNft(id,proposal.name,"__").call({from:accounts[0]})
-        await digitalContract.methods.mintDigitalNft(id,proposal.name,'__').send({from:accounts[0]})
+        await digitalContract.methods.mintDigitalNft(id,proposal.name,"__",proposal.mainImage).call({from:accounts[0]})
+        await digitalContract.methods.mintDigitalNft(id,proposal.name,'__',proposal.mainImage).send({from:accounts[0]})
             .on('receipt', function(receipt) {
                 console.log(receipt);
             })
+        handleUpdater()
     }
 
-    const getProposalStatus = async() => {
-        await daoContract.methods.getProposalStatus(id).send({from:accounts[0]})
-            .on('receipt', function(receipt) {
-                console.log(receipt);
-            })
-    }
 
      //! :::: GESTION EVENT  :::::
      useEffect(()=> {
         if(factoryContract !== null){
             (async () => {
-                // VOTER REGISTRATION INFORMATION
+                // COLLECTION CREATION
                 let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
                     fromBlock : 0,
                     toBlock:'latest'
@@ -131,14 +144,14 @@ const DaoProposal = () => {
             })()
         };
 
-    }, [/*collectionCount,*/ factoryContract]
+    }, [updater,factoryContract]
     )
 
     useEffect(()=>{
         const artifactProperty = require("../../contracts/NftProperty.json");
         const artifactDigital = require("../../contracts/NftDigital.json");
         if (collectionsList[proposal.daoId] !== null) {
-            propertyContractAddress = collectionsList[proposal.daoId].propertyContractAddress;
+            // propertyContractAddress = collectionsList[proposal.daoId].propertyContractAddress;
             const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
             const abiProperty = artifactProperty.abi;
             
@@ -152,7 +165,7 @@ const DaoProposal = () => {
             } catch (err) {
                 console.error(err);
             }
-            digitalContractAddress = collectionsList[proposal.daoId].digitalContractAddress
+            // digitalContractAddress = collectionsList[proposal.daoId].digitalContractAddress
             const abiDigital = artifactDigital.abi;
             try {
                 // address = daoArtifact.networks[networkID].address;
@@ -171,7 +184,10 @@ const DaoProposal = () => {
         }
             
         
-    }, [propertyContractAddress, digitalContractAddress])
+    }
+    , [collectionsList]
+    // [propertyContractAddress, digitalContractAddress]
+    )
     console.log('proposal=>',proposal.digitalNftMinted);
 
     return (

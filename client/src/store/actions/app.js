@@ -8,14 +8,15 @@ export const deleteAllUserNfts = () => ({
   type: DELETE_ALL_USER_NFTS
 });
 
-export const setUserDigitalNfts = (collectionId,nftId,name) => ({
+export const setUserDigitalNfts = (collectionId,nftId,name,image) => ({
   type: SET_USER_DIGITAL_NFTS,
   collectionId,
   nftId,
-  name
+  name,
+  image
 });
 
-export const setUserPropertyNfts = (collectionId, nftId, nftName, value, minter,balance, approval) => ({
+export const setUserPropertyNfts = (collectionId, nftId, nftName, value, minter,balance, approval,image) => ({
   type: SET_USER_PROPERTY_NFTS,
   collectionId,
   nftId,
@@ -23,7 +24,8 @@ export const setUserPropertyNfts = (collectionId, nftId, nftName, value, minter,
   value,
   minter,
   balance,
-  approval
+  approval,
+  image
 });
 
 export const setAdmin = (payload) => ({

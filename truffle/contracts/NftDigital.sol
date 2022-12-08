@@ -26,6 +26,7 @@ contract NftDigital is ERC721URIStorage {
         uint256 collectionId;
         uint256 nftId;
         string nftName;
+        string image;
     }
 
     IICollectorsDAO collectorsDAO;
@@ -45,14 +46,17 @@ contract NftDigital is ERC721URIStorage {
     function mintDigitalNft(
         uint256 _proposalId,
         string memory _name,
-        string calldata _nftURI
+        string calldata _nftURI,
+        string memory _image
     ) public {
         // get the proposal status to allow the mint
         bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
         require(proposalStatus == true, "proposal is not accepted");
 
         uint256 newDigitalNftId = _id.current();
-        digitalNfts.push(DigitalNft(_collectionId, newDigitalNftId, _name));
+        digitalNfts.push(
+            DigitalNft(_collectionId, newDigitalNftId, _name, _image)
+        );
         _mint(msg.sender, newDigitalNftId);
         _setTokenURI(newDigitalNftId, _nftURI);
         _id.increment();

@@ -30,7 +30,7 @@ const marketplaceReducer = (state = initialState,action={})=>{
                 ...state,
                 propertyToSell:[
                     ...state.propertyToSell,
-                    {collectionId:action.collectionId,nftId:action.nftId,name:action.name,seller:[]}
+                    {collectionId:action.collectionId,nftId:action.nftId,name:action.name,image:action.image,seller:[]}
                 ]
             }
         }

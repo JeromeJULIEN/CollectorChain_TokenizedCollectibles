@@ -12,7 +12,8 @@ const PropertyForSellCard = ({
   seller,
   marketplaceContract,
   updater,
-  handleUpdater}) => {
+  handleUpdater,
+  image}) => {
   //! LOCAL STATE
   const dispatch = useDispatch()
   const [openBuy, setOpenBuy] = useState(false);
@@ -104,7 +105,7 @@ const PropertyForSellCard = ({
     <>
     <div className='nftPropertyCard'>
         <div className="nftPropertyCard__category">Physical ownership</div>
-        <div className='nftPropertyCard__image'>image</div>
+        <img className="nftPropertyCard__image" src={image} alt="object_image" />
         <div className="nftPropertyCard__title">{name}</div>
         <div className="nftPropertyCard__shares">Share floor price : {floorPrice}</div>
         <div className="nftPropertyCard__shares">Share to sell : {totalQuantity}</div>

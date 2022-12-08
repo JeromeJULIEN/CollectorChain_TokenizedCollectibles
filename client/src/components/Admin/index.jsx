@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCollection, deleteAllCollections } from '../../store/actions/collections';
 
 const Admin = () => {
 
@@ -11,9 +12,14 @@ const Admin = () => {
     const web3 = useSelector(state => state.web3.web3);
     
     //! LOCAL STATE
+    const dispatch = useDispatch();
     const [newValue,setNewValue] = useState("");
     const handleValueChange = (event) =>{
         setNewValue(event.target.value)
+    }
+    const [updater,setUpdater] = useState(0);
+    const handleUpdater = () => {
+        setUpdater(updater+1)
     }
     //! EVENTS
     const [ethReceived,setEthReceived] = useState(0)
@@ -39,9 +45,28 @@ const Admin = () => {
                 setEthReceived(parseInt(ethReceived)+parseInt(receipt.valueReceived))
             })
             setTransactionCount(oldEthReceivedEvent.length())
+            // COLLECTION ADDED
+            let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
+               fromBlock : 0,
+               toBlock:'latest'
+           });
+           let oldCollectionCreationEvent=[];
+           collectionCreationEvent.forEach(event => {
+               oldCollectionCreationEvent.push(
+                   {
+                       collectionName : event.returnValues.collectionName,
+                       propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
+                       digitalCollectionAddress : event.returnValues.digitalCollectionAddress
+                   });
+           });
+           dispatch(deleteAllCollections());
+           console.log('oldcollectionevent', collectionCreationEvent)
+           oldCollectionCreationEvent.forEach(collection => {
+               dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
         }
         getEvents()
-    },[])
+
+    },[updater])
 
     console.log('eth received',web3.utils.fromWei(web3.utils.toBN(ethReceived)) );
 
@@ -53,6 +78,7 @@ const Admin = () => {
         const valueToSet = newValue;
         await factoryContract.methods.createCollection(valueToSet, "__", "TOKEN").send({from : accounts[0]})
         setNewValue("");
+        handleUpdater();
 
     };
   

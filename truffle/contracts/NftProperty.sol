@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity 0.8.17;
 
-import "../node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "../node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 // URI POUR TEST ==> "https://gateway.pinata.cloud/ipfs/QmUegKTCJ8r6td4AfT22FjJHCVMJn4fKTVCK4MH7zNM7Mn/{id}.json"
@@ -15,7 +15,7 @@ interface CollectorsDAO {
     function updatePropertyMintStatus(uint256 _proposalId) external;
 }
 
-contract NftProperty is ERC1155 {
+contract NftProperty is ERC1155URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
 
@@ -28,6 +28,7 @@ contract NftProperty is ERC1155 {
         string name;
         uint256 value;
         address minter;
+        string image;
     }
 
     CollectorsDAO collectorsDAO;
@@ -55,7 +56,8 @@ contract NftProperty is ERC1155 {
         string memory _name,
         uint256 _value,
         uint256 _numberOfItem,
-        address _minter
+        address _minter,
+        string memory _image
     ) public {
         // get the proposal status to allow the mint
         bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
@@ -63,7 +65,14 @@ contract NftProperty is ERC1155 {
 
         uint256 newPropertyNftId = _id.current();
         propertyNfts.push(
-            PropertyNft(_collectionId, newPropertyNftId, _name, _value, _minter)
+            PropertyNft(
+                _collectionId,
+                newPropertyNftId,
+                _name,
+                _value,
+                _minter,
+                _image
+            )
         );
         _mint(msg.sender, newPropertyNftId, _numberOfItem, "");
         _id.increment();

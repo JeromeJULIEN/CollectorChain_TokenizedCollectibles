@@ -13,7 +13,8 @@ const NftPropertyCard = ({
   isApproved,
   marketplaceContract,
   updater,
-  handleUpdater}) => {
+  handleUpdater,
+  image}) => {
   //! LOCAL STATE
   const dispatch = useDispatch()
   const [openSell, setOpenSell] = useState(false);
@@ -80,8 +81,8 @@ const NftPropertyCard = ({
   const sellPropertyNft =async() =>{
     console.log(propertyContractAddress);
     try{
-      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity).call({from:accounts[0]});
-      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity).send({from:accounts[0]});
+      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity,image).call({from:accounts[0]});
+      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity,image).send({from:accounts[0]});
     } catch(error){
       console.log(error);
     }
@@ -96,7 +97,7 @@ const NftPropertyCard = ({
     <>
     <div className='nftPropertyCard'>
         <div className="nftPropertyCard__category">Physical ownership</div>
-        <div className='nftPropertyCard__image'>image</div>
+        <img className="nftPropertyCard__image" src={image} alt="object_image" />
         <div className="nftPropertyCard__title">{name}</div>
         <div className="nftPropertyCard__shares">Shares : {balance}/100</div>
         <div className="nftPropertyCard__actions">

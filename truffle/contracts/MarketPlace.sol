@@ -44,7 +44,8 @@ contract MarketPlace is Ownable {
         string name,
         address seller,
         uint256 quantityOnSell,
-        uint256 price
+        uint256 price,
+        string image
     );
 
     function approvePropertyForSell(address _collectionAddress) external {
@@ -64,7 +65,8 @@ contract MarketPlace is Ownable {
         uint256 _itemId,
         string memory _name,
         uint256 _sellingPrice,
-        uint256 _quantityToSell
+        uint256 _quantityToSell,
+        string memory _image
     ) public {
         NftProperty nftProperty;
         nftProperty = NftProperty(_collectionAddress);
@@ -87,7 +89,8 @@ contract MarketPlace is Ownable {
             _name,
             msg.sender,
             _quantityToSell,
-            _sellingPrice
+            _sellingPrice,
+            _image
         );
     }
 
