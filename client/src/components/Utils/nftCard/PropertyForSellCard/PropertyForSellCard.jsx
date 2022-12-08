@@ -69,7 +69,7 @@ const PropertyForSellCard = ({
   //! FUNCTIONS
   const buyPropertyNft =async() =>{
     // const valueToSend = quantity*sellerPrice;
-    const valueToSend = web3.utils.toWei(web3.utils.toBN((quantity*sellerPrice),'ether'));
+    const valueToSend = web3.utils.toWei(web3.utils.toBN((quantity*sellerPrice*1.1),'ether'));
     console.log('valuetosend=>',valueToSend);
     // console.log('toWei=>',web3.utils.toWei(web3.utils.toBN(valueToSend) ,'ether' ));
     console.log('toWei=>',valueToSend);
@@ -142,6 +142,7 @@ const PropertyForSellCard = ({
       {simulate === true && 
       <>
         <p>Buying will cost you {quantity*floorPrice} eth for {quantity} shares</p>
+        <p>platform will charge additional 10% fees</p>
         <div className="modal__body__btn">
           <button onClick={buyPropertyNft} appearance="primary">
             Confirm purchase

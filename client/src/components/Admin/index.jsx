@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCollection, deleteAllCollections } from '../../store/actions/collections';
+import { deleteAllMembers } from '../../store/actions/dao';
+import './admin.scss'
 
 const Admin = () => {
 
     //! STORE
     const factoryContract = useSelector(state => state.factory.contract);
+    const daoContract = useSelector(state => state.dao.contract);
     const marketplaceContract = useSelector(state => state.marketplace.contract)
     const accounts = useSelector(state => state.web3.accounts);
     const web3 = useSelector(state => state.web3.web3);
@@ -17,17 +20,24 @@ const Admin = () => {
     const handleValueChange = (event) =>{
         setNewValue(event.target.value)
     }
+
+    const [address,setAddress] = useState();
+    const handleSetAddress = (event =>{
+        setAddress(event.target.value)
+    })
+
     const [updater,setUpdater] = useState(0);
     const handleUpdater = () => {
         setUpdater(updater+1)
     }
+
     //! EVENTS
     const [ethReceived,setEthReceived] = useState(0)
     const [transactionCount,setTransactionCount] = useState(0)
     useEffect(() => {
         // ETH RECEIVED EVENT
+        console.log('event ETH');
         const getEvents = async() => {
-            setEthReceived("0")
             let ethReceivedEvent = await marketplaceContract.getPastEvents('etherReceived',{
                 fromBlock : 0,
                 toBlock:'latest'
@@ -39,36 +49,51 @@ const Admin = () => {
                         valueReceived : event.returnValues.valueReceived,
                     });
             });
-            console.log('oldEthReceivedEvent',oldEthReceivedEvent);
-            console.log('oldEthReceivedEvent',oldEthReceivedEvent);
             oldEthReceivedEvent.forEach(receipt => {
                 setEthReceived(parseInt(ethReceived)+parseInt(receipt.valueReceived))
             })
-            setTransactionCount(oldEthReceivedEvent.length())
+            // setTransactionCount(oldEthReceivedEvent.length())
             // COLLECTION ADDED
+        console.log('event collection');
+
             let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
                fromBlock : 0,
                toBlock:'latest'
-           });
-           let oldCollectionCreationEvent=[];
-           collectionCreationEvent.forEach(event => {
-               oldCollectionCreationEvent.push(
-                   {
-                       collectionName : event.returnValues.collectionName,
-                       propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
-                       digitalCollectionAddress : event.returnValues.digitalCollectionAddress
-                   });
-           });
-           dispatch(deleteAllCollections());
-           console.log('oldcollectionevent', collectionCreationEvent)
-           oldCollectionCreationEvent.forEach(collection => {
-               dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
+            });
+            let oldCollectionCreationEvent=[];
+            collectionCreationEvent.forEach(event => {
+                oldCollectionCreationEvent.push(
+                    {
+                        collectionName : event.returnValues.collectionName,
+                        propertyCollectionAddress : event.returnValues.propertyCollectionAddress, 
+                        digitalCollectionAddress : event.returnValues.digitalCollectionAddress
+                    });
+            });
+            dispatch(deleteAllCollections());
+            console.log('oldcollectionevent', collectionCreationEvent)
+            oldCollectionCreationEvent.forEach(collection => {
+            dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
+            // MEMBER ADDED
+            // console.log('event member');
+
+            // let memberAddedEvent = await daoContract.getPastEvents('memberAdded',{
+            //     fromBlock : 0,
+            //     toBlock:'latest'
+            // });
+            // let oldMemberAddedEvent=[];
+            // memberAddedEvent.forEach(event => {
+            //     oldMemberAddedEvent.push({address:event.returnValues.newMember})
+            // });
+            // dispatch(deleteAllMembers())
+            // console.log('oldMemberAddedEvent', oldMemberAddedEvent)
+            // oldMemberAddedEvent.forEach(address => {
+            //     dispatch(addMember(address.address))
+            // });
         }
         getEvents()
 
     },[updater])
 
-    console.log('eth received',web3.utils.fromWei(web3.utils.toBN(ethReceived)) );
 
     //! FUNCTIONS
     const createCollection = async () => {
@@ -76,25 +101,41 @@ const Admin = () => {
             alert("please enter a value")
         }
         const valueToSet = newValue;
+        await factoryContract.methods.createCollection(valueToSet, "__", "TOKEN").call({from : accounts[0]})
         await factoryContract.methods.createCollection(valueToSet, "__", "TOKEN").send({from : accounts[0]})
         setNewValue("");
         handleUpdater();
-
     };
+
+    const addMember= async() => {
+        if(address === ""){
+            alert("please enter an address")
+        }
+        await daoContract.methods.addDaoMember(address).call({from: accounts[0]})
+        await daoContract.methods.addDaoMember(address).send({from: accounts[0]})
+        setAddress("");
+        handleUpdater();
+    }
   
     return (
-    <>
-        <div>
+    <div className='admin'>
+        <div className='createCollection'>
                     <p>create collection :</p>
                     <input type="text" placeholder='collection name' value={newValue} onChange={handleValueChange}/>
                     <button onClick={createCollection}>Create</button>
         </div>
-        <div>
+        <div className="daoMembers">
+            <p>add a member</p>
+            <input type="text" placeholder='user address' value={address} onChange={handleSetAddress}/>
+            <button onClick={addMember}>Add</button>
+
+        </div>
+        <div className='fees'> 
             <p>collected fees : {web3.utils.fromWei(web3.utils.toBN(ethReceived))} eth</p> 
             <p>number of transactions : {transactionCount} </p> 
 
         </div>
-    </>
+    </div>
   )
 }
 

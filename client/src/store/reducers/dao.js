@@ -1,11 +1,12 @@
-import { ADD_DAO, ADD_PROPOSAL, DELETE_DAO, DELETE_PROPOSAL, INIT_DAO, UPDATE_DIGITAL_MINT_STATUS, UPDATE_PROPERTY_MINT_STATUS, UPDATE_PROPOSAL } from "../actions/dao";
+import { ADD_DAO, ADD_MEMBER, ADD_PROPOSAL, DELETE_ALL_MEMBERS, DELETE_DAO, DELETE_PROPOSAL, INIT_DAO, UPDATE_DIGITAL_MINT_STATUS, UPDATE_PROPERTY_MINT_STATUS, UPDATE_PROPOSAL } from "../actions/dao";
 
 const initialState = {
     artifact: null,
     contract: null,
     owner: null,
     daoList :[],
-    proposalList:[]
+    proposalList:[],
+    members:[]
   };
 
 const daoReducer = (state = initialState,action={})=>{
@@ -96,6 +97,22 @@ const daoReducer = (state = initialState,action={})=>{
                         }
                         return proposal;
                     })
+            }
+        }
+        case DELETE_ALL_MEMBERS:{
+            return{
+                ...state,
+                members:[]
+            }
+        }
+        case ADD_MEMBER:{
+            console.log('coucou from add member');
+            return{
+                ...state,
+                members:[
+                    ...state.members,
+                    action.address
+                ]
             }
         }
         default :

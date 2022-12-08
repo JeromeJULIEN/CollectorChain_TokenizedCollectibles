@@ -34,7 +34,19 @@
             font-weight: bold;
             transition: background-color .5s;
 
+
+
         }
+
+        &--active:hover {
+            box-shadow: inset 0px 0px 5px white;
+        }
+
+
+    }
+
+    &__item:hover {
+        box-shadow: inset 0px 0px 5px vars.$color_callToAction;
     }
 
 }

@@ -4,6 +4,7 @@ pragma solidity 0.8.17;
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
+/// @notice this contract manage all topic of the DAO : subDao creation, member management, proposal and vote management
 contract CollectorsDAO is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
@@ -46,6 +47,8 @@ contract CollectorsDAO is Ownable {
 
     event daoCreated(uint256 daoId, string daoName);
 
+    event memberAdded(address newMember);
+
     event proposalCreated(
         uint256 daoId,
         uint256 proposalId,
@@ -73,16 +76,23 @@ contract CollectorsDAO is Ownable {
     event propertyMinted(uint256 proposalId, bool propertyMinted);
     event digitalMinted(uint256 proposalId, bool digitalMinted);
 
-    /// @notice list of members of each DAO : user address => daoId (ie collectionId) => member status
-    mapping(address => mapping(uint256 => bool)) public daoMembers;
+    /// @notice list of members of the DAO : user address => member status
+    /// @notice allow member to vote and close proposal
+    mapping(address => bool) public daoMembers;
 
     /// @notice store all proposals: proposalId => proposal
+    /// @dev call by front end
     mapping(uint256 => Proposal) public proposals;
-    /// @notice who already votes for who and to avoid vote twice: voter => proposalId => vote Status
+    /// @notice who already votes for which proposal and to avoid vote twice: voter => proposalId => vote Status
+    /// @dev call by front end
     mapping(address => mapping(uint256 => bool)) public votes;
 
+    /// @dev to be used later
     uint256 constant VOTING_PERIOD = 7 days;
 
+    /// @notice create a new DAO linked to a collection
+    /// @param _name name of the new collection
+    /// @dev function call by factory contract
     function createDAO(string memory _name) external {
         SubDao memory newSubDao;
         newSubDao.id = _id.current();
@@ -95,6 +105,22 @@ contract CollectorsDAO is Ownable {
         _id.increment();
     }
 
+    /// @notice add member to DAO to allow him to vote and close for proposal
+    /// @notice only owner of the contract can call the function
+    function addDaoMember(address _newMember) external onlyOwner {
+        require(daoMembers[_newMember] == false, "already a member");
+        daoMembers[_newMember] = true;
+
+        emit memberAdded(_newMember);
+    }
+
+    /// @notice create a new proposal
+    /// @param _daoId dao concerned by the proposal
+    /// @param _name name of the object to mint
+    /// @param _description description of the object to mint
+    /// @param _value estimated value of the object by the applicant
+    /// @param _docOwnership picture of the proof of ownership provided by the applicant
+    /// @param _mainImage picture of the object provided by the applicant
     function createProposal(
         uint256 _daoId,
         string memory _name,
@@ -136,12 +162,16 @@ contract CollectorsDAO is Ownable {
         _proposalCount.increment();
     }
 
+    /// @notice set a vote for a proposal
+    /// @notice only DAO members can do it
+    /// @notice user need to vote yes or no + give a estimated value
     function vote(
         uint256 _proposalId,
         uint256 _value,
         VotingOptions _vote
     ) external {
         Proposal storage proposal = proposals[_proposalId];
+        require(daoMembers[msg.sender] == true, "not member of the DAO");
         require(votes[msg.sender][_proposalId] == false, "already voted");
         votes[msg.sender][_proposalId] = true;
         if (_vote == VotingOptions.Yes) {
@@ -170,7 +200,11 @@ contract CollectorsDAO is Ownable {
         emit voteSetted(_proposalId, msg.sender, _vote, proposal.status);
     }
 
-    function closeProposal(uint256 _proposalId) external onlyOwner {
+    /// @notice close a proposal
+    /// @notice only DAO members can do it
+    /// @notice the status of the proposal is set during this fonction (accepted if vote yes > vote no)
+    function closeProposal(uint256 _proposalId) external {
+        require(daoMembers[msg.sender] == true, "not member of the DAO");
         if (proposals[_proposalId].status == true) {
             proposals[_proposalId].votingStatus = "accepted";
         } else {
@@ -185,6 +219,7 @@ contract CollectorsDAO is Ownable {
         );
     }
 
+    /// @dev getter for development purpose
     function getProposalStatus(uint256 _proposalId)
         external
         view
@@ -194,12 +229,14 @@ contract CollectorsDAO is Ownable {
         return proposals[_proposalId].status;
     }
 
+    /// @dev for front end management purpose
     function updatePropertyMintStatus(uint256 _proposalId) external {
         proposals[_proposalId].propertyNftMinted = true;
 
         emit propertyMinted(_proposalId, true);
     }
 
+    /// @dev for front end management purpose
     function updateDigitalMintStatus(uint256 _proposalId) external {
         proposals[_proposalId].digitalNftMinted = true;
 

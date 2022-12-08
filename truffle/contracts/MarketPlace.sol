@@ -23,9 +23,13 @@ interface NftProperty {
     function getCollectionId() external view returns (uint256);
 }
 
+/// @notice contract in charge of manage buying and selling action from the users
+/// @notice (for jury) only 1155 buy & sell is managed. 721 still to do
 contract MarketPlace is Ownable {
-    /// @notice fees collected by the platform on each sale. To be devided by 1000 to get the percentage
-    uint256 public platformFee = 100;
+    /// @notice fees collected by the platform on each sale
+    /// @notice targeted fee in 10% for the buyer
+    /// @dev this % will be applied on selling price+10%. It will give the equivalent to 10% on selling price
+    uint256 public platformFee = 91;
 
     /// @notice give the amount of item to sell by 'id' and by owner 'address'
     /// @dev collectionAddress => tokenId => userAddress => quantity to sell
@@ -48,6 +52,8 @@ contract MarketPlace is Ownable {
         string image
     );
 
+    /// @notice action require before put in sell a property nft
+    /// @dev send an approval to the good 1155 contract
     function approvePropertyForSell(address _collectionAddress) external {
         NftProperty nftProperty;
         nftProperty = NftProperty(_collectionAddress);
@@ -67,7 +73,7 @@ contract MarketPlace is Ownable {
         uint256 _sellingPrice,
         uint256 _quantityToSell,
         string memory _image
-    ) public {
+    ) external {
         NftProperty nftProperty;
         nftProperty = NftProperty(_collectionAddress);
         require(
@@ -96,14 +102,14 @@ contract MarketPlace is Ownable {
 
     /// @notice : but a 'quantity' of item of type 'itemId' to the 'seller'
     /// @dev require 1 ==> check if seller has enought item to sell
-    /// @dev require 2 ==> check if buyer send the good amount of eth
+    /// @dev require 2 ==> check if buyer send enough eth (exact amount is calculated on front end)
     /// @dev require 3 ==> check the eth transfer to 'seller'
     function buyPropertyItem(
         address _collectionAddress,
         uint256 _itemId,
         uint256 _quantityToBuy,
         address _seller
-    ) public payable {
+    ) external payable {
         require(
             _quantityToBuy <
                 itemToSellByIdByAddress[_collectionAddress][_itemId][_seller],
@@ -111,10 +117,7 @@ contract MarketPlace is Ownable {
         );
         uint256 totalBuyingAmount = _quantityToBuy *
             sellingPriceByIdByAddress[_collectionAddress][_itemId][_seller];
-        require(
-            msg.value == totalBuyingAmount,
-            "you have to send the exact amount"
-        );
+        require(msg.value > totalBuyingAmount, "you have to send enough eth");
         // transfer of ETH
         uint256 amountToSeller = (msg.value * (1000 - (platformFee))) / 1000;
         uint256 amountToPlatform = (msg.value * (platformFee)) / 1000;
@@ -143,7 +146,7 @@ contract MarketPlace is Ownable {
     }
 
     function getContractBalance()
-        public
+        external
         view
         returns (uint256 contractBalance)
     {

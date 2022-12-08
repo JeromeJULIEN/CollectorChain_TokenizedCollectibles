@@ -46,7 +46,7 @@ const ConnectBtn = () => {
         <>
             {isLogged ? (
                 <div className='connectBtn'>
-                    <button className='connectBtn__btn' onClick={disconnexion} ><OffRound className='connectBtn__logo'/>{connectedAddress}</button>
+                    <button className='connectBtn__btn' onClick={disconnexion} ><OffRound className='connectBtn__logo'/>        {connectedAddress}</button>
                 </div>
             ) :(
                 <button className='connectBtn__btn' onClick={connexion}>Connect wallet</button>

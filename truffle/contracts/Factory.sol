@@ -10,6 +10,9 @@ interface ICollectorsDAO {
     function createDAO(string memory _name) external;
 }
 
+/// @notice This contract manage the creation of new type of object collection on collectorChain
+/// @notice each collection creation will create : 1 sub dao, 1 ERC1155collection (propertt nft), 1 ERC721 collection(digital nft)
+/// @dev subDao, 1155 and 721 collection will be linked by a unique id for each colllction
 contract Factory is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
@@ -21,6 +24,7 @@ contract Factory is Ownable {
         address digitalCollectionAddress
     );
 
+    /// @dev main information stored for each collections
     struct Collection {
         uint256 _collectionId;
         string _name;
@@ -30,18 +34,24 @@ contract Factory is Ownable {
 
     Collection[] public collections;
 
+    /// @dev used to avoid twice collection in createCollection require
+    mapping(string => bool) collectionName;
+
     ICollectorsDAO collectorsDAO;
 
     address daoContractAddress;
 
-    /// @dev mapping collectionName => collectionAddress
-    mapping(string => address) public collectionsAddress;
-
+    /// @dev get the dao contract address to be able to create subDao
     constructor(address daoAddress_) {
         daoContractAddress = daoAddress_;
         collectorsDAO = ICollectorsDAO(daoAddress_);
     }
 
+    /// @notice function that create the subDao, 1155 and 721 collection
+    /// @notice only owner of the contract can do it
+    /// @param _collectionName Type of object
+    /// @param _collectionURI URI for 1155 collection
+    /// @param _collectionSymbol symbol of the token for the collection. Should be the same for all the collections
     function createCollection(
         string memory _collectionName,
         string memory _collectionURI,
@@ -58,6 +68,10 @@ contract Factory is Ownable {
         require(
             bytes(_collectionURI).length > 0,
             "collection URI should not be null"
+        );
+        require(
+            collectionName[_collectionName] == false,
+            "collection already created"
         );
 
         NftProperty nftProperty = new NftProperty(
@@ -80,6 +94,8 @@ contract Factory is Ownable {
         collections.push(newCollection);
 
         collectorsDAO.createDAO(_collectionName);
+
+        collectionName[_collectionName] = true;
 
         emit collectionCreated(
             _id.current(),

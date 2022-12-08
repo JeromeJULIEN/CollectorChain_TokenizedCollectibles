@@ -14,6 +14,8 @@ interface IICollectorsDAO {
     function updateDigitalMintStatus(uint256 _proposalId) external;
 }
 
+/// @notice this contract manage the ERC721 collection of each collector chain collections
+/// @notice (for Jury) IPFS upload not managed yet
 contract NftDigital is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
@@ -48,7 +50,7 @@ contract NftDigital is ERC721URIStorage {
         string memory _name,
         string calldata _nftURI,
         string memory _image
-    ) public {
+    ) external {
         // get the proposal status to allow the mint
         bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
         require(proposalStatus == true, "proposal is not accepted");

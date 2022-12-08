@@ -15,6 +15,8 @@ interface CollectorsDAO {
     function updatePropertyMintStatus(uint256 _proposalId) external;
 }
 
+/// @notice this contract manage the ERC1155 collection of each collector chain collections
+/// @notice (for Jury) IPFS upload not managed yet
 contract NftProperty is ERC1155URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter public _id;
@@ -35,7 +37,7 @@ contract NftProperty is ERC1155URIStorage {
 
     PropertyNft[] public propertyNfts;
 
-    /// @notice URI structure have to be managed from the from end in order to define custom attributes for each collection
+    /// @notice URI structure have to be managed from the front end in order to define custom attributes for each collection
     constructor(
         uint256 collectionId_,
         string memory collectionURI_,
@@ -51,6 +53,7 @@ contract NftProperty is ERC1155URIStorage {
     }
 
     /// @notice function mint() mint new NFT and send it to the owner of the object
+    /// @notice 100 NFTs will be mint each time (managed by front end)
     function mintPropertyNft(
         uint256 _proposalId,
         string memory _name,
@@ -58,7 +61,7 @@ contract NftProperty is ERC1155URIStorage {
         uint256 _numberOfItem,
         address _minter,
         string memory _image
-    ) public {
+    ) external {
         // get the proposal status to allow the mint
         bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);
         require(proposalStatus == true, "proposal is not accepted");

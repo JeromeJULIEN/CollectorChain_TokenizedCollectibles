@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './Logo_fond_blanc.png';
+import logo from '../Utils/Logo_fond_blanc.png';
 import './styles.scss';
 
 const Home = () => {

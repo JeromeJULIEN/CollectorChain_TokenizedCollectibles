@@ -83,6 +83,10 @@
         font-weight: bold;
     }
 
+    &__btn:hover {
+        box-shadow: inset 0px 0px 5px white;
+    }
+
 }
 
 .proposalList {
@@ -127,6 +131,12 @@
             color: white;
             border-radius: .8rem;
             padding: .2rem .5rem;
+        }
+
+        button:hover {
+            box-shadow: inset 0px 0px 5px white;
+            text-decoration: none;
+            color: white;
         }
 
         &__detail {

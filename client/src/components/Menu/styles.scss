@@ -6,20 +6,37 @@
     background-color: vars.$color_black;
     display: flex;
     justify-content: space-between;
-    // align-items: baseline;
+    align-items: baseline;
     height: 50px;
     font-size: 1rem;
     width: 100%;
-    padding: 1rem;
+    // padding: 1rem;
+
+    &__logo {
+        height: 3rem;
+    }
 
     &__navBar {
-        height: 50px;
-        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        // height: 50px;
+        // vertical-align: middle;
 
         &--item {
             color: vars.$color_white;
             text-decoration: none;
+
+            :hover {
+                color: red;
+            }
         }
+
+        &--item:hover {
+            color: vars.$color_digitalNft;
+            text-decoration: none;
+        }
+
     }
 
 

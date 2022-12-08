@@ -46,6 +46,9 @@ const Mint = () => {
     
     //! FUNCTIONS
     const askMint = async() => {
+        if(mintTitle == '' || mintDesc == '' || mintValue ==''){
+            alert("you have to fill all informations")
+        }
         try{
             await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,mainImage).call({from:accounts[0]})
             await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,mainImage).send({from:accounts[0]})
@@ -204,21 +207,21 @@ const Mint = () => {
                 <div className="panelLeft">
                     <div className="panelLeft__item">
                         <p>Collection</p>
-                        <InputPicker className='panelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection}/>
+                        <InputPicker className='panelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection} require/>
 
                     </div>
                     <div className="panelLeft__item">
                         <p>Mint title</p>
-                        <input type="text" id='name' name='name' required value={mintTitle} onChange={handleChangeMintTitle}/>
+                        <input type="text" id='name' name='name' required value={mintTitle} onChange={handleChangeMintTitle} require/>
 
                     </div>
                     <div className="panelLeft__item">
                         <p>Object description</p>
-                        <input type="text" id='description' name='description' required value={mintDesc} onChange={handleChangeMintDesc}/>
+                        <input type="text" id='description' name='description' required value={mintDesc} onChange={handleChangeMintDesc} require/>
                     </div>
                     <div className="panelLeft__item">
                         <p>Estimated value</p>
-                        <input type="text" id='value' name='value' required value={mintValue} onChange={handleChangeMintValue}/>
+                        <input type="text" id='value' name='value' required value={mintValue} onChange={handleChangeMintValue} require/>
                     </div>
                 </div>
                 <div className="panelRight">

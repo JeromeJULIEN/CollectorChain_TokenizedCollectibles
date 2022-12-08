@@ -6,6 +6,17 @@ export const DELETE_DAO = 'DELETE_DAO';
 export const UPDATE_PROPOSAL = 'UPDATE_PROPOSAL';
 export const UPDATE_PROPERTY_MINT_STATUS = 'UPDATE_PROPERTY_MINT_STATUS';
 export const UPDATE_DIGITAL_MINT_STATUS = 'UPDATE_DIGITAL_MINT_STATUS';
+export const DELETE_ALL_MEMBERS = 'DELETE_ALL_MEMBERS';
+export const ADD_MEMBER = 'ADD_MEMBER';
+
+export const addMember = (address) => ({
+  type: ADD_MEMBER,
+  address
+});
+
+export const deleteAllMembers = () => ({
+  type: DELETE_ALL_MEMBERS
+});
 
 export const updateDigitalMintStatus = (proposalId,digitalMintStatus) => ({
   type: UPDATE_DIGITAL_MINT_STATUS,

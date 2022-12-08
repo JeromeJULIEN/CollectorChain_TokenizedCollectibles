@@ -15,7 +15,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createDAO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Factory.sol\":\"ICollectorsDAO\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[]},\"sources\":{\"project:/contracts/Factory.sol\":{\"keccak256\":\"0x38f074201a6b0833f03b04ac0e7385d52e57e953d2534e58267cf42684f890d6\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://0e2649df44296ec276c627d6bc3482b694fdfa4b86c8a02b634f3d989d23db4d\",\"dweb:/ipfs/QmP5MSLKxTz57zSeHgg4wAtUssjmnxpJr2e23rpfiVF3fq\"]},\"project:/contracts/NftDigital.sol\":{\"keccak256\":\"0xe08483120c4f2748ec97d8c4a24f0f42b798b7d3165f98508e45e83510490adf\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://86f7710bca78baf5c6e41f4f0362ecbe23a4f0f48637e8d32e57a2cbe32dd2b0\",\"dweb:/ipfs/QmRSco7xe2FjehzKdfNV3QarWD3YdB8fTSuEzgLjB1KXLX\"]},\"project:/contracts/NftProperty.sol\":{\"keccak256\":\"0xb3c8e8661426d5036883a9e8ce2c74174629564b0e13b094b98be09eea50fd52\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5573c987fe22c1308a727c97eb8c1bd8694cedb29220ce0f5f266ea17ae6f133\",\"dweb:/ipfs/QmQXXLezmvhaNBYWuvse9CKE7tFS28H6HnxSQej5w4jD39\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd917747dc87f189c6779b894f367a028f9dca4be930283cccec8f312966af820\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a5e5b99830cf233f77aa3b1bd1f57561faee103beeee88e6a6f86d044817bbb\",\"dweb:/ipfs/QmREYidSDpHPig3AhxzsMHg3w2ZtMeGfRhcokXxEZyj6fC\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x6392f2cfe3a5ee802227fe7a2dfd47096d881aec89bddd214b35c5b46d3cd941\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c47a375639888e726a99da718890ba16d17d7ad9eacb0ccc892d46d1b3ee0\",\"dweb:/ipfs/Qmb41W5RUjy2sWg49A2rMnxekSeEk6SvGyJL5tyCCSr7un\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec\",\"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol\":{\"keccak256\":\"0x4e7bcc6aa9b150e125df8afbfbca5dfb7c92fa4fb01985f2f595ce0c96153cff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://75aa1a94e176c23d37e117daf8386cd6301119b1ca5cf521fe22de9ccc13dade\",\"dweb:/ipfs/QmfTfUFGRZ3iNavQgLmj2zNR7Pz2djKV5UPRTmDWnapbGg\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol\":{\"keccak256\":\"0xa66d18b9a85458d28fc3304717964502ae36f7f8a2ff35bc83f6f85d74b03574\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e46c80ea068989111d6103e5521223f9ef337e93de76deed8b03f75c6f7b2797\",\"dweb:/ipfs/QmNoSE6knNfFncdDDLTb3fGR6oSQty1srG96Vsx3E9wQdw\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xd89f3585b211fc9e3408384a4c4efdc3a93b2f877a3821046fa01c219d35be1b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ea15ef7c8980240ccd46df13809d163f749bc0a01d8bced1875660d4872da1c\",\"dweb:/ipfs/QmbDfAT9VeCSG4cnPd6tjDMp8ED85dLHbWyMyv7wbmL4CH\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xab28a56179c1db258c9bf5235b382698cb650debecb51b23d12be9e241374b68\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://daae589a9d6fa7e55f99f86c0a16796ca490f243fb3693632c3711c0646c1d56\",\"dweb:/ipfs/QmR3zpd7wNw3rcUdekwiv6FYHJqksuTCXLVioTxu6Fbxk3\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\":{\"keccak256\":\"0x5c3501c1b70fcfc64417e9da5cc6a3597191baa354781e508e1e14cc0e50a038\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://899c87a849a94c848818d0afede6961d2c87665af1dd23a5c983e78981a65691\",\"dweb:/ipfs/QmUeFDffQRDmX87FX3MRxN3bmpUxDTWpWLwPJzeAJ3yF6H\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createDAO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Factory.sol\":\"ICollectorsDAO\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[]},\"sources\":{\"project:/contracts/Factory.sol\":{\"keccak256\":\"0xebcf52612d79946a38e326e37fe5b6e2ebc2b90f3ca752888aac29385740fd8d\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://0b306a8f507481bd00b66131692b4db389debf5a28e1d7175b0c633ed6dda8b7\",\"dweb:/ipfs/QmfNuG6seh8wGpaqmpeMHSQNagWnmaocvHxSyBz4Zyngwd\"]},\"project:/contracts/NftDigital.sol\":{\"keccak256\":\"0xe08483120c4f2748ec97d8c4a24f0f42b798b7d3165f98508e45e83510490adf\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://86f7710bca78baf5c6e41f4f0362ecbe23a4f0f48637e8d32e57a2cbe32dd2b0\",\"dweb:/ipfs/QmRSco7xe2FjehzKdfNV3QarWD3YdB8fTSuEzgLjB1KXLX\"]},\"project:/contracts/NftProperty.sol\":{\"keccak256\":\"0xb3c8e8661426d5036883a9e8ce2c74174629564b0e13b094b98be09eea50fd52\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5573c987fe22c1308a727c97eb8c1bd8694cedb29220ce0f5f266ea17ae6f133\",\"dweb:/ipfs/QmQXXLezmvhaNBYWuvse9CKE7tFS28H6HnxSQej5w4jD39\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd917747dc87f189c6779b894f367a028f9dca4be930283cccec8f312966af820\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a5e5b99830cf233f77aa3b1bd1f57561faee103beeee88e6a6f86d044817bbb\",\"dweb:/ipfs/QmREYidSDpHPig3AhxzsMHg3w2ZtMeGfRhcokXxEZyj6fC\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x6392f2cfe3a5ee802227fe7a2dfd47096d881aec89bddd214b35c5b46d3cd941\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c47a375639888e726a99da718890ba16d17d7ad9eacb0ccc892d46d1b3ee0\",\"dweb:/ipfs/Qmb41W5RUjy2sWg49A2rMnxekSeEk6SvGyJL5tyCCSr7un\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec\",\"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol\":{\"keccak256\":\"0x4e7bcc6aa9b150e125df8afbfbca5dfb7c92fa4fb01985f2f595ce0c96153cff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://75aa1a94e176c23d37e117daf8386cd6301119b1ca5cf521fe22de9ccc13dade\",\"dweb:/ipfs/QmfTfUFGRZ3iNavQgLmj2zNR7Pz2djKV5UPRTmDWnapbGg\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol\":{\"keccak256\":\"0xa66d18b9a85458d28fc3304717964502ae36f7f8a2ff35bc83f6f85d74b03574\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e46c80ea068989111d6103e5521223f9ef337e93de76deed8b03f75c6f7b2797\",\"dweb:/ipfs/QmNoSE6knNfFncdDDLTb3fGR6oSQty1srG96Vsx3E9wQdw\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xd89f3585b211fc9e3408384a4c4efdc3a93b2f877a3821046fa01c219d35be1b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ea15ef7c8980240ccd46df13809d163f749bc0a01d8bced1875660d4872da1c\",\"dweb:/ipfs/QmbDfAT9VeCSG4cnPd6tjDMp8ED85dLHbWyMyv7wbmL4CH\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xab28a56179c1db258c9bf5235b382698cb650debecb51b23d12be9e241374b68\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://daae589a9d6fa7e55f99f86c0a16796ca490f243fb3693632c3711c0646c1d56\",\"dweb:/ipfs/QmR3zpd7wNw3rcUdekwiv6FYHJqksuTCXLVioTxu6Fbxk3\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\":{\"keccak256\":\"0x5c3501c1b70fcfc64417e9da5cc6a3597191baa354781e508e1e14cc0e50a038\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://899c87a849a94c848818d0afede6961d2c87665af1dd23a5c983e78981a65691\",\"dweb:/ipfs/QmUeFDffQRDmX87FX3MRxN3bmpUxDTWpWLwPJzeAJ3yF6H\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -23,143 +23,143 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.17;\n\nimport \"../node_modules/@openzeppelin/contracts/utils/Counters.sol\";\nimport \"../node_modules/@openzeppelin/contracts/access/Ownable.sol\";\nimport \"./NftProperty.sol\";\nimport \"./NftDigital.sol\";\n\ninterface ICollectorsDAO {\n    function createDAO(string memory _name) external;\n}\n\ncontract Factory is Ownable {\n    using Counters for Counters.Counter;\n    Counters.Counter public _id;\n\n    event collectionCreated(\n        uint256 collectionId,\n        string collectionName,\n        address propertyCollectionAddress,\n        address digitalCollectionAddress\n    );\n\n    struct Collection {\n        uint256 _collectionId;\n        string _name;\n        address _propertyCollectionAddress;\n        address _digitalCollectionAddress;\n    }\n\n    Collection[] public collections;\n\n    ICollectorsDAO collectorsDAO;\n\n    address daoContractAddress;\n\n    /// @dev mapping collectionName => collectionAddress\n    mapping(string => address) public collectionsAddress;\n\n    constructor(address daoAddress_) {\n        daoContractAddress = daoAddress_;\n        collectorsDAO = ICollectorsDAO(daoAddress_);\n    }\n\n    function createCollection(\n        string memory _collectionName,\n        string memory _collectionURI,\n        string memory _collectionSymbol\n    )\n        external\n        onlyOwner\n        returns (address nftPropertyAddr, address nftDigitalAddr)\n    {\n        require(\n            bytes(_collectionName).length > 0,\n            \"collection name should not be null\"\n        );\n        require(\n            bytes(_collectionURI).length > 0,\n            \"collection URI should not be null\"\n        );\n\n        NftProperty nftProperty = new NftProperty(\n            _id.current(),\n            _collectionURI,\n            daoContractAddress\n        );\n        NftDigital nftDigital = new NftDigital(\n            _id.current(),\n            _collectionName,\n            _collectionSymbol,\n            daoContractAddress\n        );\n\n        Collection memory newCollection;\n        newCollection._collectionId = _id.current();\n        newCollection._name = _collectionName;\n        newCollection._propertyCollectionAddress = address(nftProperty);\n        newCollection._digitalCollectionAddress = address(nftDigital);\n        collections.push(newCollection);\n\n        collectorsDAO.createDAO(_collectionName);\n\n        emit collectionCreated(\n            _id.current(),\n            _collectionName,\n            address(nftProperty),\n            address(nftDigital)\n        );\n\n        _id.increment();\n\n        return (address(nftProperty), address(nftDigital));\n    }\n}\n",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.17;\n\nimport \"../node_modules/@openzeppelin/contracts/utils/Counters.sol\";\nimport \"../node_modules/@openzeppelin/contracts/access/Ownable.sol\";\nimport \"./NftProperty.sol\";\nimport \"./NftDigital.sol\";\n\ninterface ICollectorsDAO {\n    function createDAO(string memory _name) external;\n}\n\n/// @notice This contract manage the creation of new type of object collection on collectorChain\n/// @notice each collection creation will create : 1 sub dao, 1 ERC1155collection, 1 ERC721 collection\n/// @dev subDao, 1155 and 721 collection will be linked by a unique id for each colllction\ncontract Factory is Ownable {\n    using Counters for Counters.Counter;\n    Counters.Counter public _id;\n\n    event collectionCreated(\n        uint256 collectionId,\n        string collectionName,\n        address propertyCollectionAddress,\n        address digitalCollectionAddress\n    );\n\n    /// @dev main information stored for each collections\n    struct Collection {\n        uint256 _collectionId;\n        string _name;\n        address _propertyCollectionAddress;\n        address _digitalCollectionAddress;\n    }\n\n    Collection[] public collections;\n\n    /// @dev used to avoid twice collection in createCollection require\n    mapping(string => bool) collectionName;\n\n    ICollectorsDAO collectorsDAO;\n\n    address daoContractAddress;\n\n    /// @dev get the dao contract address to be able to create subDao\n    constructor(address daoAddress_) {\n        daoContractAddress = daoAddress_;\n        collectorsDAO = ICollectorsDAO(daoAddress_);\n    }\n\n    /// @notice function that create the subDao, 1155 and 721 collection\n    /// @notice only owner of the contract can do it\n    /// @param _collectionName Type of object\n    /// @param _collectionURI URI for 1155 collection\n    /// @param _collectionSymbol symbol of the token for the collection. Should be the same for all the collections\n    function createCollection(\n        string memory _collectionName,\n        string memory _collectionURI,\n        string memory _collectionSymbol\n    )\n        external\n        onlyOwner\n        returns (address nftPropertyAddr, address nftDigitalAddr)\n    {\n        require(\n            bytes(_collectionName).length > 0,\n            \"collection name should not be null\"\n        );\n        require(\n            bytes(_collectionURI).length > 0,\n            \"collection URI should not be null\"\n        );\n        require(\n            collectionName[_collectionName] == false,\n            \"collection already created\"\n        );\n\n        NftProperty nftProperty = new NftProperty(\n            _id.current(),\n            _collectionURI,\n            daoContractAddress\n        );\n        NftDigital nftDigital = new NftDigital(\n            _id.current(),\n            _collectionName,\n            _collectionSymbol,\n            daoContractAddress\n        );\n\n        Collection memory newCollection;\n        newCollection._collectionId = _id.current();\n        newCollection._name = _collectionName;\n        newCollection._propertyCollectionAddress = address(nftProperty);\n        newCollection._digitalCollectionAddress = address(nftDigital);\n        collections.push(newCollection);\n\n        collectorsDAO.createDAO(_collectionName);\n\n        collectionName[_collectionName] = true;\n\n        emit collectionCreated(\n            _id.current(),\n            _collectionName,\n            address(nftProperty),\n            address(nftDigital)\n        );\n\n        _id.increment();\n\n        return (address(nftProperty), address(nftDigital));\n    }\n}\n",
   "sourcePath": "/Users/jeromejulien/Documents/vscode/FormationAlyra/02_Projets/CollectorChain_TokenizedCollectibles/truffle/contracts/Factory.sol",
   "ast": {
     "absolutePath": "project:/contracts/Factory.sol",
     "exportedSymbols": {
       "Address": [
-        3669
+        4199
       ],
       "CollectorsDAO": [
-        371
+        901
       ],
       "Context": [
-        3691
+        4221
       ],
       "Counters": [
-        3765
+        4295
       ],
       "ERC1155": [
-        1842
+        2372
       ],
       "ERC1155URIStorage": [
-        2093
+        2623
       ],
       "ERC165": [
-        3964
+        4494
       ],
       "ERC721": [
-        3053
+        3583
       ],
       "ERC721URIStorage": [
-        3312
+        3842
       ],
       "Factory": [
-        213
+        743
       ],
       "ICollectorsDAO": [
-        11
+        523
       ],
       "IERC1155": [
-        1964
+        2494
       ],
       "IERC1155MetadataURI": [
-        2108
+        2638
       ],
       "IERC1155Receiver": [
-        2005
+        2535
       ],
       "IERC165": [
-        3976
+        4506
       ],
       "IERC721": [
-        3169
+        3699
       ],
       "IERC721Metadata": [
-        3339
+        3869
       ],
       "IERC721Receiver": [
-        3187
+        3717
       ],
       "IICollectorsDAO": [
-        231
+        761
       ],
       "Math": [
-        4841
+        5371
       ],
       "NftDigital": [
-        354
+        884
       ],
       "NftProperty": [
-        506
+        1036
       ],
       "Ownable": [
-        619
+        1149
       ],
       "Strings": [
-        3940
+        4470
       ]
     },
-    "id": 214,
+    "id": 744,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 513,
         "literals": [
           "solidity",
           "0.8",
           ".17"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:23:0"
+        "src": "36:23:1"
       },
       {
         "absolutePath": "project:/node_modules/@openzeppelin/contracts/utils/Counters.sol",
         "file": "../node_modules/@openzeppelin/contracts/utils/Counters.sol",
-        "id": 2,
+        "id": 514,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 214,
-        "sourceUnit": 3766,
-        "src": "61:68:0",
+        "scope": 744,
+        "sourceUnit": 4296,
+        "src": "61:68:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/node_modules/@openzeppelin/contracts/access/Ownable.sol",
         "file": "../node_modules/@openzeppelin/contracts/access/Ownable.sol",
-        "id": 3,
+        "id": 515,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 214,
-        "sourceUnit": 620,
-        "src": "130:68:0",
+        "scope": 744,
+        "sourceUnit": 1150,
+        "src": "130:68:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/contracts/NftProperty.sol",
         "file": "./NftProperty.sol",
-        "id": 4,
+        "id": 516,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 214,
-        "sourceUnit": 507,
-        "src": "199:27:0",
+        "scope": 744,
+        "sourceUnit": 1037,
+        "src": "199:27:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/contracts/NftDigital.sol",
         "file": "./NftDigital.sol",
-        "id": 5,
+        "id": 517,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 214,
-        "sourceUnit": 355,
-        "src": "227:26:0",
+        "scope": 744,
+        "sourceUnit": 885,
+        "src": "227:26:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -170,36 +170,36 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 11,
+        "id": 523,
         "linearizedBaseContracts": [
-          11
+          523
         ],
         "name": "ICollectorsDAO",
-        "nameLocation": "265:14:0",
+        "nameLocation": "265:14:1",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "4830ebcf",
-            "id": 10,
+            "id": 522,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "createDAO",
-            "nameLocation": "295:9:0",
+            "nameLocation": "295:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8,
+              "id": 520,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7,
+                  "id": 519,
                   "mutability": "mutable",
                   "name": "_name",
-                  "nameLocation": "319:5:0",
+                  "nameLocation": "319:5:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10,
-                  "src": "305:19:0",
+                  "scope": 522,
+                  "src": "305:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -207,10 +207,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6,
+                    "id": 518,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "305:6:0",
+                    "src": "305:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -219,23 +219,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "304:21:0"
+              "src": "304:21:1"
             },
             "returnParameters": {
-              "id": 9,
+              "id": 521,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "334:0:0"
+              "src": "334:0:1"
             },
-            "scope": 11,
-            "src": "286:49:0",
+            "scope": 523,
+            "src": "286:49:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 214,
-        "src": "255:82:0",
+        "scope": 744,
+        "src": "255:82:1",
         "usedErrors": []
       },
       {
@@ -243,70 +243,76 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 12,
+              "id": 525,
               "name": "Ownable",
               "nameLocations": [
-                "359:7:0"
+                "650:7:1"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 619,
-              "src": "359:7:0"
+              "referencedDeclaration": 1149,
+              "src": "650:7:1"
             },
-            "id": 13,
+            "id": 526,
             "nodeType": "InheritanceSpecifier",
-            "src": "359:7:0"
+            "src": "650:7:1"
           }
         ],
         "canonicalName": "Factory",
         "contractDependencies": [
-          354,
-          506
+          884,
+          1036
         ],
         "contractKind": "contract",
+        "documentation": {
+          "id": 524,
+          "nodeType": "StructuredDocumentation",
+          "src": "339:291:1",
+          "text": "@notice This contract manage the creation of new type of object collection on collectorChain\n @notice each collection creation will create : 1 sub dao, 1 ERC1155collection, 1 ERC721 collection\n @dev subDao, 1155 and 721 collection will be linked by a unique id for each colllction"
+        },
         "fullyImplemented": true,
-        "id": 213,
+        "id": 743,
         "linearizedBaseContracts": [
-          213,
-          619,
-          3691
+          743,
+          1149,
+          4221
         ],
         "name": "Factory",
-        "nameLocation": "348:7:0",
+        "nameLocation": "639:7:1",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "global": false,
-            "id": 17,
+            "id": 530,
             "libraryName": {
-              "id": 14,
+              "id": 527,
               "name": "Counters",
               "nameLocations": [
-                "379:8:0"
+                "670:8:1"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3765,
-              "src": "379:8:0"
+              "referencedDeclaration": 4295,
+              "src": "670:8:1"
             },
             "nodeType": "UsingForDirective",
-            "src": "373:36:0",
+            "src": "664:36:1",
             "typeName": {
-              "id": 16,
+              "id": 529,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 15,
+                "id": 528,
                 "name": "Counters.Counter",
                 "nameLocations": [
-                  "392:8:0",
-                  "401:7:0"
+                  "683:8:1",
+                  "692:7:1"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 3697,
-                "src": "392:16:0"
+                "referencedDeclaration": 4227,
+                "src": "683:16:1"
               },
-              "referencedDeclaration": 3697,
-              "src": "392:16:0",
+              "referencedDeclaration": 4227,
+              "src": "683:16:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Counter_$3697_storage_ptr",
+                "typeIdentifier": "t_struct$_Counter_$4227_storage_ptr",
                 "typeString": "struct Counters.Counter"
               }
             }
@@ -314,37 +320,37 @@
           {
             "constant": false,
             "functionSelector": "05180237",
-            "id": 20,
+            "id": 533,
             "mutability": "mutable",
             "name": "_id",
-            "nameLocation": "438:3:0",
+            "nameLocation": "729:3:1",
             "nodeType": "VariableDeclaration",
-            "scope": 213,
-            "src": "414:27:0",
+            "scope": 743,
+            "src": "705:27:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Counter_$3697_storage",
+              "typeIdentifier": "t_struct$_Counter_$4227_storage",
               "typeString": "struct Counters.Counter"
             },
             "typeName": {
-              "id": 19,
+              "id": 532,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 18,
+                "id": 531,
                 "name": "Counters.Counter",
                 "nameLocations": [
-                  "414:8:0",
-                  "423:7:0"
+                  "705:8:1",
+                  "714:7:1"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 3697,
-                "src": "414:16:0"
+                "referencedDeclaration": 4227,
+                "src": "705:16:1"
               },
-              "referencedDeclaration": 3697,
-              "src": "414:16:0",
+              "referencedDeclaration": 4227,
+              "src": "705:16:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Counter_$3697_storage_ptr",
+                "typeIdentifier": "t_struct$_Counter_$4227_storage_ptr",
                 "typeString": "struct Counters.Counter"
               }
             },
@@ -353,24 +359,24 @@
           {
             "anonymous": false,
             "eventSelector": "81032603cc83ea314c740484276d4b1d8e02c0e6c3a997883c4bc72bf8409353",
-            "id": 30,
+            "id": 543,
             "name": "collectionCreated",
-            "nameLocation": "454:17:0",
+            "nameLocation": "745:17:1",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 29,
+              "id": 542,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22,
+                  "id": 535,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "collectionId",
-                  "nameLocation": "489:12:0",
+                  "nameLocation": "780:12:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 30,
-                  "src": "481:20:0",
+                  "scope": 543,
+                  "src": "772:20:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -378,10 +384,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 21,
+                    "id": 534,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "481:7:0",
+                    "src": "772:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -391,14 +397,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 24,
+                  "id": 537,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "collectionName",
-                  "nameLocation": "518:14:0",
+                  "nameLocation": "809:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 30,
-                  "src": "511:21:0",
+                  "scope": 543,
+                  "src": "802:21:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -406,10 +412,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23,
+                    "id": 536,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "511:6:0",
+                    "src": "802:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -419,14 +425,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 26,
+                  "id": 539,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "propertyCollectionAddress",
-                  "nameLocation": "550:25:0",
+                  "nameLocation": "841:25:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 30,
-                  "src": "542:33:0",
+                  "scope": 543,
+                  "src": "833:33:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -434,10 +440,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25,
+                    "id": 538,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "542:7:0",
+                    "src": "833:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -448,14 +454,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28,
+                  "id": 541,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "digitalCollectionAddress",
-                  "nameLocation": "593:24:0",
+                  "nameLocation": "884:24:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 30,
-                  "src": "585:32:0",
+                  "scope": 543,
+                  "src": "876:32:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -463,10 +469,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 27,
+                    "id": 540,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "585:7:0",
+                    "src": "876:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -476,23 +482,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "471:152:0"
+              "src": "762:152:1"
             },
-            "src": "448:176:0"
+            "src": "739:176:1"
           },
           {
             "canonicalName": "Factory.Collection",
-            "id": 39,
+            "id": 552,
             "members": [
               {
                 "constant": false,
-                "id": 32,
+                "id": 545,
                 "mutability": "mutable",
                 "name": "_collectionId",
-                "nameLocation": "666:13:0",
+                "nameLocation": "1015:13:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 39,
-                "src": "658:21:0",
+                "scope": 552,
+                "src": "1007:21:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -500,10 +506,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 31,
+                  "id": 544,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "658:7:0",
+                  "src": "1007:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -513,13 +519,13 @@
               },
               {
                 "constant": false,
-                "id": 34,
+                "id": 547,
                 "mutability": "mutable",
                 "name": "_name",
-                "nameLocation": "696:5:0",
+                "nameLocation": "1045:5:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 39,
-                "src": "689:12:0",
+                "scope": 552,
+                "src": "1038:12:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -527,10 +533,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 33,
+                  "id": 546,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "689:6:0",
+                  "src": "1038:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -540,13 +546,13 @@
               },
               {
                 "constant": false,
-                "id": 36,
+                "id": 549,
                 "mutability": "mutable",
                 "name": "_propertyCollectionAddress",
-                "nameLocation": "719:26:0",
+                "nameLocation": "1068:26:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 39,
-                "src": "711:34:0",
+                "scope": 552,
+                "src": "1060:34:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -554,10 +560,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 35,
+                  "id": 548,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "711:7:0",
+                  "src": "1060:7:1",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -568,13 +574,13 @@
               },
               {
                 "constant": false,
-                "id": 38,
+                "id": 551,
                 "mutability": "mutable",
                 "name": "_digitalCollectionAddress",
-                "nameLocation": "763:25:0",
+                "nameLocation": "1112:25:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 39,
-                "src": "755:33:0",
+                "scope": 552,
+                "src": "1104:33:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -582,10 +588,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 37,
+                  "id": 550,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "755:7:0",
+                  "src": "1104:7:1",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -596,54 +602,54 @@
               }
             ],
             "name": "Collection",
-            "nameLocation": "637:10:0",
+            "nameLocation": "986:10:1",
             "nodeType": "StructDefinition",
-            "scope": 213,
-            "src": "630:165:0",
+            "scope": 743,
+            "src": "979:165:1",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "fdbda0ec",
-            "id": 43,
+            "id": 556,
             "mutability": "mutable",
             "name": "collections",
-            "nameLocation": "821:11:0",
+            "nameLocation": "1170:11:1",
             "nodeType": "VariableDeclaration",
-            "scope": 213,
-            "src": "801:31:0",
+            "scope": 743,
+            "src": "1150:31:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Collection_$39_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Collection_$552_storage_$dyn_storage",
               "typeString": "struct Factory.Collection[]"
             },
             "typeName": {
               "baseType": {
-                "id": 41,
+                "id": 554,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 40,
+                  "id": 553,
                   "name": "Collection",
                   "nameLocations": [
-                    "801:10:0"
+                    "1150:10:1"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 39,
-                  "src": "801:10:0"
+                  "referencedDeclaration": 552,
+                  "src": "1150:10:1"
                 },
-                "referencedDeclaration": 39,
-                "src": "801:10:0",
+                "referencedDeclaration": 552,
+                "src": "1150:10:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Collection_$39_storage_ptr",
+                  "typeIdentifier": "t_struct$_Collection_$552_storage_ptr",
                   "typeString": "struct Factory.Collection"
                 }
               },
-              "id": 42,
+              "id": 555,
               "nodeType": "ArrayTypeName",
-              "src": "801:12:0",
+              "src": "1150:12:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Collection_$39_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Collection_$552_storage_$dyn_storage_ptr",
                 "typeString": "struct Factory.Collection[]"
               }
             },
@@ -651,36 +657,88 @@
           },
           {
             "constant": false,
-            "id": 46,
+            "documentation": {
+              "id": 557,
+              "nodeType": "StructuredDocumentation",
+              "src": "1188:67:1",
+              "text": "@dev used to avoid twice collection in createCollection require"
+            },
+            "id": 561,
             "mutability": "mutable",
-            "name": "collectorsDAO",
-            "nameLocation": "854:13:0",
+            "name": "collectionName",
+            "nameLocation": "1284:14:1",
             "nodeType": "VariableDeclaration",
-            "scope": 213,
-            "src": "839:28:0",
+            "scope": 743,
+            "src": "1260:38:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ICollectorsDAO_$11",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+              "typeString": "mapping(string => bool)"
+            },
+            "typeName": {
+              "id": 560,
+              "keyType": {
+                "id": 558,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "1268:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1260:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                "typeString": "mapping(string => bool)"
+              },
+              "valueType": {
+                "id": 559,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "1278:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 564,
+            "mutability": "mutable",
+            "name": "collectorsDAO",
+            "nameLocation": "1320:13:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 743,
+            "src": "1305:28:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ICollectorsDAO_$523",
               "typeString": "contract ICollectorsDAO"
             },
             "typeName": {
-              "id": 45,
+              "id": 563,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 44,
+                "id": 562,
                 "name": "ICollectorsDAO",
                 "nameLocations": [
-                  "839:14:0"
+                  "1305:14:1"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 11,
-                "src": "839:14:0"
+                "referencedDeclaration": 523,
+                "src": "1305:14:1"
               },
-              "referencedDeclaration": 11,
-              "src": "839:14:0",
+              "referencedDeclaration": 523,
+              "src": "1305:14:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICollectorsDAO_$11",
+                "typeIdentifier": "t_contract$_ICollectorsDAO_$523",
                 "typeString": "contract ICollectorsDAO"
               }
             },
@@ -688,13 +746,13 @@
           },
           {
             "constant": false,
-            "id": 48,
+            "id": 566,
             "mutability": "mutable",
             "name": "daoContractAddress",
-            "nameLocation": "882:18:0",
+            "nameLocation": "1348:18:1",
             "nodeType": "VariableDeclaration",
-            "scope": 213,
-            "src": "874:26:0",
+            "scope": 743,
+            "src": "1340:26:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -702,10 +760,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 47,
+              "id": 565,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "874:7:0",
+              "src": "1340:7:1",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -715,79 +773,25 @@
             "visibility": "internal"
           },
           {
-            "constant": false,
-            "documentation": {
-              "id": 49,
-              "nodeType": "StructuredDocumentation",
-              "src": "907:52:0",
-              "text": "@dev mapping collectionName => collectionAddress"
-            },
-            "functionSelector": "5983da9a",
-            "id": 53,
-            "mutability": "mutable",
-            "name": "collectionsAddress",
-            "nameLocation": "998:18:0",
-            "nodeType": "VariableDeclaration",
-            "scope": 213,
-            "src": "964:52:0",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_address_$",
-              "typeString": "mapping(string => address)"
-            },
-            "typeName": {
-              "id": 52,
-              "keyType": {
-                "id": 50,
-                "name": "string",
-                "nodeType": "ElementaryTypeName",
-                "src": "972:6:0",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                }
-              },
-              "nodeType": "Mapping",
-              "src": "964:26:0",
-              "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_address_$",
-                "typeString": "mapping(string => address)"
-              },
-              "valueType": {
-                "id": 51,
-                "name": "address",
-                "nodeType": "ElementaryTypeName",
-                "src": "982:7:0",
-                "stateMutability": "nonpayable",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_address",
-                  "typeString": "address"
-                }
-              }
-            },
-            "visibility": "public"
-          },
-          {
             "body": {
-              "id": 68,
+              "id": 582,
               "nodeType": "Block",
-              "src": "1056:102:0",
+              "src": "1476:102:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 60,
+                    "id": 574,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 58,
+                      "id": 572,
                       "name": "daoContractAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 48,
-                      "src": "1066:18:0",
+                      "referencedDeclaration": 566,
+                      "src": "1486:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -796,43 +800,43 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 59,
+                      "id": 573,
                       "name": "daoAddress_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 55,
-                      "src": "1087:11:0",
+                      "referencedDeclaration": 569,
+                      "src": "1507:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "1066:32:0",
+                    "src": "1486:32:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 61,
+                  "id": 575,
                   "nodeType": "ExpressionStatement",
-                  "src": "1066:32:0"
+                  "src": "1486:32:1"
                 },
                 {
                   "expression": {
-                    "id": 66,
+                    "id": 580,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 62,
+                      "id": 576,
                       "name": "collectorsDAO",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 46,
-                      "src": "1108:13:0",
+                      "referencedDeclaration": 564,
+                      "src": "1528:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ICollectorsDAO_$11",
+                        "typeIdentifier": "t_contract$_ICollectorsDAO_$523",
                         "typeString": "contract ICollectorsDAO"
                       }
                     },
@@ -841,12 +845,12 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 64,
+                          "id": 578,
                           "name": "daoAddress_",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 55,
-                          "src": "1139:11:0",
+                          "referencedDeclaration": 569,
+                          "src": "1559:11:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -860,18 +864,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 63,
+                        "id": 577,
                         "name": "ICollectorsDAO",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11,
-                        "src": "1124:14:0",
+                        "referencedDeclaration": 523,
+                        "src": "1544:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ICollectorsDAO_$11_$",
+                          "typeIdentifier": "t_type$_t_contract$_ICollectorsDAO_$523_$",
                           "typeString": "type(contract ICollectorsDAO)"
                         }
                       },
-                      "id": 65,
+                      "id": 579,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -880,26 +884,32 @@
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1124:27:0",
+                      "src": "1544:27:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ICollectorsDAO_$11",
+                        "typeIdentifier": "t_contract$_ICollectorsDAO_$523",
                         "typeString": "contract ICollectorsDAO"
                       }
                     },
-                    "src": "1108:43:0",
+                    "src": "1528:43:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ICollectorsDAO_$11",
+                      "typeIdentifier": "t_contract$_ICollectorsDAO_$523",
                       "typeString": "contract ICollectorsDAO"
                     }
                   },
-                  "id": 67,
+                  "id": 581,
                   "nodeType": "ExpressionStatement",
-                  "src": "1108:43:0"
+                  "src": "1528:43:1"
                 }
               ]
             },
-            "id": 69,
+            "documentation": {
+              "id": 567,
+              "nodeType": "StructuredDocumentation",
+              "src": "1373:65:1",
+              "text": "@dev get the dao contract address to be able to create subDao"
+            },
+            "id": 583,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -907,18 +917,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 56,
+              "id": 570,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 55,
+                  "id": 569,
                   "mutability": "mutable",
                   "name": "daoAddress_",
-                  "nameLocation": "1043:11:0",
+                  "nameLocation": "1463:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 69,
-                  "src": "1035:19:0",
+                  "scope": 583,
+                  "src": "1455:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -926,10 +936,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 54,
+                    "id": 568,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1035:7:0",
+                    "src": "1455:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -939,25 +949,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1034:21:0"
+              "src": "1454:21:1"
             },
             "returnParameters": {
-              "id": 57,
+              "id": 571,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1056:0:0"
+              "src": "1476:0:1"
             },
-            "scope": 213,
-            "src": "1023:135:0",
+            "scope": 743,
+            "src": "1443:135:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 211,
+              "id": 741,
               "nodeType": "Block",
-              "src": "1419:1210:0",
+              "src": "2181:1382:1",
               "statements": [
                 {
                   "expression": {
@@ -967,7 +977,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 91,
+                        "id": 606,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -976,12 +986,12 @@
                           "expression": {
                             "arguments": [
                               {
-                                "id": 87,
+                                "id": 602,
                                 "name": "_collectionName",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 71,
-                                "src": "1456:15:0",
+                                "referencedDeclaration": 586,
+                                "src": "2218:15:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
                                   "typeString": "string memory"
@@ -995,26 +1005,26 @@
                                   "typeString": "string memory"
                                 }
                               ],
-                              "id": 86,
+                              "id": 601,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
-                              "src": "1450:5:0",
+                              "src": "2212:5:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                                 "typeString": "type(bytes storage pointer)"
                               },
                               "typeName": {
-                                "id": 85,
+                                "id": 600,
                                 "name": "bytes",
                                 "nodeType": "ElementaryTypeName",
-                                "src": "1450:5:0",
+                                "src": "2212:5:1",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 88,
+                            "id": 603,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1023,22 +1033,22 @@
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1450:22:0",
+                            "src": "2212:22:1",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
                             }
                           },
-                          "id": 89,
+                          "id": 604,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1473:6:0",
+                          "memberLocation": "2235:6:1",
                           "memberName": "length",
                           "nodeType": "MemberAccess",
-                          "src": "1450:29:0",
+                          "src": "2212:29:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1048,21 +1058,21 @@
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 90,
+                          "id": 605,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1482:1:0",
+                          "src": "2244:1:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1450:33:0",
+                        "src": "2212:33:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1070,14 +1080,14 @@
                       },
                       {
                         "hexValue": "636f6c6c656374696f6e206e616d652073686f756c64206e6f74206265206e756c6c",
-                        "id": 92,
+                        "id": 607,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1497:36:0",
+                        "src": "2259:36:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_ef681e6ba8045900f0e163bb9f4f8932bd2a5bb5a3c6e1ac8dfbebb4d325ebca",
                           "typeString": "literal_string \"collection name should not be null\""
@@ -1096,7 +1106,7 @@
                           "typeString": "literal_string \"collection name should not be null\""
                         }
                       ],
-                      "id": 84,
+                      "id": 599,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1104,13 +1114,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1429:7:0",
+                      "src": "2191:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 93,
+                    "id": 608,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1119,16 +1129,16 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1429:114:0",
+                    "src": "2191:114:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 94,
+                  "id": 609,
                   "nodeType": "ExpressionStatement",
-                  "src": "1429:114:0"
+                  "src": "2191:114:1"
                 },
                 {
                   "expression": {
@@ -1138,7 +1148,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 102,
+                        "id": 617,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1147,12 +1157,12 @@
                           "expression": {
                             "arguments": [
                               {
-                                "id": 98,
+                                "id": 613,
                                 "name": "_collectionURI",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 73,
-                                "src": "1580:14:0",
+                                "referencedDeclaration": 588,
+                                "src": "2342:14:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
                                   "typeString": "string memory"
@@ -1166,26 +1176,26 @@
                                   "typeString": "string memory"
                                 }
                               ],
-                              "id": 97,
+                              "id": 612,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
-                              "src": "1574:5:0",
+                              "src": "2336:5:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                                 "typeString": "type(bytes storage pointer)"
                               },
                               "typeName": {
-                                "id": 96,
+                                "id": 611,
                                 "name": "bytes",
                                 "nodeType": "ElementaryTypeName",
-                                "src": "1574:5:0",
+                                "src": "2336:5:1",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 99,
+                            "id": 614,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1194,22 +1204,22 @@
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1574:21:0",
+                            "src": "2336:21:1",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
                             }
                           },
-                          "id": 100,
+                          "id": 615,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1596:6:0",
+                          "memberLocation": "2358:6:1",
                           "memberName": "length",
                           "nodeType": "MemberAccess",
-                          "src": "1574:28:0",
+                          "src": "2336:28:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1219,21 +1229,21 @@
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 101,
+                          "id": 616,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1605:1:0",
+                          "src": "2367:1:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1574:32:0",
+                        "src": "2336:32:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1241,14 +1251,14 @@
                       },
                       {
                         "hexValue": "636f6c6c656374696f6e205552492073686f756c64206e6f74206265206e756c6c",
-                        "id": 103,
+                        "id": 618,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1620:35:0",
+                        "src": "2382:35:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_592a8dc0d9cbf7769378a3c2e6cd0a001b76323093a3db9763b3ed3a71519bde",
                           "typeString": "literal_string \"collection URI should not be null\""
@@ -1267,7 +1277,7 @@
                           "typeString": "literal_string \"collection URI should not be null\""
                         }
                       ],
-                      "id": 95,
+                      "id": 610,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1275,13 +1285,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1553:7:0",
+                      "src": "2315:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 104,
+                    "id": 619,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1290,61 +1300,197 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1553:112:0",
+                    "src": "2315:112:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 105,
+                  "id": 620,
                   "nodeType": "ExpressionStatement",
-                  "src": "1553:112:0"
+                  "src": "2315:112:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 626,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "baseExpression": {
+                            "id": 622,
+                            "name": "collectionName",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 561,
+                            "src": "2458:14:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                              "typeString": "mapping(string memory => bool)"
+                            }
+                          },
+                          "id": 624,
+                          "indexExpression": {
+                            "id": 623,
+                            "name": "_collectionName",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 586,
+                            "src": "2473:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "2458:31:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "hexValue": "66616c7365",
+                          "id": 625,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2493:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "2458:40:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "636f6c6c656374696f6e20616c72656164792063726561746564",
+                        "id": 627,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2512:28:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e6a7938f695a31d86d67f1b5df8e97c4841ff39f7ab180b6f1fa881ba47f7334",
+                          "typeString": "literal_string \"collection already created\""
+                        },
+                        "value": "collection already created"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e6a7938f695a31d86d67f1b5df8e97c4841ff39f7ab180b6f1fa881ba47f7334",
+                          "typeString": "literal_string \"collection already created\""
+                        }
+                      ],
+                      "id": 621,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "2437:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 628,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2437:113:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 629,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2437:113:1"
                 },
                 {
                   "assignments": [
-                    108
+                    632
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 108,
+                      "id": 632,
                       "mutability": "mutable",
                       "name": "nftProperty",
-                      "nameLocation": "1688:11:0",
+                      "nameLocation": "2573:11:1",
                       "nodeType": "VariableDeclaration",
-                      "scope": 211,
-                      "src": "1676:23:0",
+                      "scope": 741,
+                      "src": "2561:23:1",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_NftProperty_$506",
+                        "typeIdentifier": "t_contract$_NftProperty_$1036",
                         "typeString": "contract NftProperty"
                       },
                       "typeName": {
-                        "id": 107,
+                        "id": 631,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 106,
+                          "id": 630,
                           "name": "NftProperty",
                           "nameLocations": [
-                            "1676:11:0"
+                            "2561:11:1"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 506,
-                          "src": "1676:11:0"
+                          "referencedDeclaration": 1036,
+                          "src": "2561:11:1"
                         },
-                        "referencedDeclaration": 506,
-                        "src": "1676:11:0",
+                        "referencedDeclaration": 1036,
+                        "src": "2561:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_NftProperty_$506",
+                          "typeIdentifier": "t_contract$_NftProperty_$1036",
                           "typeString": "contract NftProperty"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 118,
+                  "id": 642,
                   "initialValue": {
                     "arguments": [
                       {
@@ -1352,33 +1498,33 @@
                         "expression": {
                           "argumentTypes": [],
                           "expression": {
-                            "id": 112,
+                            "id": 636,
                             "name": "_id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 20,
-                            "src": "1731:3:0",
+                            "referencedDeclaration": 533,
+                            "src": "2616:3:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Counter_$3697_storage",
+                              "typeIdentifier": "t_struct$_Counter_$4227_storage",
                               "typeString": "struct Counters.Counter storage ref"
                             }
                           },
-                          "id": 113,
+                          "id": 637,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1735:7:0",
+                          "memberLocation": "2620:7:1",
                           "memberName": "current",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3709,
-                          "src": "1731:11:0",
+                          "referencedDeclaration": 4239,
+                          "src": "2616:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3697_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3697_storage_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$4227_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$4227_storage_ptr_$",
                             "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                           }
                         },
-                        "id": 114,
+                        "id": 638,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1387,7 +1533,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1731:13:0",
+                        "src": "2616:13:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1395,24 +1541,24 @@
                         }
                       },
                       {
-                        "id": 115,
+                        "id": 639,
                         "name": "_collectionURI",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 73,
-                        "src": "1758:14:0",
+                        "referencedDeclaration": 588,
+                        "src": "2643:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 116,
+                        "id": 640,
                         "name": "daoContractAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 48,
-                        "src": "1786:18:0",
+                        "referencedDeclaration": 566,
+                        "src": "2671:18:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1434,39 +1580,39 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 111,
+                      "id": 635,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
-                      "src": "1702:15:0",
+                      "src": "2587:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_NftProperty_$506_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_NftProperty_$1036_$",
                         "typeString": "function (uint256,string memory,address) returns (contract NftProperty)"
                       },
                       "typeName": {
-                        "id": 110,
+                        "id": 634,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 109,
+                          "id": 633,
                           "name": "NftProperty",
                           "nameLocations": [
-                            "1706:11:0"
+                            "2591:11:1"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 506,
-                          "src": "1706:11:0"
+                          "referencedDeclaration": 1036,
+                          "src": "2591:11:1"
                         },
-                        "referencedDeclaration": 506,
-                        "src": "1706:11:0",
+                        "referencedDeclaration": 1036,
+                        "src": "2591:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_NftProperty_$506",
+                          "typeIdentifier": "t_contract$_NftProperty_$1036",
                           "typeString": "contract NftProperty"
                         }
                       }
                     },
-                    "id": 117,
+                    "id": 641,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1475,60 +1621,60 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1702:112:0",
+                    "src": "2587:112:1",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_NftProperty_$506",
+                      "typeIdentifier": "t_contract$_NftProperty_$1036",
                       "typeString": "contract NftProperty"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1676:138:0"
+                  "src": "2561:138:1"
                 },
                 {
                   "assignments": [
-                    121
+                    645
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 121,
+                      "id": 645,
                       "mutability": "mutable",
                       "name": "nftDigital",
-                      "nameLocation": "1835:10:0",
+                      "nameLocation": "2720:10:1",
                       "nodeType": "VariableDeclaration",
-                      "scope": 211,
-                      "src": "1824:21:0",
+                      "scope": 741,
+                      "src": "2709:21:1",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_NftDigital_$354",
+                        "typeIdentifier": "t_contract$_NftDigital_$884",
                         "typeString": "contract NftDigital"
                       },
                       "typeName": {
-                        "id": 120,
+                        "id": 644,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 119,
+                          "id": 643,
                           "name": "NftDigital",
                           "nameLocations": [
-                            "1824:10:0"
+                            "2709:10:1"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 354,
-                          "src": "1824:10:0"
+                          "referencedDeclaration": 884,
+                          "src": "2709:10:1"
                         },
-                        "referencedDeclaration": 354,
-                        "src": "1824:10:0",
+                        "referencedDeclaration": 884,
+                        "src": "2709:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_NftDigital_$354",
+                          "typeIdentifier": "t_contract$_NftDigital_$884",
                           "typeString": "contract NftDigital"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 132,
+                  "id": 656,
                   "initialValue": {
                     "arguments": [
                       {
@@ -1536,33 +1682,33 @@
                         "expression": {
                           "argumentTypes": [],
                           "expression": {
-                            "id": 125,
+                            "id": 649,
                             "name": "_id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 20,
-                            "src": "1876:3:0",
+                            "referencedDeclaration": 533,
+                            "src": "2761:3:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Counter_$3697_storage",
+                              "typeIdentifier": "t_struct$_Counter_$4227_storage",
                               "typeString": "struct Counters.Counter storage ref"
                             }
                           },
-                          "id": 126,
+                          "id": 650,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1880:7:0",
+                          "memberLocation": "2765:7:1",
                           "memberName": "current",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3709,
-                          "src": "1876:11:0",
+                          "referencedDeclaration": 4239,
+                          "src": "2761:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3697_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3697_storage_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$4227_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$4227_storage_ptr_$",
                             "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                           }
                         },
-                        "id": 127,
+                        "id": 651,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1571,7 +1717,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1876:13:0",
+                        "src": "2761:13:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1579,36 +1725,36 @@
                         }
                       },
                       {
-                        "id": 128,
+                        "id": 652,
                         "name": "_collectionName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "1903:15:0",
+                        "referencedDeclaration": 586,
+                        "src": "2788:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 129,
+                        "id": 653,
                         "name": "_collectionSymbol",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 75,
-                        "src": "1932:17:0",
+                        "referencedDeclaration": 590,
+                        "src": "2817:17:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 130,
+                        "id": 654,
                         "name": "daoContractAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 48,
-                        "src": "1963:18:0",
+                        "referencedDeclaration": 566,
+                        "src": "2848:18:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1634,39 +1780,39 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 124,
+                      "id": 648,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
-                      "src": "1848:14:0",
+                      "src": "2733:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_NftDigital_$354_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_NftDigital_$884_$",
                         "typeString": "function (uint256,string memory,string memory,address) returns (contract NftDigital)"
                       },
                       "typeName": {
-                        "id": 123,
+                        "id": 647,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 122,
+                          "id": 646,
                           "name": "NftDigital",
                           "nameLocations": [
-                            "1852:10:0"
+                            "2737:10:1"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 354,
-                          "src": "1852:10:0"
+                          "referencedDeclaration": 884,
+                          "src": "2737:10:1"
                         },
-                        "referencedDeclaration": 354,
-                        "src": "1852:10:0",
+                        "referencedDeclaration": 884,
+                        "src": "2737:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_NftDigital_$354",
+                          "typeIdentifier": "t_contract$_NftDigital_$884",
                           "typeString": "contract NftDigital"
                         }
                       }
                     },
-                    "id": 131,
+                    "id": 655,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1675,93 +1821,93 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1848:143:0",
+                    "src": "2733:143:1",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_NftDigital_$354",
+                      "typeIdentifier": "t_contract$_NftDigital_$884",
                       "typeString": "contract NftDigital"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1824:167:0"
+                  "src": "2709:167:1"
                 },
                 {
                   "assignments": [
-                    135
+                    659
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 135,
+                      "id": 659,
                       "mutability": "mutable",
                       "name": "newCollection",
-                      "nameLocation": "2020:13:0",
+                      "nameLocation": "2905:13:1",
                       "nodeType": "VariableDeclaration",
-                      "scope": 211,
-                      "src": "2002:31:0",
+                      "scope": 741,
+                      "src": "2887:31:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                        "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                         "typeString": "struct Factory.Collection"
                       },
                       "typeName": {
-                        "id": 134,
+                        "id": 658,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 133,
+                          "id": 657,
                           "name": "Collection",
                           "nameLocations": [
-                            "2002:10:0"
+                            "2887:10:1"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 39,
-                          "src": "2002:10:0"
+                          "referencedDeclaration": 552,
+                          "src": "2887:10:1"
                         },
-                        "referencedDeclaration": 39,
-                        "src": "2002:10:0",
+                        "referencedDeclaration": 552,
+                        "src": "2887:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Collection_$39_storage_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_storage_ptr",
                           "typeString": "struct Factory.Collection"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 136,
+                  "id": 660,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "2002:31:0"
+                  "src": "2887:31:1"
                 },
                 {
                   "expression": {
-                    "id": 143,
+                    "id": 667,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 137,
+                        "id": 661,
                         "name": "newCollection",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "2043:13:0",
+                        "referencedDeclaration": 659,
+                        "src": "2928:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                           "typeString": "struct Factory.Collection memory"
                         }
                       },
-                      "id": 139,
+                      "id": 663,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "2057:13:0",
+                      "memberLocation": "2942:13:1",
                       "memberName": "_collectionId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 32,
-                      "src": "2043:27:0",
+                      "referencedDeclaration": 545,
+                      "src": "2928:27:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1774,33 +1920,33 @@
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 140,
+                          "id": 664,
                           "name": "_id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 20,
-                          "src": "2073:3:0",
+                          "referencedDeclaration": 533,
+                          "src": "2958:3:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Counter_$3697_storage",
+                            "typeIdentifier": "t_struct$_Counter_$4227_storage",
                             "typeString": "struct Counters.Counter storage ref"
                           }
                         },
-                        "id": 141,
+                        "id": 665,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "2077:7:0",
+                        "memberLocation": "2962:7:1",
                         "memberName": "current",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 3709,
-                        "src": "2073:11:0",
+                        "referencedDeclaration": 4239,
+                        "src": "2958:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3697_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3697_storage_ptr_$",
+                          "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$4227_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$4227_storage_ptr_$",
                           "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                         }
                       },
-                      "id": 142,
+                      "id": 666,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1809,53 +1955,53 @@
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2073:13:0",
+                      "src": "2958:13:1",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2043:43:0",
+                    "src": "2928:43:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 144,
+                  "id": 668,
                   "nodeType": "ExpressionStatement",
-                  "src": "2043:43:0"
+                  "src": "2928:43:1"
                 },
                 {
                   "expression": {
-                    "id": 149,
+                    "id": 673,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 145,
+                        "id": 669,
                         "name": "newCollection",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "2096:13:0",
+                        "referencedDeclaration": 659,
+                        "src": "2981:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                           "typeString": "struct Factory.Collection memory"
                         }
                       },
-                      "id": 147,
+                      "id": 671,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "2110:5:0",
+                      "memberLocation": "2995:5:1",
                       "memberName": "_name",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 34,
-                      "src": "2096:19:0",
+                      "referencedDeclaration": 547,
+                      "src": "2981:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
@@ -1864,57 +2010,57 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 148,
+                      "id": 672,
                       "name": "_collectionName",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 71,
-                      "src": "2118:15:0",
+                      "referencedDeclaration": 586,
+                      "src": "3003:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "2096:37:0",
+                    "src": "2981:37:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "id": 150,
+                  "id": 674,
                   "nodeType": "ExpressionStatement",
-                  "src": "2096:37:0"
+                  "src": "2981:37:1"
                 },
                 {
                   "expression": {
-                    "id": 158,
+                    "id": 682,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 151,
+                        "id": 675,
                         "name": "newCollection",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "2143:13:0",
+                        "referencedDeclaration": 659,
+                        "src": "3028:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                           "typeString": "struct Factory.Collection memory"
                         }
                       },
-                      "id": 153,
+                      "id": 677,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "2157:26:0",
+                      "memberLocation": "3042:26:1",
                       "memberName": "_propertyCollectionAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 36,
-                      "src": "2143:40:0",
+                      "referencedDeclaration": 549,
+                      "src": "3028:40:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1925,14 +2071,14 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 156,
+                          "id": 680,
                           "name": "nftProperty",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 108,
-                          "src": "2194:11:0",
+                          "referencedDeclaration": 632,
+                          "src": "3079:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_NftProperty_$506",
+                            "typeIdentifier": "t_contract$_NftProperty_$1036",
                             "typeString": "contract NftProperty"
                           }
                         }
@@ -1940,30 +2086,30 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_contract$_NftProperty_$506",
+                            "typeIdentifier": "t_contract$_NftProperty_$1036",
                             "typeString": "contract NftProperty"
                           }
                         ],
-                        "id": 155,
+                        "id": 679,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "2186:7:0",
+                        "src": "3071:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_address_$",
                           "typeString": "type(address)"
                         },
                         "typeName": {
-                          "id": 154,
+                          "id": 678,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
-                          "src": "2186:7:0",
+                          "src": "3071:7:1",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 157,
+                      "id": 681,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1972,53 +2118,53 @@
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2186:20:0",
+                      "src": "3071:20:1",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "2143:63:0",
+                    "src": "3028:63:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 159,
+                  "id": 683,
                   "nodeType": "ExpressionStatement",
-                  "src": "2143:63:0"
+                  "src": "3028:63:1"
                 },
                 {
                   "expression": {
-                    "id": 167,
+                    "id": 691,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 160,
+                        "id": 684,
                         "name": "newCollection",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "2216:13:0",
+                        "referencedDeclaration": 659,
+                        "src": "3101:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                           "typeString": "struct Factory.Collection memory"
                         }
                       },
-                      "id": 162,
+                      "id": 686,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "2230:25:0",
+                      "memberLocation": "3115:25:1",
                       "memberName": "_digitalCollectionAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 38,
-                      "src": "2216:39:0",
+                      "referencedDeclaration": 551,
+                      "src": "3101:39:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2029,14 +2175,14 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 165,
+                          "id": 689,
                           "name": "nftDigital",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 121,
-                          "src": "2266:10:0",
+                          "referencedDeclaration": 645,
+                          "src": "3151:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_NftDigital_$354",
+                            "typeIdentifier": "t_contract$_NftDigital_$884",
                             "typeString": "contract NftDigital"
                           }
                         }
@@ -2044,30 +2190,30 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_contract$_NftDigital_$354",
+                            "typeIdentifier": "t_contract$_NftDigital_$884",
                             "typeString": "contract NftDigital"
                           }
                         ],
-                        "id": 164,
+                        "id": 688,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "2258:7:0",
+                        "src": "3143:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_address_$",
                           "typeString": "type(address)"
                         },
                         "typeName": {
-                          "id": 163,
+                          "id": 687,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
-                          "src": "2258:7:0",
+                          "src": "3143:7:1",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 166,
+                      "id": 690,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2076,35 +2222,35 @@
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2258:19:0",
+                      "src": "3143:19:1",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "2216:61:0",
+                    "src": "3101:61:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 168,
+                  "id": 692,
                   "nodeType": "ExpressionStatement",
-                  "src": "2216:61:0"
+                  "src": "3101:61:1"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 172,
+                        "id": 696,
                         "name": "newCollection",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "2304:13:0",
+                        "referencedDeclaration": 659,
+                        "src": "3189:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                           "typeString": "struct Factory.Collection memory"
                         }
                       }
@@ -2112,37 +2258,37 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Collection_$39_memory_ptr",
+                          "typeIdentifier": "t_struct$_Collection_$552_memory_ptr",
                           "typeString": "struct Factory.Collection memory"
                         }
                       ],
                       "expression": {
-                        "id": 169,
+                        "id": 693,
                         "name": "collections",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 43,
-                        "src": "2287:11:0",
+                        "referencedDeclaration": 556,
+                        "src": "3172:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Collection_$39_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_Collection_$552_storage_$dyn_storage",
                           "typeString": "struct Factory.Collection storage ref[] storage ref"
                         }
                       },
-                      "id": 171,
+                      "id": 695,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2299:4:0",
+                      "memberLocation": "3184:4:1",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "2287:16:0",
+                      "src": "3172:16:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Collection_$39_storage_$dyn_storage_ptr_$_t_struct$_Collection_$39_storage_$returns$__$bound_to$_t_array$_t_struct$_Collection_$39_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Collection_$552_storage_$dyn_storage_ptr_$_t_struct$_Collection_$552_storage_$returns$__$bound_to$_t_array$_t_struct$_Collection_$552_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct Factory.Collection storage ref[] storage pointer,struct Factory.Collection storage ref)"
                       }
                     },
-                    "id": 173,
+                    "id": 697,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2151,27 +2297,27 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2287:31:0",
+                    "src": "3172:31:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 174,
+                  "id": 698,
                   "nodeType": "ExpressionStatement",
-                  "src": "2287:31:0"
+                  "src": "3172:31:1"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 178,
+                        "id": 702,
                         "name": "_collectionName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "2353:15:0",
+                        "referencedDeclaration": 586,
+                        "src": "3238:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2186,33 +2332,33 @@
                         }
                       ],
                       "expression": {
-                        "id": 175,
+                        "id": 699,
                         "name": "collectorsDAO",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 46,
-                        "src": "2329:13:0",
+                        "referencedDeclaration": 564,
+                        "src": "3214:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ICollectorsDAO_$11",
+                          "typeIdentifier": "t_contract$_ICollectorsDAO_$523",
                           "typeString": "contract ICollectorsDAO"
                         }
                       },
-                      "id": 177,
+                      "id": 701,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2343:9:0",
+                      "memberLocation": "3228:9:1",
                       "memberName": "createDAO",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 10,
-                      "src": "2329:23:0",
+                      "referencedDeclaration": 522,
+                      "src": "3214:23:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory) external"
                       }
                     },
-                    "id": 179,
+                    "id": 703,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2221,16 +2367,88 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2329:40:0",
+                    "src": "3214:40:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 180,
+                  "id": 704,
                   "nodeType": "ExpressionStatement",
-                  "src": "2329:40:0"
+                  "src": "3214:40:1"
+                },
+                {
+                  "expression": {
+                    "id": 709,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 705,
+                        "name": "collectionName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 561,
+                        "src": "3265:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                          "typeString": "mapping(string memory => bool)"
+                        }
+                      },
+                      "id": 707,
+                      "indexExpression": {
+                        "id": 706,
+                        "name": "_collectionName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 586,
+                        "src": "3280:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "3265:31:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 708,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "3299:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "3265:38:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 710,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3265:38:1"
                 },
                 {
                   "eventCall": {
@@ -2240,33 +2458,33 @@
                         "expression": {
                           "argumentTypes": [],
                           "expression": {
-                            "id": 182,
+                            "id": 712,
                             "name": "_id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 20,
-                            "src": "2416:3:0",
+                            "referencedDeclaration": 533,
+                            "src": "3350:3:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Counter_$3697_storage",
+                              "typeIdentifier": "t_struct$_Counter_$4227_storage",
                               "typeString": "struct Counters.Counter storage ref"
                             }
                           },
-                          "id": 183,
+                          "id": 713,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2420:7:0",
+                          "memberLocation": "3354:7:1",
                           "memberName": "current",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3709,
-                          "src": "2416:11:0",
+                          "referencedDeclaration": 4239,
+                          "src": "3350:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3697_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3697_storage_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$4227_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$4227_storage_ptr_$",
                             "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                           }
                         },
-                        "id": 184,
+                        "id": 714,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2275,7 +2493,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2416:13:0",
+                        "src": "3350:13:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2283,12 +2501,12 @@
                         }
                       },
                       {
-                        "id": 185,
+                        "id": 715,
                         "name": "_collectionName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "2443:15:0",
+                        "referencedDeclaration": 586,
+                        "src": "3377:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2297,14 +2515,14 @@
                       {
                         "arguments": [
                           {
-                            "id": 188,
+                            "id": 718,
                             "name": "nftProperty",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 108,
-                            "src": "2480:11:0",
+                            "referencedDeclaration": 632,
+                            "src": "3414:11:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_NftProperty_$506",
+                              "typeIdentifier": "t_contract$_NftProperty_$1036",
                               "typeString": "contract NftProperty"
                             }
                           }
@@ -2312,30 +2530,30 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_NftProperty_$506",
+                              "typeIdentifier": "t_contract$_NftProperty_$1036",
                               "typeString": "contract NftProperty"
                             }
                           ],
-                          "id": 187,
+                          "id": 717,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2472:7:0",
+                          "src": "3406:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 186,
+                            "id": 716,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2472:7:0",
+                            "src": "3406:7:1",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 189,
+                        "id": 719,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2344,7 +2562,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2472:20:0",
+                        "src": "3406:20:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2354,14 +2572,14 @@
                       {
                         "arguments": [
                           {
-                            "id": 192,
+                            "id": 722,
                             "name": "nftDigital",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 121,
-                            "src": "2514:10:0",
+                            "referencedDeclaration": 645,
+                            "src": "3448:10:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_NftDigital_$354",
+                              "typeIdentifier": "t_contract$_NftDigital_$884",
                               "typeString": "contract NftDigital"
                             }
                           }
@@ -2369,30 +2587,30 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_NftDigital_$354",
+                              "typeIdentifier": "t_contract$_NftDigital_$884",
                               "typeString": "contract NftDigital"
                             }
                           ],
-                          "id": 191,
+                          "id": 721,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2506:7:0",
+                          "src": "3440:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 190,
+                            "id": 720,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2506:7:0",
+                            "src": "3440:7:1",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 193,
+                        "id": 723,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2401,7 +2619,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2506:19:0",
+                        "src": "3440:19:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2428,18 +2646,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 181,
+                      "id": 711,
                       "name": "collectionCreated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 30,
-                      "src": "2385:17:0",
+                      "referencedDeclaration": 543,
+                      "src": "3319:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (uint256,string memory,address,address)"
                       }
                     },
-                    "id": 194,
+                    "id": 724,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2448,16 +2666,16 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2385:150:0",
+                    "src": "3319:150:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 195,
+                  "id": 725,
                   "nodeType": "EmitStatement",
-                  "src": "2380:155:0"
+                  "src": "3314:155:1"
                 },
                 {
                   "expression": {
@@ -2465,33 +2683,33 @@
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 196,
+                        "id": 726,
                         "name": "_id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 20,
-                        "src": "2546:3:0",
+                        "referencedDeclaration": 533,
+                        "src": "3480:3:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Counter_$3697_storage",
+                          "typeIdentifier": "t_struct$_Counter_$4227_storage",
                           "typeString": "struct Counters.Counter storage ref"
                         }
                       },
-                      "id": 198,
+                      "id": 728,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2550:9:0",
+                      "memberLocation": "3484:9:1",
                       "memberName": "increment",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3723,
-                      "src": "2546:13:0",
+                      "referencedDeclaration": 4253,
+                      "src": "3480:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Counter_$3697_storage_ptr_$returns$__$bound_to$_t_struct$_Counter_$3697_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Counter_$4227_storage_ptr_$returns$__$bound_to$_t_struct$_Counter_$4227_storage_ptr_$",
                         "typeString": "function (struct Counters.Counter storage pointer)"
                       }
                     },
-                    "id": 199,
+                    "id": 729,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2500,16 +2718,16 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2546:15:0",
+                    "src": "3480:15:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 200,
+                  "id": 730,
                   "nodeType": "ExpressionStatement",
-                  "src": "2546:15:0"
+                  "src": "3480:15:1"
                 },
                 {
                   "expression": {
@@ -2517,14 +2735,14 @@
                       {
                         "arguments": [
                           {
-                            "id": 203,
+                            "id": 733,
                             "name": "nftProperty",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 108,
-                            "src": "2588:11:0",
+                            "referencedDeclaration": 632,
+                            "src": "3522:11:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_NftProperty_$506",
+                              "typeIdentifier": "t_contract$_NftProperty_$1036",
                               "typeString": "contract NftProperty"
                             }
                           }
@@ -2532,30 +2750,30 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_NftProperty_$506",
+                              "typeIdentifier": "t_contract$_NftProperty_$1036",
                               "typeString": "contract NftProperty"
                             }
                           ],
-                          "id": 202,
+                          "id": 732,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2580:7:0",
+                          "src": "3514:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 201,
+                            "id": 731,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2580:7:0",
+                            "src": "3514:7:1",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 204,
+                        "id": 734,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2564,7 +2782,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2580:20:0",
+                        "src": "3514:20:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2574,14 +2792,14 @@
                       {
                         "arguments": [
                           {
-                            "id": 207,
+                            "id": 737,
                             "name": "nftDigital",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 121,
-                            "src": "2610:10:0",
+                            "referencedDeclaration": 645,
+                            "src": "3544:10:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_NftDigital_$354",
+                              "typeIdentifier": "t_contract$_NftDigital_$884",
                               "typeString": "contract NftDigital"
                             }
                           }
@@ -2589,30 +2807,30 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_NftDigital_$354",
+                              "typeIdentifier": "t_contract$_NftDigital_$884",
                               "typeString": "contract NftDigital"
                             }
                           ],
-                          "id": 206,
+                          "id": 736,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2602:7:0",
+                          "src": "3536:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 205,
+                            "id": 735,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2602:7:0",
+                            "src": "3536:7:1",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 208,
+                        "id": 738,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2621,7 +2839,7 @@
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2602:19:0",
+                        "src": "3536:19:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2629,64 +2847,70 @@
                         }
                       }
                     ],
-                    "id": 209,
+                    "id": 739,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "2579:43:0",
+                    "src": "3513:43:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_address_$_t_address_$",
                       "typeString": "tuple(address,address)"
                     }
                   },
-                  "functionReturnParameters": 83,
-                  "id": 210,
+                  "functionReturnParameters": 598,
+                  "id": 740,
                   "nodeType": "Return",
-                  "src": "2572:50:0"
+                  "src": "3506:50:1"
                 }
               ]
             },
+            "documentation": {
+              "id": 584,
+              "nodeType": "StructuredDocumentation",
+              "src": "1584:337:1",
+              "text": "@notice function that create the subDao, 1155 and 721 collection\n @notice only owner of the contract can do it\n @param _collectionName Type of object\n @param _collectionURI URI for 1155 collection\n @param _collectionSymbol symbol of the token for the collection. Should be the same for all the collections"
+            },
             "functionSelector": "ece86c21",
-            "id": 212,
+            "id": 742,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 78,
+                "id": 593,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 77,
+                  "id": 592,
                   "name": "onlyOwner",
                   "nameLocations": [
-                    "1339:9:0"
+                    "2101:9:1"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 538,
-                  "src": "1339:9:0"
+                  "referencedDeclaration": 1068,
+                  "src": "2101:9:1"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1339:9:0"
+                "src": "2101:9:1"
               }
             ],
             "name": "createCollection",
-            "nameLocation": "1173:16:0",
+            "nameLocation": "1935:16:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 76,
+              "id": 591,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 71,
+                  "id": 586,
                   "mutability": "mutable",
                   "name": "_collectionName",
-                  "nameLocation": "1213:15:0",
+                  "nameLocation": "1975:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 212,
-                  "src": "1199:29:0",
+                  "scope": 742,
+                  "src": "1961:29:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2694,10 +2918,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 70,
+                    "id": 585,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1199:6:0",
+                    "src": "1961:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2707,13 +2931,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 73,
+                  "id": 588,
                   "mutability": "mutable",
                   "name": "_collectionURI",
-                  "nameLocation": "1252:14:0",
+                  "nameLocation": "2014:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 212,
-                  "src": "1238:28:0",
+                  "scope": 742,
+                  "src": "2000:28:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2721,10 +2945,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 72,
+                    "id": 587,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1238:6:0",
+                    "src": "2000:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2734,13 +2958,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 75,
+                  "id": 590,
                   "mutability": "mutable",
                   "name": "_collectionSymbol",
-                  "nameLocation": "1290:17:0",
+                  "nameLocation": "2052:17:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 212,
-                  "src": "1276:31:0",
+                  "scope": 742,
+                  "src": "2038:31:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2748,10 +2972,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 74,
+                    "id": 589,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1276:6:0",
+                    "src": "2038:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2760,21 +2984,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1189:124:0"
+              "src": "1951:124:1"
             },
             "returnParameters": {
-              "id": 83,
+              "id": 598,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 80,
+                  "id": 595,
                   "mutability": "mutable",
                   "name": "nftPropertyAddr",
-                  "nameLocation": "1374:15:0",
+                  "nameLocation": "2136:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 212,
-                  "src": "1366:23:0",
+                  "scope": 742,
+                  "src": "2128:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2782,10 +3006,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 79,
+                    "id": 594,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1366:7:0",
+                    "src": "2128:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2796,13 +3020,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 82,
+                  "id": 597,
                   "mutability": "mutable",
                   "name": "nftDigitalAddr",
-                  "nameLocation": "1399:14:0",
+                  "nameLocation": "2161:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 212,
-                  "src": "1391:22:0",
+                  "scope": 742,
+                  "src": "2153:22:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2810,10 +3034,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 81,
+                    "id": 596,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1391:7:0",
+                    "src": "2153:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2823,21 +3047,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1365:49:0"
+              "src": "2127:49:1"
             },
-            "scope": 213,
-            "src": "1164:1465:0",
+            "scope": 743,
+            "src": "1926:1637:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 214,
-        "src": "339:2292:0",
+        "scope": 744,
+        "src": "630:2935:1",
         "usedErrors": []
       }
     ],
-    "src": "36:2596:0"
+    "src": "36:3530:1"
   },
   "compiler": {
     "name": "solc",
@@ -2845,7 +3069,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-08T10:01:36.469Z",
+  "updatedAt": "2022-12-08T11:32:52.515Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

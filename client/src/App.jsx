@@ -128,7 +128,7 @@ function App() {
    useEffect(()=> {
     if(factoryContract !== null){
         (async () => {
-            // VOTER REGISTRATION INFORMATION
+            // COLLECTION ADDED
             let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
                 fromBlock : 0,
                 toBlock:'latest'

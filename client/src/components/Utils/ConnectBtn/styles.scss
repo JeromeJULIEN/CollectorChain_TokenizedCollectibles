@@ -3,12 +3,13 @@
 .connectBtn {
     display: flex;
     align-items: flex-end;
+    gap: .2rem;
 
     &__btn {
         background-color: transparent;
     }
 
     &__logo {
-        color: vars.$color_callToAction
+        color: vars.$color_digitalNft
     }
 }
