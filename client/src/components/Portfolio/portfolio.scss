@@ -9,7 +9,7 @@
     width: 100vw;
     height: 30px;
     padding: 0 1rem;
-    background-color: vars.$color_callToAction;
+    background-color: vars.$color_digitalNft;
 
     color: white;
 }
@@ -32,14 +32,16 @@
             color: white;
             border-radius: 1rem;
             font-weight: bold;
-            transition: background-color .5s;
+
 
 
 
         }
 
         &--active:hover {
-            box-shadow: inset 0px 0px 5px white;
+            box-shadow: inset 0px 0px 7px white;
+
+
         }
 
 

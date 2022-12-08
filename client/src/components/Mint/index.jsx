@@ -226,10 +226,10 @@ const Mint = () => {
                 </div>
                 <div className="panelRight">
                     <div className="panelRight__doc">
-                        <p>Upload your proof of ownership</p>   
-                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadOwnershipImage} className="picture__input" id="docOwnership" />
                         <p>Upload the main picture of the object</p>   
                         <input type="file" accept="image/*" name="docOwnership" onChange={uploadMainImage} className="picture__input" id="docOwnership" />
+                        <p>Upload your proof of ownership</p>   
+                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadOwnershipImage} className="picture__input" id="docOwnership" />
                     </div>
                     <button className='panelRight__btn' onClick={askMint}>Send request</button>
                 </div>

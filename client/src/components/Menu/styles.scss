@@ -26,15 +26,15 @@
         &--item {
             color: vars.$color_white;
             text-decoration: none;
+            transition: color .2s;
 
-            :hover {
-                color: red;
-            }
         }
 
         &--item:hover {
             color: vars.$color_digitalNft;
             text-decoration: none;
+            transition: color .2s;
+
         }
 
     }
