@@ -7,8 +7,6 @@ import Web3 from 'web3';
 import './daoProposal.scss';
 import { addCollection, deleteAllCollections, setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
 import CheckRoundIcon from '@rsuite/icons/CheckRound';
-import { uploadFileToIPFS } from '../Utils/ipfs';
-import { pinFileToIPFS } from '../../pinataTest';
 // import fs from "fs";
 // require('dotenv').config()
 // const Dotenv = require('dotenv-webpack');

@@ -1,0 +1,46 @@
+require('dotenv').config();
+const key = process.env.PINATA_KEY;
+const secret = process.env.PINATA_SECRET;
+const pinataSDK = require('@pinata/sdk');
+const pinata = new pinataSDK(key, secret);
+
+
+const uploadPinata = (file) => {
+    const options = {
+        pinataMetadata: {
+            name: "AlyraNFT",
+        },
+        pinataOptions: {
+            cidVersion: 0
+        }
+    };
+    
+    
+    const upload = () => {
+        pinata.pinFileToIPFS(file, options).then((result) => {
+        const body = {
+            description: "Un NFT tres beau pour alyra.",
+            image: result.IpfsHash,
+            name: "BestNFT",
+        };
+    
+        pinata.pinJSONToIPFS(body, options).then((json) => {
+            console.log(json);
+        }).catch((err) => {
+            console.log(err);
+        });
+    
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    return(
+        <button onClick={upload}>upload</button>
+    )
+  
+  
+}
+
+export default uploadPinata
+

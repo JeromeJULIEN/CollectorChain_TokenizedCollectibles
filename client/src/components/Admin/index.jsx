@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCollection, deleteAllCollections } from '../../store/actions/collections';
 import { deleteAllMembers } from '../../store/actions/dao';
 import './admin.scss'
+import FileUpload from '../Utils/FileUpload'
+import JsonUpload from '../Utils/JsonUpload';
+
 
 const Admin = () => {
 
@@ -30,6 +33,13 @@ const Admin = () => {
     const handleUpdater = () => {
         setUpdater(updater+1)
     }
+
+    const [file,setFile] =useState();
+    const handleFile = (event) =>{
+        setFile(event.target.file[0])
+    }
+
+    
 
     //! EVENTS
     const [ethReceived,setEthReceived] = useState(0)
@@ -144,6 +154,14 @@ const Admin = () => {
             <p>collected fees : {ethReceived} eth</p> 
             <p>number of transactions : {transactionCount} </p> 
 
+        </div>
+        <div>
+            <p>test upload pinata</p>
+            <FileUpload/>
+        </div>
+        <div>
+            <p>test upload JSON</p>
+            <JsonUpload/>
         </div>
     </div>
   )
