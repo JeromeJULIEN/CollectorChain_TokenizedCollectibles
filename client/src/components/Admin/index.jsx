@@ -34,28 +34,39 @@ const Admin = () => {
     //! EVENTS
     const [ethReceived,setEthReceived] = useState(0)
     const [transactionCount,setTransactionCount] = useState(0)
+    useEffect(()=>{
+        setEthReceived(0);
+        setTransactionCount(0);
+    },[])
+    
     useEffect(() => {
         // ETH RECEIVED EVENT
-        console.log('event ETH');
+        // console.log('event ETH');
+        // console.log('eth should be 0',ethReceived);
+        // console.log('transac should be 0',transactionCount);
         const getEvents = async() => {
-            let ethReceivedEvent = await marketplaceContract.getPastEvents('etherReceived',{
-                fromBlock : 0,
-                toBlock:'latest'
-            });
-            let oldEthReceivedEvent=[];
-            ethReceivedEvent.forEach(event => {
-                oldEthReceivedEvent.push(
-                    {
-                        valueReceived : event.returnValues.valueReceived,
-                    });
-            });
-            oldEthReceivedEvent.forEach(receipt => {
-                setEthReceived(parseInt(ethReceived)+parseInt(receipt.valueReceived))
-            })
+        //     let ethReceivedEvent = await marketplaceContract.getPastEvents('etherReceived',{
+        //         fromBlock : 0,
+        //         toBlock:'latest'
+        //     });
+        //     console.log('ethReceivedEvent=>',ethReceivedEvent);
+        //     let oldEthReceivedEvent=[];
+        //     ethReceivedEvent.forEach(event => {
+        //         oldEthReceivedEvent.push(
+        //             {
+        //                 valueReceived : web3.utils.fromWei(event.returnValues.valueReceived)
+        //             });
+        //     });
+        //     console.log('oldReceivedEvent=>',oldEthReceivedEvent);
+            
+        //     let totalEthReceived = 0;
+        //     oldEthReceivedEvent.forEach(receipt => {
+        //         totalEthReceived = parseInt(totalEthReceived) + parseInt(receipt.valueReceived)
+        //         console.log('result intermediaire',totalEthReceived);
+        //     })
+        //     setEthReceived(totalEthReceived)
             // setTransactionCount(oldEthReceivedEvent.length())
             // COLLECTION ADDED
-        console.log('event collection');
-
             let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
                fromBlock : 0,
                toBlock:'latest'
@@ -70,7 +81,6 @@ const Admin = () => {
                     });
             });
             dispatch(deleteAllCollections());
-            console.log('oldcollectionevent', collectionCreationEvent)
             oldCollectionCreationEvent.forEach(collection => {
             dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
             // MEMBER ADDED
@@ -131,7 +141,7 @@ const Admin = () => {
 
         </div>
         <div className='fees'> 
-            <p>collected fees : {web3.utils.fromWei(web3.utils.toBN(ethReceived))} eth</p> 
+            <p>collected fees : {ethReceived} eth</p> 
             <p>number of transactions : {transactionCount} </p> 
 
         </div>

@@ -77,15 +77,15 @@ contract MarketPlace is Ownable {
         NftProperty nftProperty;
         nftProperty = NftProperty(_collectionAddress);
         require(
-            nftProperty.balanceOf(msg.sender, _itemId) > _quantityToSell,
+            nftProperty.balanceOf(msg.sender, _itemId) >= _quantityToSell,
             "not enough item to sell"
         );
         itemToSellByIdByAddress[_collectionAddress][_itemId][
             msg.sender
         ] += _quantityToSell;
-        sellingPriceByIdByAddress[_collectionAddress][_itemId][msg.sender] =
-            _sellingPrice *
-            10**18;
+        sellingPriceByIdByAddress[_collectionAddress][_itemId][
+            msg.sender
+        ] = _sellingPrice;
 
         uint256 collectionId = nftProperty.getCollectionId();
 

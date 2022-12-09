@@ -14,6 +14,12 @@ const PropertyForSellCard = ({
   updater,
   handleUpdater,
   image}) => {
+
+    //! STORE
+    const propertyContractAddress = useSelector(state => state.collections.collections[collectionId].propertyContractAddress)
+    const accounts = useSelector(state => state.web3.accounts)
+    const web3 = useSelector(state => state.web3.web3)
+
   //! LOCAL STATE
   const dispatch = useDispatch()
   const [openBuy, setOpenBuy] = useState(false);
@@ -50,7 +56,7 @@ const PropertyForSellCard = ({
   let floorPrice = 0
   seller.map(seller => {
     if(seller.price > floorPrice) {
-      floorPrice = seller.price
+      floorPrice = web3.utils.fromWei(seller.price)
     };
   })
 
@@ -59,17 +65,15 @@ const PropertyForSellCard = ({
     totalQuantity = parseInt(totalQuantity) + parseInt(seller.quantity)
   })
 
-  //! STORE
-  const propertyContractAddress = useSelector(state => state.collections.collections[collectionId].propertyContractAddress)
-  const accounts = useSelector(state => state.web3.accounts)
-  const web3 = useSelector(state => state.web3.web3)
 
   //! EVENTS
 
   //! FUNCTIONS
   const buyPropertyNft =async() =>{
     // const valueToSend = quantity*sellerPrice;
-    const valueToSend = web3.utils.toWei(web3.utils.toBN((quantity*sellerPrice*1.1),'ether'));
+    console.log('sellerprice =>',sellerPrice)
+    console.log(quantity*sellerPrice*1.1);
+    const valueToSend = web3.utils.toBN((quantity*sellerPrice*1.1));
     console.log('valuetosend=>',valueToSend);
     // console.log('toWei=>',web3.utils.toWei(web3.utils.toBN(valueToSend) ,'ether' ));
     console.log('toWei=>',valueToSend);
@@ -129,7 +133,7 @@ const PropertyForSellCard = ({
         <input type="text" value={quantity} onChange={handleSetQuantity} placeholder="set quantity"/>
         <p>Select the seller</p>
         {seller.map(seller => (
-          <button onClick={handleSetSellerAddress} value={seller.seller} id={seller.price}>{formatETHAddress(seller.seller,2)} / Price: {seller.price} eth</button>
+          <button onClick={handleSetSellerAddress} value={seller.seller} id={seller.price}>{formatETHAddress(seller.seller,2)} / Price: {web3.utils.fromWei(seller.price)} eth</button>
         ) )}
       </div>
 

@@ -46,12 +46,14 @@ const Mint = () => {
     
     //! FUNCTIONS
     const askMint = async() => {
+        const mintValueInWei = web3.utils.toBN(web3.utils.toWei(mintValue))
+        console.log(mintValueInWei);
         if(mintTitle == '' || mintDesc == '' || mintValue ==''){
             alert("you have to fill all informations")
         }
         try{
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,mainImage).call({from:accounts[0]})
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValue,docOwnership,mainImage).send({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValueInWei,docOwnership,mainImage).call({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValueInWei,docOwnership,mainImage).send({from:accounts[0]})
             setMintCount(mintCount +1);
         } catch (error) {
             console.error(error)

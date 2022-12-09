@@ -33,7 +33,10 @@ const DaoProposal = () => {
     const factoryContract = useSelector(state => state.factory.contract);
     let propertyContractAddress = collectionsList[proposal.daoId].propertyContractAddress;
     let digitalContractAddress= collectionsList[proposal.daoId].digitalContractAddress;
+    console.log('property contract addr=>)',propertyContractAddress);
     console.log('proposal',proposal);
+    console.log('property contract =>', propertyContract);
+    console.log('digital contract=>', digitalContract);
     
     //! LOCAL STATE
     
@@ -45,13 +48,16 @@ const DaoProposal = () => {
 
     const [value, setValue] = useState('');
     const handleChangeValue = (event) => {
-        setValue(web3.utils.toBN(event.target.value))
+        setValue(event.target.value)
     }
 
     //! FUNCTIONS
     const voteYes = async() => {
-        await daoContract.methods.vote(id, value, 0).call({from :accounts[0] });
-        await daoContract.methods.vote(id, value, 0).send({from :accounts[0] });
+        console.log(value);
+        const valueInWei = web3.utils.toBN(web3.utils.toWei(value));
+        console.log(valueInWei);
+        await daoContract.methods.vote(id, valueInWei, 0).call({from :accounts[0] });
+        await daoContract.methods.vote(id, valueInWei, 0).send({from :accounts[0] });
     }
 
     const voteNo = async() => {
@@ -70,9 +76,11 @@ const DaoProposal = () => {
     }
 
     const mintProperty = async() => {
+        const mintValueInWei = web3.utils.toBN(web3.utils.toWei(proposal.value))
+        console.log(mintValueInWei);
         // pinFileToIPFS('./image.png');
-        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,web3.utils.toBN(100),accounts[0],proposal.mainImage).call({from:accounts[0]})
-        await propertyContract.methods.mintPropertyNft(id,proposal.name,proposal.value,web3.utils.toBN(100),accounts[0],proposal.mainImage).send({from:accounts[0]})
+        await propertyContract.methods.mintPropertyNft(id,proposal.name,mintValueInWei,web3.utils.toBN(100),accounts[0],proposal.mainImage).call({from:accounts[0]})
+        await propertyContract.methods.mintPropertyNft(id,proposal.name,mintValueInWei,web3.utils.toBN(100),accounts[0],proposal.mainImage).send({from:accounts[0]})
         handleUpdater()
     }
 
@@ -148,6 +156,7 @@ const DaoProposal = () => {
     )
 
     useEffect(()=>{
+        console.log('entrée dans use effect instanciation contrat');
         const artifactProperty = require("../../contracts/NftProperty.json");
         const artifactDigital = require("../../contracts/NftDigital.json");
         if (collectionsList[proposal.daoId] !== null) {
@@ -188,7 +197,7 @@ const DaoProposal = () => {
     , [collectionsList]
     // [propertyContractAddress, digitalContractAddress]
     )
-    console.log('proposal=>',proposal.digitalNftMinted);
+    // console.log('proposal=>',proposal.digitalNftMinted);
 
     return (
         <div className='daoProposal'>
@@ -205,7 +214,7 @@ const DaoProposal = () => {
                         :
                         <>
                         <div className="panelLeft__vote__value">
-                            <p>Set a value for the object (owner estimated {proposal.value} ETH)</p>
+                            <p>Set a value for the object (owner estimated {web3.utils.fromWei(proposal.value)} ETH)</p>
                             <input type="text" placeholder='value in ETH' value={value} onChange={handleChangeValue}/>
                         </div>
                         <div className="panelLeft__vote__setVote">
@@ -223,16 +232,16 @@ const DaoProposal = () => {
                         :<></>
                         }
                         <div className="panelLeft__vote__result">
-                            {proposal.status === "accepted" ? <div className='panelLeft__vote__result--accepted'>Proposal accepted. Valued at {proposal.value} ETH</div> 
+                            {proposal.status === "accepted" ? <div className='panelLeft__vote__result--accepted'>Proposal accepted. Valued at {web3.utils.fromWei(proposal.value)} ETH</div> 
                             : proposal.status === "refused" ? <div className='panelLeft__vote__result--refused'>Proposal refused</div> 
                             : <></>}
                         </div>
                         {accounts[0] === proposal.owner && proposal.status === "accepted" ? 
                         <div>
-                            {proposal.propertyNftMinted ? <div className='panelLeft__vote__message'>Proof of ownership already minted <CheckRoundIcon className='panelLeft__vote__message--green'/></div>
+                            {proposal.propertyNftMinted ? <div className='panelLeft__vote__message'>Proof of ownership minted <CheckRoundIcon className='panelLeft__vote__message--green'/></div>
                              :<button className='panelLeft__vote__btn' onClick={mintProperty}>Mint your Proof of ownership</button> 
                              }
-                            {proposal.digitalNftMinted ? <div className='panelLeft__vote__message'>Digital collectible already minted <CheckRoundIcon className='panelLeft__vote__message--green'/></div>
+                            {proposal.digitalNftMinted ? <div className='panelLeft__vote__message'>Digital collectible minted <CheckRoundIcon className='panelLeft__vote__message--green'/></div>
                              :<button className='panelLeft__vote__btn' onClick={mintDigital}>Mint your Digital collectible</button> 
                              } 
                         </div>

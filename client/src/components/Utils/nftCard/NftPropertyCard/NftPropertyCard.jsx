@@ -79,10 +79,11 @@ const NftPropertyCard = ({
   }
 
   const sellPropertyNft =async() =>{
-    console.log(propertyContractAddress);
+    const priceInWei=web3.utils.toBN(web3.utils.toWei(price))
+    console.log(priceInWei);
     try{
-      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity,image).call({from:accounts[0]});
-      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,price,quantity,image).send({from:accounts[0]});
+      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,priceInWei,quantity,image).call({from:accounts[0]});
+      await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,priceInWei,quantity,image).send({from:accounts[0]});
     } catch(error){
       console.log(error);
     }
@@ -131,7 +132,7 @@ const NftPropertyCard = ({
       }
       {simulate === true && 
       <>
-        <p>Selling all the share at the selected price will make you earn {quantity*price} eth</p>
+        <p>Selling all the share at the selected price will make you earn {(quantity*price).toFixed(2)} eth</p>
         <p>note that buyers have not to buy all the share you're putting to sell</p>
         <div className="modal__body__btn">
           <button onClick={sellPropertyNft} appearance="primary">
