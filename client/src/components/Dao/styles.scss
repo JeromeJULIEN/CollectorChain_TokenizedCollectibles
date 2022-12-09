@@ -1,16 +1,31 @@
 @use '../../../styles/vars';
 
+.titleDao {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 3rem;
+    padding: 0 1rem;
+    background-color: vars.$color_digitalNft;
+
+    color: white;
+}
+
 .dao {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 95%;
+    // width: 95%;
     font-size: vars.$fontSize_normal;
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
 
     &__title {
         font-size: vars.$fontSize_dig;
         font-weight: bold;
+        margin-top: 1rem;
     }
 
 }

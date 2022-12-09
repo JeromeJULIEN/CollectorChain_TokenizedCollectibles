@@ -1,0 +1,18 @@
+@use '../../../styles/vars';
+
+.work {
+
+    &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 3rem;
+        padding: 0 1rem;
+        background-color: vars.$color_digitalNft;
+
+        color: white;
+    }
+}

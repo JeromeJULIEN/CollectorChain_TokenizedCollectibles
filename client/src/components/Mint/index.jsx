@@ -185,7 +185,10 @@ const Mint = () => {
 
     return (
     <div className='mint'>
+        <div className="titleMint">Create your collectible</div>
         <div className='mintForm'>
+            <p>Whether a manufactured object, a work of Art, or an Antique, click on Mint your collectible to post your new DAO proposal for joining the verified collector chain community.</p>
+            <p> Fill out the form, upload the requested documents, and submit your message to the community.</p>
            <p className='mintForm__title'>Ask for a mint</p> 
            <div className="mintForm__panel">
                 <div className="panelLeft">

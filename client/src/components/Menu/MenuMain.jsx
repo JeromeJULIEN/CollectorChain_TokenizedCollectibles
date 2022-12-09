@@ -4,7 +4,7 @@ import { Nav } from 'rsuite';
 import "./styles.scss"
 import ConnectBtn from '../Utils/ConnectBtn/ConnectBtn';
 import { useSelector } from 'react-redux';
-import logo from '../Utils/Logo_Fond_Bleu.png';
+import logo from '../Utils/image/Logo_Fond_Bleu.png';
 
 
  

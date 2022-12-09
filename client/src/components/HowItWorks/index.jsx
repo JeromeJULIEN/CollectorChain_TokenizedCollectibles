@@ -1,8 +1,11 @@
 import React from 'react'
+import './howItWork.scss';
 
 const HowItWorks = () => {
   return (
-    <div>HowItWorks</div>
+    <div className='work'>
+      <div  className='work__title'>How it works ?</div>
+    </div>
   )
 }
 

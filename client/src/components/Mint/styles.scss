@@ -1,12 +1,26 @@
 @use '../../../styles/vars';
 
+.titleMint {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 3rem;
+    padding: 0 1rem;
+    background-color: vars.$color_digitalNft;
+
+    color: white;
+}
+
 .mint {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 95%;
+    // width: 95%;
     font-size: vars.$fontSize_normal;
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
     color: vars.$color_black;
 
     &__title {
@@ -20,6 +34,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 1rem;
 
     &__title {
         font-size: vars.$fontSize_dig;

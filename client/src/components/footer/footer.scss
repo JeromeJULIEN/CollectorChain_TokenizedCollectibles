@@ -1,0 +1,14 @@
+@use '../../../styles/vars';
+
+.footer {
+    background-color: vars.$color_black;
+    color: vars.$color_white;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    font-size: .8rem;
+}

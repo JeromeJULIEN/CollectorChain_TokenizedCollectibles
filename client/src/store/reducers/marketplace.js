@@ -1,4 +1,4 @@
-import { ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL } from "../actions/marketplace";
+import { ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL, UPDATE_SELLER_BALANCE } from "../actions/marketplace";
 
 const initialState = {
     artifact: null,
@@ -52,6 +52,7 @@ const marketplaceReducer = (state = initialState,action={})=>{
                 
             }
         }
+    
         default :
         return state;
     }

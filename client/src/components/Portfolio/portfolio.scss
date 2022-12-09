@@ -1,13 +1,13 @@
 @use '../../../styles/vars';
 
 .title {
-    font-size: vars.$fontSize_normal ;
+    font-size: 2rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 30px;
+    height: 3rem;
     padding: 0 1rem;
     background-color: vars.$color_digitalNft;
 

@@ -108,9 +108,9 @@ const Dao = () => {
     )
     return (
     <div className='dao'>
+        <div className="titleDao">DAO</div>
             <p className='dao__title'>Mint proposals :</p> 
-            <p className='dao__desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa corporis est sapiente autem qui vero eveniet, unde nobis, dicta ab repellat. Iste labore eum consequuntur itaque, totam tempore aliquam.
-            Molestias dolor, aperiam atque laborum sapiente voluptates error itaque velit officia expedita illo modi, eligendi perspiciatis explicabo, maxime corrupti quisquam? Odio architecto, aspernatur earum optio error velit iure facilis quasi? </p>
+            <p className='dao__desc'>Whether a manufactured object, a work of Art, or an Antique, click on Mint your collectible to post your new DAO proposal for joining the verified collector chain community. Fill out the form, upload the requested documents, and submit your message to the community.</p>
             <div className='proposalList'>
                 <div className="proposalList__legend">
                     <p className="proposalList__legend__detail">Collection</p>

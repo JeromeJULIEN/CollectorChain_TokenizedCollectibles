@@ -34,7 +34,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_proposalId\",\"type\":\"uint256\"}],\"name\":\"getProposalStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"proposalStatus\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_proposalId\",\"type\":\"uint256\"}],\"name\":\"updatePropertyMintStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/NftProperty.sol\":\"IIICollectorsDAO\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[]},\"sources\":{\"project:/contracts/NftProperty.sol\":{\"keccak256\":\"0xcffe63340f0b54452e6183a73a00bdeeb61c0c32c40314500517fa88e29f339b\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://a44c2e980cc4ede5f8279b78ff86c153ea4b9248fe1dd7ee2310cd31bef4ff39\",\"dweb:/ipfs/QmW8bpSZ4DYBardGHVF7rkYjjG7odjkbLNKSEqZHKn39v1\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd917747dc87f189c6779b894f367a028f9dca4be930283cccec8f312966af820\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a5e5b99830cf233f77aa3b1bd1f57561faee103beeee88e6a6f86d044817bbb\",\"dweb:/ipfs/QmREYidSDpHPig3AhxzsMHg3w2ZtMeGfRhcokXxEZyj6fC\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x6392f2cfe3a5ee802227fe7a2dfd47096d881aec89bddd214b35c5b46d3cd941\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c47a375639888e726a99da718890ba16d17d7ad9eacb0ccc892d46d1b3ee0\",\"dweb:/ipfs/Qmb41W5RUjy2sWg49A2rMnxekSeEk6SvGyJL5tyCCSr7un\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec\",\"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol\":{\"keccak256\":\"0x4e7bcc6aa9b150e125df8afbfbca5dfb7c92fa4fb01985f2f595ce0c96153cff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://75aa1a94e176c23d37e117daf8386cd6301119b1ca5cf521fe22de9ccc13dade\",\"dweb:/ipfs/QmfTfUFGRZ3iNavQgLmj2zNR7Pz2djKV5UPRTmDWnapbGg\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol\":{\"keccak256\":\"0xa66d18b9a85458d28fc3304717964502ae36f7f8a2ff35bc83f6f85d74b03574\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e46c80ea068989111d6103e5521223f9ef337e93de76deed8b03f75c6f7b2797\",\"dweb:/ipfs/QmNoSE6knNfFncdDDLTb3fGR6oSQty1srG96Vsx3E9wQdw\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_proposalId\",\"type\":\"uint256\"}],\"name\":\"getProposalStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"proposalStatus\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_proposalId\",\"type\":\"uint256\"}],\"name\":\"updatePropertyMintStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/NftProperty.sol\":\"IIICollectorsDAO\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[]},\"sources\":{\"project:/contracts/NftProperty.sol\":{\"keccak256\":\"0x455bb51cd9d1c0d7afa91b3f99445fc14fe8780cf57ac9b0bc0a266386c46f46\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://8b7b92cadb4bbbb35d1341f04a92a773e1e5b6ade365ebe4b9de2479c50d4ba0\",\"dweb:/ipfs/QmWBzNXcscVoQk7DX2Z7FB4tJWHd4YR1SG5d2YS21PRLYP\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd917747dc87f189c6779b894f367a028f9dca4be930283cccec8f312966af820\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a5e5b99830cf233f77aa3b1bd1f57561faee103beeee88e6a6f86d044817bbb\",\"dweb:/ipfs/QmREYidSDpHPig3AhxzsMHg3w2ZtMeGfRhcokXxEZyj6fC\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x6392f2cfe3a5ee802227fe7a2dfd47096d881aec89bddd214b35c5b46d3cd941\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c47a375639888e726a99da718890ba16d17d7ad9eacb0ccc892d46d1b3ee0\",\"dweb:/ipfs/Qmb41W5RUjy2sWg49A2rMnxekSeEk6SvGyJL5tyCCSr7un\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec\",\"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol\":{\"keccak256\":\"0x4e7bcc6aa9b150e125df8afbfbca5dfb7c92fa4fb01985f2f595ce0c96153cff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://75aa1a94e176c23d37e117daf8386cd6301119b1ca5cf521fe22de9ccc13dade\",\"dweb:/ipfs/QmfTfUFGRZ3iNavQgLmj2zNR7Pz2djKV5UPRTmDWnapbGg\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol\":{\"keccak256\":\"0xa66d18b9a85458d28fc3304717964502ae36f7f8a2ff35bc83f6f85d74b03574\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e46c80ea068989111d6103e5521223f9ef337e93de76deed8b03f75c6f7b2797\",\"dweb:/ipfs/QmNoSE6knNfFncdDDLTb3fGR6oSQty1srG96Vsx3E9wQdw\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -42,55 +42,55 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.17;\n\nimport \"../node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol\";\nimport \"../node_modules/@openzeppelin/contracts/utils/Counters.sol\";\n\n// URI POUR TEST ==> \"https://gateway.pinata.cloud/ipfs/QmUegKTCJ8r6td4AfT22FjJHCVMJn4fKTVCK4MH7zNM7Mn/{id}.json\"\n\ninterface IIICollectorsDAO {\n    function getProposalStatus(uint256 _proposalId)\n        external\n        view\n        returns (bool proposalStatus);\n\n    function updatePropertyMintStatus(uint256 _proposalId) external;\n}\n\n/// @notice this contract manage the ERC1155 collection of each collector chain collections\n/// @notice (for Jury) IPFS upload not managed yet\ncontract NftProperty is ERC1155URIStorage {\n    using Counters for Counters.Counter;\n    Counters.Counter public _id;\n\n    string public collectionName;\n    uint256 public _collectionId;\n\n    struct PropertyNft {\n        uint256 collectionId;\n        uint256 nftId;\n        string name;\n        uint256 value;\n        address minter;\n        string image;\n    }\n\n    IIICollectorsDAO collectorsDAO;\n\n    PropertyNft[] public propertyNfts;\n\n    /// @notice URI structure have to be managed from the front end in order to define custom attributes for each collection\n    constructor(\n        uint256 collectionId_,\n        string memory collectionURI_,\n        address daoContractAddress_\n    )\n        ERC1155(\n            /* URI de la collection*/\n            collectionURI_\n        )\n    {\n        _collectionId = collectionId_;\n        collectorsDAO = IIICollectorsDAO(daoContractAddress_);\n    }\n\n    /// @notice function mint() mint new NFT and send it to the owner of the object\n    /// @notice 100 NFTs will be mint each time (managed by front end)\n    function mintPropertyNft(\n        uint256 _proposalId,\n        string memory _name,\n        uint256 _value,\n        uint256 _numberOfItem,\n        address _minter,\n        string memory _image\n    ) external {\n        // get the proposal status to allow the mint\n        bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);\n        require(proposalStatus == true, \"proposal is not accepted\");\n\n        uint256 newPropertyNftId = _id.current();\n        propertyNfts.push(\n            PropertyNft(\n                _collectionId,\n                newPropertyNftId,\n                _name,\n                _value,\n                _minter,\n                _image\n            )\n        );\n        _mint(msg.sender, newPropertyNftId, _numberOfItem, \"\");\n        _id.increment();\n        collectorsDAO.updatePropertyMintStatus(_proposalId);\n    }\n\n    function getCollectionId() external view returns (uint256) {\n        return _collectionId;\n    }\n}\n",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.17;\n\nimport \"../node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155URIStorage.sol\";\nimport \"../node_modules/@openzeppelin/contracts/utils/Counters.sol\";\n\n// URI POUR TEST ==> \"https://gateway.pinata.cloud/ipfs/QmUegKTCJ8r6td4AfT22FjJHCVMJn4fKTVCK4MH7zNM7Mn/{id}.json\"\n\ninterface IIICollectorsDAO {\n    function getProposalStatus(uint256 _proposalId)\n        external\n        view\n        returns (bool proposalStatus);\n\n    function updatePropertyMintStatus(uint256 _proposalId) external;\n}\n\n/// @notice this contract manage the ERC1155 collection of each collector chain collections\n/// @notice (for Jury) IPFS upload not managed yet\ncontract NftProperty is ERC1155URIStorage {\n    using Counters for Counters.Counter;\n    Counters.Counter public _id;\n\n    string public collectionName;\n    uint256 public _collectionId;\n\n    struct PropertyNft {\n        uint256 collectionId;\n        uint256 nftId;\n        string name;\n        uint256 value;\n        address minter;\n        string image;\n    }\n\n    IIICollectorsDAO collectorsDAO;\n\n    PropertyNft[] public propertyNfts;\n\n    /// @notice URI structure have to be managed from the front end in order to define custom attributes for each collection\n    constructor(\n        uint256 collectionId_,\n        string memory collectionURI_,\n        address daoContractAddress_\n    )\n        ERC1155(\n            /* URI de la collection*/\n            collectionURI_\n        )\n    {\n        _collectionId = collectionId_;\n        collectorsDAO = IIICollectorsDAO(daoContractAddress_);\n    }\n\n    /// @notice function mint() mint new NFT and send it to the owner of the object\n    /// @notice 100 NFTs will be mint each time (managed by front end)\n    function mintPropertyNft(\n        uint256 _proposalId,\n        string memory _name,\n        uint256 _value,\n        uint256 _numberOfItem,\n        address _minter,\n        string memory _image\n    ) external {\n        // get the proposal status to allow the mint\n        bool proposalStatus = collectorsDAO.getProposalStatus(_proposalId);\n        require(proposalStatus == true, \"proposal is not accepted\");\n\n        uint256 newPropertyNftId = _id.current();\n        propertyNfts.push(\n            PropertyNft(\n                _collectionId,\n                newPropertyNftId,\n                _name,\n                _value,\n                _minter,\n                _image\n            )\n        );\n        _mint(msg.sender, newPropertyNftId, _numberOfItem, \"\");\n        _id.increment();\n        collectorsDAO.updatePropertyMintStatus(_proposalId);\n    }\n\n    /// @dev function launch just after the minting by the minter, in the same frontEnd call\n    function launchSetURI(uint256 _nftId, string memory _nftUri) external {\n        uint256 balance = balanceOf(msg.sender, _nftId);\n        require(balance > 0, \"not the owner\");\n        _setURI(_nftId, _nftUri);\n    }\n\n    function getCollectionId() external view returns (uint256) {\n        return _collectionId;\n    }\n}\n",
   "sourcePath": "/Users/jeromejulien/Documents/vscode/FormationAlyra/02_Projets/CollectorChain_TokenizedCollectibles/truffle/contracts/NftProperty.sol",
   "ast": {
     "absolutePath": "project:/contracts/NftProperty.sol",
     "exportedSymbols": {
       "Address": [
-        3689
+        3718
       ],
       "Context": [
-        3711
+        3740
       ],
       "Counters": [
-        3785
+        3814
       ],
       "ERC1155": [
-        1862
+        1891
       ],
       "ERC1155URIStorage": [
-        2113
+        2142
       ],
       "ERC165": [
-        3984
+        4013
       ],
       "IERC1155": [
-        1984
+        2013
       ],
       "IERC1155MetadataURI": [
-        2128
+        2157
       ],
       "IERC1155Receiver": [
-        2025
+        2054
       ],
       "IERC165": [
-        3996
+        4025
       ],
       "IIICollectorsDAO": [
         390
       ],
       "Math": [
-        4861
+        4890
       ],
       "NftProperty": [
-        526
+        555
       ],
       "Strings": [
-        3960
+        3989
       ]
     },
-    "id": 527,
+    "id": 556,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -110,8 +110,8 @@
         "id": 376,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 527,
-        "sourceUnit": 2114,
+        "scope": 556,
+        "sourceUnit": 2143,
         "src": "61:96:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -122,8 +122,8 @@
         "id": 377,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 527,
-        "sourceUnit": 3786,
+        "scope": 556,
+        "sourceUnit": 3815,
         "src": "158:68:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -282,7 +282,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 527,
+        "scope": 556,
         "src": "343:221:2",
         "usedErrors": []
       },
@@ -297,7 +297,7 @@
                 "733:17:2"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2113,
+              "referencedDeclaration": 2142,
               "src": "733:17:2"
             },
             "id": 393,
@@ -315,16 +315,16 @@
           "text": "@notice this contract manage the ERC1155 collection of each collector chain collections\n @notice (for Jury) IPFS upload not managed yet"
         },
         "fullyImplemented": true,
-        "id": 526,
+        "id": 555,
         "linearizedBaseContracts": [
-          526,
-          2113,
-          1862,
-          2128,
-          1984,
-          3984,
-          3996,
-          3711
+          555,
+          2142,
+          1891,
+          2157,
+          2013,
+          4013,
+          4025,
+          3740
         ],
         "name": "NftProperty",
         "nameLocation": "718:11:2",
@@ -340,7 +340,7 @@
                 "763:8:2"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3785,
+              "referencedDeclaration": 3814,
               "src": "763:8:2"
             },
             "nodeType": "UsingForDirective",
@@ -356,13 +356,13 @@
                   "785:7:2"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 3717,
+                "referencedDeclaration": 3746,
                 "src": "776:16:2"
               },
-              "referencedDeclaration": 3717,
+              "referencedDeclaration": 3746,
               "src": "776:16:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Counter_$3717_storage_ptr",
+                "typeIdentifier": "t_struct$_Counter_$3746_storage_ptr",
                 "typeString": "struct Counters.Counter"
               }
             }
@@ -375,12 +375,12 @@
             "name": "_id",
             "nameLocation": "822:3:2",
             "nodeType": "VariableDeclaration",
-            "scope": 526,
+            "scope": 555,
             "src": "798:27:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Counter_$3717_storage",
+              "typeIdentifier": "t_struct$_Counter_$3746_storage",
               "typeString": "struct Counters.Counter"
             },
             "typeName": {
@@ -394,13 +394,13 @@
                   "807:7:2"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 3717,
+                "referencedDeclaration": 3746,
                 "src": "798:16:2"
               },
-              "referencedDeclaration": 3717,
+              "referencedDeclaration": 3746,
               "src": "798:16:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Counter_$3717_storage_ptr",
+                "typeIdentifier": "t_struct$_Counter_$3746_storage_ptr",
                 "typeString": "struct Counters.Counter"
               }
             },
@@ -414,7 +414,7 @@
             "name": "collectionName",
             "nameLocation": "846:14:2",
             "nodeType": "VariableDeclaration",
-            "scope": 526,
+            "scope": 555,
             "src": "832:28:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -442,7 +442,7 @@
             "name": "_collectionId",
             "nameLocation": "881:13:2",
             "nodeType": "VariableDeclaration",
-            "scope": 526,
+            "scope": 555,
             "src": "866:28:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -633,7 +633,7 @@
             "name": "PropertyNft",
             "nameLocation": "908:11:2",
             "nodeType": "StructDefinition",
-            "scope": 526,
+            "scope": 555,
             "src": "901:169:2",
             "visibility": "public"
           },
@@ -644,7 +644,7 @@
             "name": "collectorsDAO",
             "nameLocation": "1093:13:2",
             "nodeType": "VariableDeclaration",
-            "scope": 526,
+            "scope": 555,
             "src": "1076:30:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -682,7 +682,7 @@
             "name": "propertyNfts",
             "nameLocation": "1134:12:2",
             "nodeType": "VariableDeclaration",
-            "scope": 526,
+            "scope": 555,
             "src": "1113:33:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -886,7 +886,7 @@
                     "1410:7:2"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1862,
+                  "referencedDeclaration": 1891,
                   "src": "1410:7:2"
                 },
                 "nodeType": "ModifierInvocation",
@@ -991,7 +991,7 @@
               "parameters": [],
               "src": "1498:0:2"
             },
-            "scope": 526,
+            "scope": 555,
             "src": "1278:329:2",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1262,7 +1262,7 @@
                         "referencedDeclaration": 400,
                         "src": "2212:3:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Counter_$3717_storage",
+                          "typeIdentifier": "t_struct$_Counter_$3746_storage",
                           "typeString": "struct Counters.Counter storage ref"
                         }
                       },
@@ -1274,10 +1274,10 @@
                       "memberLocation": "2216:7:2",
                       "memberName": "current",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3729,
+                      "referencedDeclaration": 3758,
                       "src": "2212:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3717_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3717_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Counter_$3746_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_Counter_$3746_storage_ptr_$",
                         "typeString": "function (struct Counters.Counter storage pointer) view returns (uint256)"
                       }
                     },
@@ -1580,7 +1580,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1296,
+                      "referencedDeclaration": 1325,
                       "src": "2472:5:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_bytes_memory_ptr_$returns$__$",
@@ -1620,7 +1620,7 @@
                         "referencedDeclaration": 400,
                         "src": "2536:3:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Counter_$3717_storage",
+                          "typeIdentifier": "t_struct$_Counter_$3746_storage",
                           "typeString": "struct Counters.Counter storage ref"
                         }
                       },
@@ -1632,10 +1632,10 @@
                       "memberLocation": "2540:9:2",
                       "memberName": "increment",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3743,
+                      "referencedDeclaration": 3772,
                       "src": "2536:13:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Counter_$3717_storage_ptr_$returns$__$bound_to$_t_struct$_Counter_$3717_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Counter_$3746_storage_ptr_$returns$__$bound_to$_t_struct$_Counter_$3746_storage_ptr_$",
                         "typeString": "function (struct Counters.Counter storage pointer)"
                       }
                     },
@@ -1921,7 +1921,7 @@
               "parameters": [],
               "src": "1976:0:2"
             },
-            "scope": 526,
+            "scope": 555,
             "src": "1768:851:2",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1929,57 +1929,340 @@
           },
           {
             "body": {
-              "id": 524,
+              "id": 545,
               "nodeType": "Block",
-              "src": "2684:37:2",
+              "src": "2788:145:2",
               "statements": [
                 {
-                  "expression": {
-                    "id": 522,
-                    "name": "_collectionId",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 404,
-                    "src": "2701:13:2",
+                  "assignments": [
+                    526
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 526,
+                      "mutability": "mutable",
+                      "name": "balance",
+                      "nameLocation": "2806:7:2",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 545,
+                      "src": "2798:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 525,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2798:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 532,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 528,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "2826:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 529,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2830:6:2",
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "2826:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 530,
+                        "name": "_nftId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 520,
+                        "src": "2838:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 527,
+                      "name": "balanceOf",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 784,
+                      "src": "2816:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256) view returns (uint256)"
+                      }
+                    },
+                    "id": 531,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2816:29:2",
+                    "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 521,
-                  "id": 523,
-                  "nodeType": "Return",
-                  "src": "2694:20:2"
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2798:47:2"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 536,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 534,
+                          "name": "balance",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 526,
+                          "src": "2863:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 535,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2873:1:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "2863:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "6e6f7420746865206f776e6572",
+                        "id": 537,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2876:15:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_09ee694bb6d0f66081e15dd53293c7f941705ae2fd8f9732918eb9f8e2ff3219",
+                          "typeString": "literal_string \"not the owner\""
+                        },
+                        "value": "not the owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_09ee694bb6d0f66081e15dd53293c7f941705ae2fd8f9732918eb9f8e2ff3219",
+                          "typeString": "literal_string \"not the owner\""
+                        }
+                      ],
+                      "id": 533,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "2855:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 538,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2855:37:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 539,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2855:37:2"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 541,
+                        "name": "_nftId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 520,
+                        "src": "2910:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 542,
+                        "name": "_nftUri",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 522,
+                        "src": "2918:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 540,
+                      "name": "_setURI",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2130,
+                        1224
+                      ],
+                      "referencedDeclaration": 2130,
+                      "src": "2902:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,string memory)"
+                      }
+                    },
+                    "id": 543,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2902:24:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 544,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2902:24:2"
                 }
               ]
             },
-            "functionSelector": "7c8e7bfe",
-            "id": 525,
+            "documentation": {
+              "id": 518,
+              "nodeType": "StructuredDocumentation",
+              "src": "2625:88:2",
+              "text": "@dev function launch just after the minting by the minter, in the same frontEnd call"
+            },
+            "functionSelector": "fc94041e",
+            "id": 546,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "getCollectionId",
-            "nameLocation": "2634:15:2",
+            "name": "launchSetURI",
+            "nameLocation": "2727:12:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 518,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "2649:2:2"
-            },
-            "returnParameters": {
-              "id": 521,
+              "id": 523,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
                   "id": 520,
                   "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
+                  "name": "_nftId",
+                  "nameLocation": "2748:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 525,
-                  "src": "2675:7:2",
+                  "scope": 546,
+                  "src": "2740:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1990,7 +2273,120 @@
                     "id": 519,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2675:7:2",
+                    "src": "2740:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 522,
+                  "mutability": "mutable",
+                  "name": "_nftUri",
+                  "nameLocation": "2770:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 546,
+                  "src": "2756:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 521,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2756:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2739:39:2"
+            },
+            "returnParameters": {
+              "id": 524,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2788:0:2"
+            },
+            "scope": 555,
+            "src": "2718:215:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 553,
+              "nodeType": "Block",
+              "src": "2998:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 551,
+                    "name": "_collectionId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 404,
+                    "src": "3015:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 550,
+                  "id": 552,
+                  "nodeType": "Return",
+                  "src": "3008:20:2"
+                }
+              ]
+            },
+            "functionSelector": "7c8e7bfe",
+            "id": 554,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCollectionId",
+            "nameLocation": "2948:15:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2963:2:2"
+            },
+            "returnParameters": {
+              "id": 550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 549,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 554,
+                  "src": "2989:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 548,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2989:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1999,21 +2395,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2674:9:2"
+              "src": "2988:9:2"
             },
-            "scope": 526,
-            "src": "2625:96:2",
+            "scope": 555,
+            "src": "2939:96:2",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 527,
-        "src": "709:2014:2",
+        "scope": 556,
+        "src": "709:2328:2",
         "usedErrors": []
       }
     ],
-    "src": "36:2688:2"
+    "src": "36:3002:2"
   },
   "compiler": {
     "name": "solc",
@@ -2021,7 +2417,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-09T08:50:19.535Z",
+  "updatedAt": "2022-12-09T15:18:08.861Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

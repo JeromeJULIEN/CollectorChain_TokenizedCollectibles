@@ -18,6 +18,7 @@ import Mint from './components/Mint';
 import Admin from './components/Admin';
 import DaoProposal from './components/DaoProposal';
 import { addCollection, deleteAllCollections } from './store/actions/collections';
+import Footer from './components/footer';
 
 function App() {
 
@@ -170,6 +171,7 @@ function App() {
           <Route path="/mint" element={<Mint />}/> 
           <Route path="/admin" element={<Admin />}/> 
         </Routes>
+        <Footer/>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export const UPDATE_PROPOSAL = 'UPDATE_PROPOSAL';
 export const UPDATE_PROPERTY_MINT_STATUS = 'UPDATE_PROPERTY_MINT_STATUS';
 export const UPDATE_DIGITAL_MINT_STATUS = 'UPDATE_DIGITAL_MINT_STATUS';
 export const DELETE_ALL_MEMBERS = 'DELETE_ALL_MEMBERS';
-export const ADD_MEMBER = 'ADD_MEMBER';
+export const ADD_MEMBERS = 'ADD_MEMBERS';
 export const ADD_MAIN_IMAGE = 'ADD_MAIN_IMAGE';
 export const ADD_OWNERSHIP_IMAGE = 'ADD_OWNERSHIP_IMAGE';
 
@@ -21,9 +21,9 @@ export const addMainImage = (payload) => ({
   payload
 });
 
-export const addMember = (address) => ({
-  type: ADD_MEMBER,
-  address
+export const addMembers = (payload) => ({
+  type: ADD_MEMBERS,
+  payload
 });
 
 export const deleteAllMembers = () => ({

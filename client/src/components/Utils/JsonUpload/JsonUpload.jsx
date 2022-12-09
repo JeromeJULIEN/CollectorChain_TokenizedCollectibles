@@ -1,22 +1,13 @@
-import { useState } from "react"
 import axios from "axios"
 
-const JsonUpload = () => {
-
-  const [selectedFile, setSelectedFile] = useState();
-
-  const changeHandler = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
-  const handleSubmission = async() => {
+const JsonUpload = async(test) => {
 
     var data = JSON.stringify({
       "pinataOptions": {
         "cidVersion": 1
       },
       "pinataMetadata": {
-        "name": "testing",
+        "name": `${test}`,
       },
       "pinataContent": {
         "collection":"collectionName",
@@ -25,8 +16,8 @@ const JsonUpload = () => {
         "image":"imageURL",
         "initial value":"value",
         "attributes": [
-          {"attribute 1": "value 1"},
-          {"attribute 2": "value 2"}
+          {"trait_type": "trait 1", "value":"value 1"},
+          {"trait_type": "trait 2", "value":"value 2"}
         ]
       }
     });
@@ -47,14 +38,8 @@ const JsonUpload = () => {
     console.log(res.data);  
     };
 
-  return (
-    <>
-    <label class="form-label">Choose File</label>
-    <input type="file"  onChange={changeHandler}/>
-    <button onClick={handleSubmission}>Submit</button>
-    </>
-  )
-}
+  
+
 
 export default JsonUpload
 

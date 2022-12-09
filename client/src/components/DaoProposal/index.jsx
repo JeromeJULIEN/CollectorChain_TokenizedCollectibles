@@ -7,14 +7,8 @@ import Web3 from 'web3';
 import './daoProposal.scss';
 import { addCollection, deleteAllCollections, setDigitalCollection, setPropertyCollection } from '../../store/actions/collections';
 import CheckRoundIcon from '@rsuite/icons/CheckRound';
-// import fs from "fs";
-// require('dotenv').config()
-// const Dotenv = require('dotenv-webpack');
-// récupération des infos du .env
+import axios from 'axios';
 
-// cconnection à pinata avec la clé
-
-// import de fs qui est un 'systeme de fichier'
 
 const DaoProposal = () => {
     const {id} = useParams();
@@ -74,11 +68,14 @@ const DaoProposal = () => {
     }
 
     const mintProperty = async() => {
-        const mintValueInWei = web3.utils.toBN(web3.utils.toWei(proposal.value))
-        console.log(mintValueInWei);
-        // pinFileToIPFS('./image.png');
+        const mintValueInWei = web3.utils.toBN(proposal.value)
+        const mintValuelInEth = web3.utils.fromWei(proposal.value)
+        uploadJson(mintValuelInEth)
         await propertyContract.methods.mintPropertyNft(id,proposal.name,mintValueInWei,web3.utils.toBN(100),accounts[0],proposal.mainImage).call({from:accounts[0]})
         await propertyContract.methods.mintPropertyNft(id,proposal.name,mintValueInWei,web3.utils.toBN(100),accounts[0],proposal.mainImage).send({from:accounts[0]})
+        const nftId = await propertyContract.methods._id().call({from:accounts[0]})
+        await propertyContract.methods.launchSetURI(web3.utils.toBN(nftId-1),ipfsJson).call({from:accounts[0]})
+        await propertyContract.methods.launchSetURI(web3.utils.toBN(nftId-1),ipfsJson).send({from:accounts[0]})
         handleUpdater()
     }
 
@@ -90,6 +87,47 @@ const DaoProposal = () => {
             })
         handleUpdater()
     }
+
+    const [ipfsJson,setIpfsJson] = useState("")
+
+    const uploadJson = async(mintValuelInEth) => {
+
+        var data = JSON.stringify({
+          "pinataOptions": {
+            "cidVersion": 1
+          },
+          "pinataMetadata": {
+            "name": `${proposal.name}`,
+          },
+          "pinataContent": {
+            "collection":`${daoList[proposal.daoId].name}`,
+            "name": `${proposal.name}`,
+            "description":`${proposal.desc}`,
+            "image":`${proposal.mainImage}`,
+            "ownership":`${proposal.docOwnership}`,
+            "attributes": [
+              {"trait_type": "initial value", "value":`${mintValuelInEth} eth`},
+            ]
+          }
+        });
+    
+        var config = {
+          method: 'post',
+          url: 'https://api.pinata.cloud/pinning/pinJSONToIPFS',
+          headers: { 
+            'Content-Type': 'application/json', 
+            pinata_api_key: "63bb820f34b47baa1cb9",
+            pinata_secret_api_key: "b5de21d37ed9d8e10799f214b508bac043704f94519db42e9ea4955d80657513"
+          },
+          data : data
+        };
+    
+        const res = await axios(config);
+
+        setIpfsJson(`https://gateway.pinata.cloud/ipfs/${res.data.IpfsHash}`)
+    
+        console.log(res.data);  
+    };
 
 
      //! :::: GESTION EVENT  :::::

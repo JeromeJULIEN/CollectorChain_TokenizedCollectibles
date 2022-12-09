@@ -2,17 +2,16 @@
 
 
 
-.title {
-    font-size: vars.$fontSize_normal ;
+.titleMarketplace {
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 30px;
+    height: 3rem;
     padding: 0 1rem;
-    background-color: vars.$color_callToAction;
-
+    background-color: vars.$color_digitalNft;
+    font-size: 2rem;
     color: white;
 }
 
