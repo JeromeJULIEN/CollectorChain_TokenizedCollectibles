@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addDao, addProposal, deleteDao, deleteProposal, updatePropertyMintStatus, updateProposal } from '../../store/actions/dao';
+import { addDao, addMainImage, addOwnershipImage, addProposal, deleteDao, deleteProposal, updatePropertyMintStatus, updateProposal } from '../../store/actions/dao';
 import {Link} from 'react-router-dom';
 import PlusRoundIcon from '@rsuite/icons/PlusRound';
 import {InputPicker} from 'rsuite';
-import Axios from 'axios';
+import axios from 'axios';
 import './styles.scss'
 import { addCollection, deleteAllCollections } from '../../store/actions/collections';
+import FileUpload from '../Utils/FileUpload/FileUpload';
+import CheckRoundIcon from '@rsuite/icons/CheckRound';
+
 
 
 const Mint = () => {
@@ -19,6 +22,8 @@ const Mint = () => {
     const web3 = useSelector(state => state.web3.web3)
     const daoList = useSelector(state => state.dao.daoList)
     const proposalList = useSelector(state => state.dao.proposalList)
+    const proposalMainImage = useSelector(state => state.dao.proposalMainImage)
+    const proposalOwnershipImage = useSelector(state=>state.dao.proposalOwnershipImage)
 
     //! LOCAL STATE
     const [mintCollection, setMintCollection] = useState(0);
@@ -43,17 +48,18 @@ const Mint = () => {
     const handleChangeMintValue = (event) => {
         setMintValue(event.target.value)
     }
+    const[mainImageOK,setMainImageOK] = useState(false);
+    const[ownershipImageOK,setOwnershipImageOK] =useState(false)
     
     //! FUNCTIONS
     const askMint = async() => {
         const mintValueInWei = web3.utils.toBN(web3.utils.toWei(mintValue))
-        console.log(mintValueInWei);
         if(mintTitle == '' || mintDesc == '' || mintValue ==''){
             alert("you have to fill all informations")
         }
         try{
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValueInWei,docOwnership,mainImage).call({from:accounts[0]})
-            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValueInWei,docOwnership,mainImage).send({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValueInWei,proposalOwnershipImage,proposalMainImage).call({from:accounts[0]})
+            await daoContract.methods.createProposal(mintCollection, mintTitle, mintDesc,mintValueInWei,proposalOwnershipImage,proposalMainImage).send({from:accounts[0]})
             setMintCount(mintCount +1);
         } catch (error) {
             console.error(error)
@@ -68,41 +74,17 @@ const Mint = () => {
         }
     })
 
-    const [docOwnership,setDocOwnership] = useState("")
-    const uploadOwnershipImage = (event) => {
-        // setPicture(event.target.files);
-        // Il faut stocker un chemin URL pour afficher l'image
-        // dispatch(storeNftMedia(event.target.files[0]));
-        // tuto youtube : https://www.youtube.com/watch?v=Y-VgaRwWS3o
-        const formData = new FormData()
-        formData.append("file", event.target.files[0])
-        formData.append("upload_preset", "r2bx0mli")
-        Axios.post("https://api.cloudinary.com/v1_1/ddsddskey/image/upload",
-            formData
-        ).then((response) => {
-            console.log(response.data.secure_url);
-            setDocOwnership(response.data.secure_url);
-        })
+    // Stockage des IPFSHash
+    const changeMainImage = (value) =>{
+        dispatch(addMainImage(value))
+        setMainImageOK(true)
+    }
 
-    };
+    const changeOwnershipImage = (value) =>{
+        dispatch(addOwnershipImage(value))
+        setOwnershipImageOK(true)
+    }
 
-    const [mainImage,setMainImage] = useState("")
-    const uploadMainImage = (event) => {
-        // setPicture(event.target.files);
-        // Il faut stocker un chemin URL pour afficher l'image
-        // dispatch(storeNftMedia(event.target.files[0]));
-        // tuto youtube : https://www.youtube.com/watch?v=Y-VgaRwWS3o
-        const formData = new FormData()
-        formData.append("file", event.target.files[0])
-        formData.append("upload_preset", "r2bx0mli")
-        Axios.post("https://api.cloudinary.com/v1_1/ddsddskey/image/upload",
-            formData
-        ).then((response) => {
-            console.log(response.data.secure_url);
-            setMainImage(response.data.secure_url);
-        })
-
-    };
   
     //! EVENT
     useEffect(()=> {
@@ -228,12 +210,14 @@ const Mint = () => {
                 </div>
                 <div className="panelRight">
                     <div className="panelRight__doc">
-                        <p>Upload the main picture of the object</p>   
-                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadMainImage} className="picture__input" id="docOwnership" />
-                        <p>Upload your proof of ownership</p>   
-                        <input type="file" accept="image/*" name="docOwnership" onChange={uploadOwnershipImage} className="picture__input" id="docOwnership" />
+                        <p>Upload the main picture of the object</p>
+                        {mainImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeMainImage} />}
+                        <p>Upload your proof of ownership</p>
+                        {ownershipImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeOwnershipImage}/>}
                     </div>
-                    <button className='panelRight__btn' onClick={askMint}>Send request</button>
+                    {(mainImageOK==true && ownershipImageOK==true) ?
+                     <button className='panelRight__btn' onClick={askMint}>Send request</button>
+                     : <p>PLease provide the object and ownership proof picture before submit</p>}
                 </div>
 
            </div>

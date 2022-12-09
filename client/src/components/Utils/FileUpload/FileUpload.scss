@@ -1,0 +1,18 @@
+@use '../../../../styles/vars';
+
+.fileUpload {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+
+    &__btn {
+        background-color: vars.$color_callToAction;
+        height: 1.5rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        color: white;
+        font-weight: bold;
+        width: 20%;
+    }
+}

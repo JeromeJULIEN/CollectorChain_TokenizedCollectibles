@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCollection, deleteAllCollections } from '../../store/actions/collections';
 import { deleteAllMembers } from '../../store/actions/dao';
 import './admin.scss'
-import FileUpload from '../Utils/FileUpload'
-import JsonUpload from '../Utils/JsonUpload';
+
 
 
 const Admin = () => {
@@ -154,14 +153,6 @@ const Admin = () => {
             <p>collected fees : {ethReceived} eth</p> 
             <p>number of transactions : {transactionCount} </p> 
 
-        </div>
-        <div>
-            <p>test upload pinata</p>
-            <FileUpload/>
-        </div>
-        <div>
-            <p>test upload JSON</p>
-            <JsonUpload/>
         </div>
     </div>
   )
