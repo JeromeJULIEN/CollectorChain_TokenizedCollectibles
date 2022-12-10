@@ -10,7 +10,7 @@
 
 .headLine {
     font-size: 2rem;
-    width: 75%;
+    width: 100%;
 
     strong {
         color: vars.$color_digitalNft;
@@ -31,15 +31,13 @@
 
     &__btn:hover {
         box-shadow: inset 0px 0px 5px white;
-        text-decoration: none;
-        color: white;
     }
 }
 
 .nft {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 5rem;
     margin: 0 5rem;
 
     &__digital {

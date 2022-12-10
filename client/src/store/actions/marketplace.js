@@ -6,6 +6,15 @@ export const DELETE_TRANSACTION_COUNT = 'DELETE_TRANSACTION_COUNT';
 export const INCREMENT_TRANSACTION_COUNT = 'INCREMENT_TRANSACTION_COUNT';
 export const DELETE_FEES = 'DELETE_FEES';
 export const ADD_FEES = 'ADD_FEES';
+export const UPDATE_QUANTITY_TO_SELL = 'UPDATE_QUANTITY_TO_SELL';
+
+export const updateQuantityToSell = (collectionId,nftId,seller,quantity) => ({
+  type: UPDATE_QUANTITY_TO_SELL,
+  collectionId,
+  nftId,
+  seller,
+  quantity
+});
 
 export const addFees = (payload) => ({
   type: ADD_FEES,

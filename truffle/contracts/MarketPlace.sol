@@ -52,6 +52,13 @@ contract MarketPlace is Ownable {
         string image
     );
 
+    event propertySold(
+        uint256 collectionId,
+        uint256 nftId,
+        address seller,
+        uint256 quantity
+    );
+
     /// @notice action require before put in sell a property nft
     /// @dev send an approval to the good 1155 contract
     function approvePropertyForSell(address _collectionAddress) external {
@@ -139,10 +146,13 @@ contract MarketPlace is Ownable {
             _quantityToBuy,
             ""
         );
+        uint256 _collectionId = nftProperty.getCollectionId();
         // update of seller balance
         itemToSellByIdByAddress[_collectionAddress][_itemId][
             _seller
         ] -= _quantityToBuy;
+
+        emit propertySold(_collectionId, _itemId, _seller, _quantityToBuy);
     }
 
     function getContractBalance()

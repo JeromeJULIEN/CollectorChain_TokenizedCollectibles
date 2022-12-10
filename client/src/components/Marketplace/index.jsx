@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import "./marketplace.scss"
-import { addSeller, deleteAllNftsToSell, setPropertyNftsToSell } from '../../store/actions/marketplace';
+import { addSeller, deleteAllNftsToSell, setPropertyNftsToSell, updateQuantityToSell } from '../../store/actions/marketplace';
 import PropertyForSellCard from '../Utils/nftCard/PropertyForSellCard/PropertyForSellCard';
 
 
@@ -42,25 +42,9 @@ const Marketplace = () => {
         const abiDigital = artifactDigital.abi;
         // set to zero
         dispatch(deleteAllNftsToSell())
-        // loop on each collection
-        // collectionList.forEach(async(collection) => {
-        //     let propertyContractAddress = collection.propertyContractAddress;
-        //     let digitalContractAddress = collection.digitalContractAddress;
-        //     let digitalContract = new web3.eth.Contract(abiDigital, digitalContractAddress);
-        //     let propertyContract = new web3.eth.Contract(abiProperty, propertyContractAddress);
-            // loop on digital subcollection
-            // const nbOfDigitalMint = await digitalContract.methods._id().call({from:accounts[0]})
-            // let idDigitalArray =[]
-            // for (let index = 0; index < nbOfDigitalMint; index++) {
-            //     idDigitalArray.push(index)
-            // }
-            // for await (let i of idDigitalArray ) {
-            //     const nft = await digitalContract.methods.digitalNfts(i).call({from:accounts[0]})
-            //     console.log('digital nft=>', nft);
-            //     dispatch(setUserDigitalNfts(nft.collectionId,i,nft.nftName))
-            // }
-            // LOOP ON MARKETPLACE EVENT
+             // LOOP ON MARKETPLACE EVENT
             const getEvent= async()=> {
+                // properryPutOnsell event
                 let propertyToSellEvents = await marketplaceContract.getPastEvents('propertyPutOnSell',{
                     fromBlock : 0,
                     toBlock:'latest'
@@ -80,17 +64,25 @@ const Marketplace = () => {
                 });
                 oldPropertyToSellEvents.forEach(event => {
                     dispatch(setPropertyNftsToSell(event.collectionId,event.nftId, event.name, event.image))
-                    dispatch(addSeller(event.collectionId,event.nftId,event.seller,event.quantityOnSell,event.price))
-                // const nbOfPropertylMint = await propertyContract.methods._id().call({from:accounts[0]})
-                // let idPropertyArray =[]
-                // for (let index = 0; index < nbOfPropertylMint; index++) {
-                //     idPropertyArray.push(index)
-                // }
-                // for await (let i of idPropertyArray ) {
-                //     const nft = await propertyContract.methods.propertyNfts(i).call({from:accounts[0]})
-                //     dispatch(setPropertyNftsToSell(nft.collectionId, nft.nftId, nft.name))
-                // }
-                
+                    dispatch(addSeller(event.collectionId,event.nftId,event.seller,event.quantityOnSell,event.price))                
+                });
+                // propertySold event
+                let propertySoldEvent = await marketplaceContract.getPastEvents('propertySold',{
+                    fromBlock : 0,
+                    toBlock:'latest'
+                });
+                let oldPropertySoldEvent=[];
+                propertySoldEvent.forEach(event => {
+                    oldPropertySoldEvent.push(
+                        {
+                            collectionId : event.returnValues.collectionId,
+                            nftId : event.returnValues.nftId, 
+                            seller : event.returnValues.seller,
+                            quantityBought: event.returnValues.quantity,
+                        });
+                });
+                oldPropertySoldEvent.forEach(event => {
+                    dispatch(updateQuantityToSell(event.collectionId,event.nftId,event.seller,event.quantityBought))
                 });
             }
             getEvent()

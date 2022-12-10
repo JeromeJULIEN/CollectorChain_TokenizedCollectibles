@@ -10295,8 +10295,8 @@
         }
       },
       "links": {},
-      "address": "0x179DEf9327346FE5BE957871be3cbEBDd7Acb4eD",
-      "transactionHash": "0x66028bc4b09719b948cc04331c2c90438b7b2f28278f6d1c1779a30c12af1cf3"
+      "address": "0xf06620022FdC9bf59f18f82f9A72377AFb5e2794",
+      "transactionHash": "0x70d810b1ed4e03a946daeaba8366ed92025880dfcecd0d8b43c8ed7eb71a1754"
     },
     "80001": {
       "events": {},
@@ -10318,7 +10318,7 @@
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-09T15:18:10.862Z",
+  "updatedAt": "2022-12-10T10:29:04.739Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "subDao, 1155 and 721 collection will be linked by a unique id for each colllction",

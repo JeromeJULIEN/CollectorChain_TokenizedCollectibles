@@ -174,18 +174,22 @@ contract CollectorsDAO is Ownable {
         Proposal storage proposal = proposals[_proposalId];
         require(daoMembers[msg.sender] == true, "not member of the DAO");
         require(votes[msg.sender][_proposalId] == false, "already voted");
+        require(
+            proposals[_proposalId].author != msg.sender,
+            "applicant can't vote for his proposal"
+        );
         votes[msg.sender][_proposalId] = true;
         if (_vote == VotingOptions.Yes) {
             proposal.votesForYes += 1;
+            proposal.value =
+                (proposal.value * (proposal.votesForYes - 1) + _value) /
+                proposal.votesForYes;
             if (
                 (proposal.votesForYes * 100) /
                     (proposal.votesForYes + proposal.votesForNo) >
                 50
             ) {
                 proposal.status = true;
-                proposal.value =
-                    (proposal.value * (proposal.votesForYes - 1) + _value) /
-                    proposal.votesForYes;
             }
         } else {
             proposal.votesForNo += 1;

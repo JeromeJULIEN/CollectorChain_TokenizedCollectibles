@@ -1,4 +1,4 @@
-import { ADD_FEES, ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, DELETE_FEES, DELETE_TRANSACTION_COUNT, INCREMENT_TRANSACTION_COUNT, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL, UPDATE_SELLER_BALANCE } from "../actions/marketplace";
+import { ADD_FEES, ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, DELETE_FEES, DELETE_TRANSACTION_COUNT, INCREMENT_TRANSACTION_COUNT, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL, UPDATE_QUANTITY_TO_SELL, UPDATE_SELLER_BALANCE } from "../actions/marketplace";
 
 const initialState = {
     artifact: null,
@@ -52,6 +52,33 @@ const marketplaceReducer = (state = initialState,action={})=>{
                         return nft
                     })
                 
+            }
+        }
+        case UPDATE_QUANTITY_TO_SELL:{
+            console.log(action.collectionId,action.nftId,action.seller,action.quantity)
+            return{
+                ...state,
+                // propertyToSell:
+                //     state.propertyToSell.map(nft =>{
+                //         if((nft.collectionId === action.collectionId && nft.nftId === action.nftId)) {
+                //             return{
+                //                 ...nft,
+                //                 seller:[
+                //                     nft.seller.map(seller =>{
+                //                         if(seller == action.seller) {
+                //                             console.log('seller',seller)
+                //                             return{
+                //                                 ...seller,
+                //                                 quantity:state.propertyToSell.seller.quantity - action.quantity
+                //                             }
+                //                         }
+                //                         return seller
+                //                     })
+                //                 ]
+                //             }
+                //         }
+                //         return nft
+                //     })
             }
         }
         case DELETE_TRANSACTION_COUNT:{

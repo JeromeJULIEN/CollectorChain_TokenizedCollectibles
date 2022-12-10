@@ -85,6 +85,7 @@ const PropertyForSellCard = ({
     } catch(error){
       console.log(error);
     }
+    
   }
   
   const formatETHAddress = (s, size) =>{;
