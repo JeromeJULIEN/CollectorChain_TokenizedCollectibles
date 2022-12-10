@@ -10230,10 +10230,61 @@
   },
   "networks": {
     "5": {
-      "events": {},
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x81032603cc83ea314c740484276d4b1d8e02c0e6c3a997883c4bc72bf8409353": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "collectionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "collectionName",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "propertyCollectionAddress",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "digitalCollectionAddress",
+              "type": "address"
+            }
+          ],
+          "name": "collectionCreated",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x3C3213E0b304694d073d84B7cA018e3EF7700F75",
-      "transactionHash": "0x951bed42604949f9090fc340b790857e1f74b0135ee8ea22a6a6e92bd2d06bf4"
+      "address": "0x5799381a45fE059Be82Fabf846Ddc0DDD147D0Db",
+      "transactionHash": "0xe751043cdf4776366955b75f2e69175f1ec38ee1a86aa396a356bbd569491b49"
     },
     "1337": {
       "events": {},
@@ -10318,7 +10369,7 @@
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-10T10:29:04.739Z",
+  "updatedAt": "2022-12-10T10:46:15.394Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "subDao, 1155 and 721 collection will be linked by a unique id for each colllction",

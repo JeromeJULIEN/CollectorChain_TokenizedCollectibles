@@ -20,7 +20,9 @@ const MenuMain = () => {
           <Link to='/portfolio' className='menu__navBar--item'>My portfolio</Link>
           <Link to='/dao' className='menu__navBar--item'>DAO</Link>
           <Link to='/mint' className='menu__navBar--item'>Create your collectible</Link>
-          {isAdmin && <Link to='/admin' className='menu__navBar--item'>Admin</Link>}
+          {/* {isAdmin &&  */}
+          <Link to='/admin' className='menu__navBar--item'>Admin</Link>
+          {/* } */}
         </div>
         <ConnectBtn/>
       </div >

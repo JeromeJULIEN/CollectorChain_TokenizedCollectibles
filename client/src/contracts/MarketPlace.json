@@ -11891,10 +11891,123 @@
   },
   "networks": {
     "5": {
-      "events": {},
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x699e21c8b7091f6cb2dc2f2653d170e400fa469381b6b0441201d78664cbf34e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "valueReceived",
+              "type": "uint256"
+            }
+          ],
+          "name": "etherReceived",
+          "type": "event"
+        },
+        "0x6e8750b86182d9ec65203a9bf479c6545c5649f7fefaa06b7dccab8e8640ea00": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "collectionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "nftId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "quantityOnSell",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "image",
+              "type": "string"
+            }
+          ],
+          "name": "propertyPutOnSell",
+          "type": "event"
+        },
+        "0x9eff7eafba3af09ade0ff8971cd51ce8ab3273ae77ec90370be519db3a02ccd9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "collectionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "nftId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "quantity",
+              "type": "uint256"
+            }
+          ],
+          "name": "propertySold",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x2B97EB96E49a8dbb7860126AD41a1e89907d905A",
-      "transactionHash": "0x295f6c7b9c75c3a3ef290005e6f650f2cb1e01f01c32d3a25b3e611a8af231a1"
+      "address": "0xDa36E7a0b034e73d90a2fbB903777A17Ea01e87b",
+      "transactionHash": "0xab927f5c10472b2e9f44118560281cf064576ff618b7d20c8cf9a8185a4a007b"
     },
     "1337": {
       "events": {},
@@ -12121,7 +12234,7 @@
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-10T10:29:04.769Z",
+  "updatedAt": "2022-12-10T10:46:15.409Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

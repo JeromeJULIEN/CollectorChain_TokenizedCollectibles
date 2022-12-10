@@ -18496,10 +18496,211 @@
   },
   "networks": {
     "5": {
-      "events": {},
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x233468f62cb5569433a2646a1c57b4333dc80fc4881a358e28455bb25feb3be3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "daoId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "daoName",
+              "type": "string"
+            }
+          ],
+          "name": "daoCreated",
+          "type": "event"
+        },
+        "0x5802cc018bf0d01c7ed6c794bb8d560c639d43858443f4aaf18d96cd6051419b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "proposalId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "digitalMinted",
+              "type": "bool"
+            }
+          ],
+          "name": "digitalMinted",
+          "type": "event"
+        },
+        "0xdbfcb877450159cfc3af51c0e4fd98de8b92ebb8fe2b8ee929f3320c5c5a8970": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "newMember",
+              "type": "address"
+            }
+          ],
+          "name": "memberAdded",
+          "type": "event"
+        },
+        "0xc2c6d84af001f6703730e6a4be5cdb2d3ed3e5998823abcfb475ffc10dc80d13": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "proposalId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "propertyMinted",
+              "type": "bool"
+            }
+          ],
+          "name": "propertyMinted",
+          "type": "event"
+        },
+        "0x321c3f57789939cd39adec5d8128505091bd9203987e6809db9bc7c8213c485f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "proposalId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "finalValue",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "votingStatus",
+              "type": "string"
+            }
+          ],
+          "name": "proposalClosed",
+          "type": "event"
+        },
+        "0x3def31f11840d66bfe2d5e185f6a870795e28798376bac72ba4d66745b09c9df": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "daoId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "proposalId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "proposalName",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "proposalDesc",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "docOwnership",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "mainImage",
+              "type": "string"
+            }
+          ],
+          "name": "proposalCreated",
+          "type": "event"
+        },
+        "0x850c01f77ce89db19c181f2bfa4b0511a21b3950c753d84abe84ef69195cce11": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "proposalId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "voter",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "enum CollectorsDAO.VotingOptions",
+              "name": "vote",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "updatedProposalStatus",
+              "type": "bool"
+            }
+          ],
+          "name": "voteSetted",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x03553dd080b6cE907D8068511e607d939068E375",
-      "transactionHash": "0xe83a42868e3d9aa60b84b1dd798e24f1b74ef0cef4ffbccf7ba3593019b81393"
+      "address": "0x5e613B5329C480A36B42A7bF48C480072dc8629E",
+      "transactionHash": "0xecbae8b581317e37985223e6afe41e3cc5ccb1718fc8006246628c3c9539a347"
     },
     "1337": {
       "events": {},
@@ -19113,7 +19314,7 @@
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-10T10:29:04.747Z",
+  "updatedAt": "2022-12-10T10:46:15.400Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
