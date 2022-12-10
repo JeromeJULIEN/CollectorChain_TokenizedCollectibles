@@ -5,6 +5,7 @@ import { addCollection, deleteAllCollections } from '../../store/actions/collect
 import { addMembers, deleteAllMembers } from '../../store/actions/dao';
 import './admin.scss'
 import JsonUpload from '../Utils/JsonUpload/JsonUpload';
+import { addFees, deleteFees, deleteTransactionCount, incrementTransactionCount } from '../../store/actions/marketplace';
 
 
 
@@ -12,11 +13,15 @@ const Admin = () => {
 
     //! STORE
     const factoryContract = useSelector(state => state.factory.contract);
+    const marketplaceContract =useSelector(state=> state.marketplace.contract)
     const daoContract = useSelector(state => state.dao.contract);
     const accounts = useSelector(state => state.web3.accounts);
     const web3 = useSelector(state => state.web3.web3);
     const collectionList = useSelector(state=> state.collections.collections)
     const membersList = useSelector(state=>state.dao.members)
+    const transactionCount = useSelector(state => state.marketplace.transactionCount);
+    const fees = useSelector(state=>state.marketplace.fees);
+
     
     //! LOCAL STATE
     const dispatch = useDispatch();
@@ -42,41 +47,33 @@ const Admin = () => {
 
     const test = 'coucou'
 
-    //! EVENTS
-    const [ethReceived,setEthReceived] = useState(0)
-    const [transactionCount,setTransactionCount] = useState(0)
-    useEffect(()=>{
-        setEthReceived(0);
-        setTransactionCount(0);
-    },[])
-    
+    //! EVENTS    
     useEffect(() => {
         // ETH RECEIVED EVENT
         // console.log('event ETH');
         // console.log('eth should be 0',ethReceived);
         // console.log('transac should be 0',transactionCount);
         const getCollectionEvents = async() => {
-        //     let ethReceivedEvent = await marketplaceContract.getPastEvents('etherReceived',{
-        //         fromBlock : 0,
-        //         toBlock:'latest'
-        //     });
-        //     console.log('ethReceivedEvent=>',ethReceivedEvent);
-        //     let oldEthReceivedEvent=[];
-        //     ethReceivedEvent.forEach(event => {
-        //         oldEthReceivedEvent.push(
-        //             {
-        //                 valueReceived : web3.utils.fromWei(event.returnValues.valueReceived)
-        //             });
-        //     });
-        //     console.log('oldReceivedEvent=>',oldEthReceivedEvent);
+            let ethReceivedEvent = await marketplaceContract.getPastEvents('etherReceived',{
+                fromBlock : 0,
+                toBlock:'latest'
+            });
+            console.log('ethReceivedEvent=>',ethReceivedEvent);
+            let oldEthReceivedEvent=[];
+            ethReceivedEvent.forEach(event => {
+                oldEthReceivedEvent.push(
+                    {
+                        valueReceived : web3.utils.fromWei(event.returnValues.valueReceived)
+                    });
+            });
+            console.log('oldReceivedEvent=>',oldEthReceivedEvent);
             
-        //     let totalEthReceived = 0;
-        //     oldEthReceivedEvent.forEach(receipt => {
-        //         totalEthReceived = parseInt(totalEthReceived) + parseInt(receipt.valueReceived)
-        //         console.log('result intermediaire',totalEthReceived);
-        //     })
-        //     setEthReceived(totalEthReceived)
-            // setTransactionCount(oldEthReceivedEvent.length())
+            dispatch(deleteTransactionCount());
+            dispatch(deleteFees());
+            oldEthReceivedEvent.forEach(receipt => {
+                dispatch(incrementTransactionCount());
+                dispatch(addFees(parseFloat(receipt.valueReceived) ));
+            })
             // COLLECTION ADDED
             let collectionCreationEvent = await factoryContract.getPastEvents('collectionCreated',{
                fromBlock : 0,
@@ -178,7 +175,7 @@ const Admin = () => {
 
         </div>
         <div className='fees'> 
-            <p>collected fees : {ethReceived} eth</p> 
+            <p>collected fees : {fees.toFixed(3)} eth</p> 
             <p>number of transactions : {transactionCount} </p> 
 
         </div>

@@ -1,9 +1,11 @@
-import { ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL, UPDATE_SELLER_BALANCE } from "../actions/marketplace";
+import { ADD_FEES, ADD_SELLER, DELETE_ALL_NFTS_TO_SELL, DELETE_FEES, DELETE_TRANSACTION_COUNT, INCREMENT_TRANSACTION_COUNT, INIT_MARKETPLACE, SET_PROPERTY_NFTS_TO_SELL, UPDATE_SELLER_BALANCE } from "../actions/marketplace";
 
 const initialState = {
     artifact: null,
     contract: null,
     owner:null,
+    transactionCount:0,
+    fees:0,
     propertyToSell:[],
     digitalToSell:[]
   };
@@ -50,6 +52,31 @@ const marketplaceReducer = (state = initialState,action={})=>{
                         return nft
                     })
                 
+            }
+        }
+        case DELETE_TRANSACTION_COUNT:{
+            return{
+                ...state,
+                transactionCount:0
+            }
+        }
+        case INCREMENT_TRANSACTION_COUNT:{
+            return{
+                ...state,
+                transactionCount : state.transactionCount+1
+            }
+        }
+        case DELETE_FEES:{
+            return{
+                ...state,
+                fees:0
+            }
+        }
+        case ADD_FEES:{
+            console.log("value from reducer",action.payload,typeof(action.payload));
+            return{
+                ...state,
+                fees:state.fees+action.payload
             }
         }
     

@@ -26,7 +26,7 @@ const Home = () => {
           <img className='nft__property--image' src={piece} alt="" />
           <div className='nft__property--title'>NFT as ownership certificate</div>
           <div className="nft__property__text">
-            <p><ArrowRightLineIcon/><strong>Collectible tokenized</strong> with an ownership fractionized in 100 shares</p>
+            <p><ArrowRightLineIcon/><strong>Tokenized collectible</strong> with an ownership fractionized in 100 shares</p>
             <p><ArrowRightLineIcon/><strong>Weekly Rewards</strong> for the NFT owner (from Royalties)</p>
             <p><ArrowRightLineIcon/>Physiccal collectible stored in our <strong>secured ‘vault’</strong></p>
             <p><ArrowRightLineIcon/>Secured <strong>cold storage solution</strong></p>

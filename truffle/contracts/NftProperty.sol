@@ -82,6 +82,13 @@ contract NftProperty is ERC1155URIStorage {
         collectorsDAO.updatePropertyMintStatus(_proposalId);
     }
 
+    /// @dev function launch just after the minting by the minter, in the same frontEnd call
+    function launchSetURI(uint256 _nftId, string memory _nftUri) external {
+        uint256 balance = balanceOf(msg.sender, _nftId);
+        require(balance > 0, "not the owner");
+        _setURI(_nftId, _nftUri);
+    }
+
     function getCollectionId() external view returns (uint256) {
         return _collectionId;
     }
