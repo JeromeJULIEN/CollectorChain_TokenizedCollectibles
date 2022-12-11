@@ -1,5 +1,18 @@
 @use '../../../styles/vars';
 
+.titleAdmin {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 3rem;
+    padding: 0 1rem;
+    background-color: vars.$color_digitalNft;
+    font-size: 2rem;
+    color: white;
+}
+
 .btn {
     background-color: vars.$color_callToAction;
     color: white;
@@ -7,7 +20,7 @@
     padding: .2rem .5rem;
     width: 100%;
     height: 2rem;
-    font-size: 2rem;
+    margin-top: 50px;
 }
 
 .admin {
@@ -15,6 +28,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 
     // button {
     //     background-color: vars.$color_callToAction;
@@ -99,4 +113,8 @@
     background-color: vars.$color_digitalNft;
     color: vars.$color_white;
     font-weight: bold;
+}
+
+.address {
+    color: white;
 }

@@ -1,6 +1,10 @@
 @use '../../../styles/vars';
 
 .work {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
 
     &__title {
         font-size: 2rem;
@@ -14,5 +18,46 @@
         background-color: vars.$color_digitalNft;
 
         color: white;
+    }
+}
+
+.block {
+    box-shadow: 0px 0px 10px vars.$color_black;
+    margin: 1rem 2rem;
+    border-radius: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: .2rem;
+        font-size: 1rem;
+
+        strong {
+            color: vars.$color_digitalNft;
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        font-size: 1rem;
+    }
+}
+
+
+.dao {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        font-size: 3rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 3rem;
+        padding: 0 1rem;
+        color: vars.$color_black;
     }
 }

@@ -99,7 +99,6 @@ const Dao = ({connect}) => {
                         });
                 });
                 dispatch(deleteAllCollections());
-                console.log('oldcollectionevent', collectionCreationEvent)
                 oldCollectionCreationEvent.forEach(collection => {
                     dispatch(addCollection(collection.collectionName, collection.propertyCollectionAddress, collection.digitalCollectionAddress))});
                 
@@ -109,7 +108,7 @@ const Dao = ({connect}) => {
     }, [daoContract]
     )
     return (
-    <div className='dao'>
+        <div className='dao'>
         {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
         <>
         <div className="titleDao">DAO</div>
@@ -127,14 +126,14 @@ const Dao = ({connect}) => {
                 <div className="proposalList__item">
                     <p className="proposalList__item__detail">{daoList[proposal.daoId].name}</p>
                     <p className="proposalList__item__detail">{proposal.name}</p>
-                    <p className="proposalList__item__detail">{proposal.desc.substr(0, 50)}...</p>
+                    <p className="proposalList__item__detail--desc">{proposal.desc.substr(0, 20)}...</p>
                     <p className="proposalList__item__detail">{proposal.status}</p>
                     <button ><Link className="proposalList__item__detail--button" to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
                 </div>
                 ))}
             </div>
         </>}
-    </div>    
+    </div>  
   )
 }
 

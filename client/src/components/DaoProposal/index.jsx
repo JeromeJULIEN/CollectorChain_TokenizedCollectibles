@@ -25,10 +25,7 @@ const DaoProposal = () => {
     const factoryContract = useSelector(state => state.factory.contract);
     let propertyContractAddress = collectionsList[proposal.daoId].propertyContractAddress;
     let digitalContractAddress= collectionsList[proposal.daoId].digitalContractAddress;
-    console.log('property contract addr=>)',propertyContractAddress);
-    console.log('proposal',proposal);
-    console.log('property contract =>', propertyContract);
-    console.log('digital contract=>', digitalContract);
+
     
     //! LOCAL STATE
     
@@ -61,7 +58,6 @@ const DaoProposal = () => {
         await daoContract.methods.closeProposal(id).call({from :accounts[0] });
         await daoContract.methods.closeProposal(id).send({from :accounts[0] })
             .on('receipt', function(receipt){
-                console.log(receipt.events.proposalClosed.returnValues);
                 const proposalData = receipt.events.proposalClosed.returnValues;
                 dispatch(updateProposal(proposalData.proposalId,proposalData.finalValue,proposalData.votingStatus))
             });
@@ -192,7 +188,6 @@ const DaoProposal = () => {
     )
 
     useEffect(()=>{
-        console.log('entrée dans use effect instanciation contrat');
         const artifactProperty = require("../../contracts/NftProperty.json");
         const artifactDigital = require("../../contracts/NftDigital.json");
         if (collectionsList[proposal.daoId] !== null) {

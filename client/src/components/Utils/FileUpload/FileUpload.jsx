@@ -40,7 +40,6 @@ const FileUpload = ({changeMainImage}) => {
           pinata_api_key: "63bb820f34b47baa1cb9",
           pinata_secret_api_key: "b5de21d37ed9d8e10799f214b508bac043704f94519db42e9ea4955d80657513"
         }});
-        console.log(res.data);
         changeMainImage(res.data.IpfsHash)
     } catch (error) {
       console.log(error);

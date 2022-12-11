@@ -62,7 +62,6 @@ const NftPropertyCard = ({
 
   //! FUNCTIONS
   const approveForSell = async() => {
-    console.log('mkplace address=>',marketplaceContract._address);
     // instanciation du bon contrat pour lancer l'approval
     var artifact = require("../../../../contracts/NftProperty.json");
     const abiProperty = artifact.abi;  
@@ -80,7 +79,6 @@ const NftPropertyCard = ({
 
   const sellPropertyNft =async() =>{
     const priceInWei=web3.utils.toBN(web3.utils.toWei(price))
-    console.log(priceInWei);
     try{
       await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,priceInWei,quantity,image).call({from:accounts[0]});
       await marketplaceContract.methods.putPropertyForSell(propertyContractAddress,nftId,name,priceInWei,quantity,image).send({from:accounts[0]});

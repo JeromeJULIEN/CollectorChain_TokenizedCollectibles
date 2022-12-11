@@ -60,7 +60,6 @@ const Admin = ({connect}) => {
                 fromBlock : 0,
                 toBlock:'latest'
             });
-            console.log('ethReceivedEvent=>',ethReceivedEvent);
             let oldEthReceivedEvent=[];
             ethReceivedEvent.forEach(event => {
                 oldEthReceivedEvent.push(
@@ -68,7 +67,6 @@ const Admin = ({connect}) => {
                         valueReceived : web3.utils.fromWei(event.returnValues.valueReceived)
                     });
             });
-            console.log('oldReceivedEvent=>',oldEthReceivedEvent);
             
             dispatch(deleteTransactionCount());
             dispatch(deleteFees());
@@ -111,7 +109,6 @@ const Admin = ({connect}) => {
              console.log(oldMemberAddedEvent);
              dispatch(deleteAllMembers());
              oldMemberAddedEvent.forEach(member => {
-                console.log('check');
                 dispatch(addMembers(member.newMember))
             });
 
@@ -155,6 +152,7 @@ const Admin = ({connect}) => {
     <div className='admin'>
         {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
         <>
+        <div className="titleAdmin">Admin panel</div>
         <div className='createCollection'>
             <p>Create a new collection</p>
             <input type="text" placeholder='collection name' value={newValue} onChange={handleValueChange}/>
@@ -182,6 +180,11 @@ const Admin = ({connect}) => {
             <p>collected fees : {fees.toFixed(3)} eth</p> 
             <p>number of transactions : {transactionCount} </p> 
 
+        </div>
+        <div className='address'>
+            <p>0x20807E1B897a878e31303088F59c30E858fa2961</p>
+            <p>0xecb17406182593fe5e6f1Ed1Df687B21917D130a</p>
+            <p>0xd4281D9Dc7C60Bb43B8905B546C95BB7C936eaEA</p>
         </div>
         </>}
     </div>

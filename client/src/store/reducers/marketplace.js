@@ -55,7 +55,6 @@ const marketplaceReducer = (state = initialState,action={})=>{
             }
         }
         case UPDATE_QUANTITY_TO_SELL:{
-            console.log(action.collectionId,action.nftId,action.seller,action.quantity)
             return{
                 ...state,
                 // propertyToSell:

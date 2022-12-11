@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem;
+    margin: calc(2rem + 50px);
 
 }
 
@@ -36,15 +36,18 @@
 
 .nft {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 5rem;
-    margin: 0 5rem;
+    margin: 0 2rem;
+
+
 
     &__digital {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 40%;
+        width: 100%;
         margin-top: 5rem;
         font-size: 1.2rem;
 
@@ -68,7 +71,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 100%;
         font-size: 1.2rem;
 
 
@@ -86,4 +89,19 @@
             color: vars.$color_digitalNft;
         }
     }
+}
+
+@media (min-width: 721px) {
+    .nft {
+        flex-direction: row;
+
+        &__digital {
+            width: 50%;
+        }
+
+        &__property {
+            width: 50%;
+        }
+    }
+
 }

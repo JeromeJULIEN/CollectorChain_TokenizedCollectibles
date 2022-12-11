@@ -106,7 +106,6 @@ const daoReducer = (state = initialState,action={})=>{
             }
         }
         case ADD_MEMBERS:{
-            console.log('coucou from add member');
             return{
                 ...state,
                 members:[

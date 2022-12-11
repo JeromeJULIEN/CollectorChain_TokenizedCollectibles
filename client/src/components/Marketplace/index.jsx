@@ -93,7 +93,7 @@ const Marketplace = () => {
     
 
     return (
-        <div>
+        <div className='marketplace'>
              <div className='titleMarketplace'>NFTs for sell</div>
         <div className="selector">
             <button className={`selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>

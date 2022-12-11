@@ -30,7 +30,6 @@ function App() {
   const dispatch = useDispatch();
   // init compte
   const connect =async()=>{
-    console.log('connect');
     const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
     const accounts = await web3.eth.requestAccounts();
     dispatch(connectAccounts(accounts))

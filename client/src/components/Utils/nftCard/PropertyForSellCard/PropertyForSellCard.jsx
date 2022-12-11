@@ -70,13 +70,7 @@ const PropertyForSellCard = ({
 
   //! FUNCTIONS
   const buyPropertyNft =async() =>{
-    // const valueToSend = quantity*sellerPrice;
-    console.log('sellerprice =>',sellerPrice)
-    console.log(quantity*sellerPrice*1.1);
     const valueToSend = web3.utils.toBN((quantity*sellerPrice*1.1));
-    console.log('valuetosend=>',valueToSend);
-    // console.log('toWei=>',web3.utils.toWei(web3.utils.toBN(valueToSend) ,'ether' ));
-    console.log('toWei=>',valueToSend);
     try{
       await marketplaceContract.methods.buyPropertyItem(propertyContractAddress,nftId,quantity,sellerAddress)
       .call({from:accounts[0],value:valueToSend });
@@ -97,8 +91,6 @@ const PropertyForSellCard = ({
   const [sellerAddress,setSellerAddress] = useState()
   const [sellerPrice,setSellerPrice] = useState()
   const handleSetSellerAddress = (event) => {
-    console.log(event.target.id);
-    console.log(event.target.value);
     setSellerAddress(event.target.value)
     setSellerPrice(event.target.id)
   }
@@ -108,14 +100,14 @@ const PropertyForSellCard = ({
 
   return (
     <>
-    <div className='nftPropertyCard'>
-        <div className="nftPropertyCard__category">Physical ownership</div>
-        <img className="nftPropertyCard__image" src={image} alt="object_image" />
-        <div className="nftPropertyCard__title">{name}</div>
-        <div className="nftPropertyCard__shares">Share floor price : {floorPrice}</div>
-        <div className="nftPropertyCard__shares">Share to sell : {totalQuantity}</div>
-        <div className="nftPropertyCard__actions">
-        <button className="nftPropertyCard__actions__button" onClick={handleOpenBuy}>Buy</button>
+    <div className='nftPropertyCardForSell'>
+        <div className="nftPropertyCardForSell__category">Physical ownership</div>
+        <img className="nftPropertyCardForSell__image" src={image} alt="object_image" />
+        <div className="nftPropertyCardForSell__title">{name}</div>
+        <div className="nftPropertyCardForSell__shares">Share floor price : {floorPrice}</div>
+        <div className="nftPropertyCardForSell__shares">Share to sell : {totalQuantity}</div>
+        <div className="nftPropertyCardForSell__actions">
+        <button className="nftPropertyCardForSell__actions__button" onClick={handleOpenBuy}>Buy</button>
 
           
 

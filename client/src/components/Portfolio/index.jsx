@@ -61,7 +61,6 @@ const Portfolio = ({connect}) => {
                     const owner = await digitalContract.methods.ownerOf(i).call({from:accounts[0]})
                     if(owner === accounts[0]){
                         const nft = await digitalContract.methods.digitalNfts(i).call({from:accounts[0]})
-                        console.log('digital nft=>', nft);
                         dispatch(setUserDigitalNfts(nft.collectionId,i,nft.nftName,nft.image))
                     }
                 }
@@ -91,7 +90,7 @@ const Portfolio = ({connect}) => {
         {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
         <>
         <div className='title'>My portfolio</div>
-        <div className="selector">
+        <div className="portfolio__selector">
             <button className={`selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>
             <button className={`selector__item${toggle === "digital"? "--active":""}`} onClick={handleToggle}>Digital collectible</button>
         </div>
