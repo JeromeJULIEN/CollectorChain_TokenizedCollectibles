@@ -1,54 +1,40 @@
-# Base project directory using Truffle, React, Redux and web3
+# Collector Chain - Tokenized collectible - MVP Alyra 2022 / Developer class Rynkeby
 
-## Client app created with Create React App
+## Project presentation
+### Overview
+Collector Chain is a collectibles tokenization platform.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Client app is in ```/client```
+<img src="./imageReadme.png" alt="drawing" width="500"/>
 
-### Available Scripts
+By submitting a request to a DAO of enthusiasts, each user will be able to tokenize a unique physical object that they own (numbered or collectible).
 
-In the ```/client``` directory, you can run:
+Once the request has been accepted and valued by the DAO, two types of NFT from the object can be created :
+- A "owership certificate" NFT, split into 100 and allowing the purchase/sale of the real ownership of the object. The owner must transmit the object to collector chain to be able to mint the NFTs
 
-#### `npm start`
+- A unique 'digital object' NFT that can be sold, worn or rented for use in the web3 world
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-#### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Live demonstration
+- Part 1 : https://www.loom.com/share/6dceb37211794878a3b0f6672a82ff9a
+- Part 2 : https://www.loom.com/share/bda1df8b3c8a44268f4a2cb5becca646
+- Part 3 : https://www.loom.com/share/10ba363ce43944f49094f5bd4b29688e
 
 
-### Store structure
-The store is structured using Redux in ```/client/src/store```
 
-There is two reducer in ```/client/src/store/reducers``` :
-- One dedicated to front app data,called ```app```
-- One dedicated to web3 constants, called ```web3```
+## Getting started
 
-Actions are also structured with the same logic
+- Run `npm install` in `./truffle/`and `./client` directories
+- Launch a local blockchain with ganache or other provider
+- Launch projet by running `npm start`in `./client` directory
+- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Build with 
+- React
+- Truffle
+- Web3 JS
+- React suite library
 
-## Smart contract was create using truffle init
+## Licence
+Distributed under the GPL-3.0 License
 
-It include a `simpleStorage.sol` contract
-
-Migration script is configured for ganache
-
-### Available scripts
-#### `truffle migrate`
-Launch the compilation of the selected contract in the directory `/client/src/contracts`
+## Contact
+Jérôme JULIEN - Twitter @CryptoDje - https://www.linkedin.com/in/jerome-julien-6256a0a/ - https://github.com/JeromeJULIEN/CollectorChain_TokenizedCollectibles
