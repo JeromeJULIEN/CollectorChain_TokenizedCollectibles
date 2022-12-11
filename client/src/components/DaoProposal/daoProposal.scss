@@ -4,6 +4,7 @@
     width: 95vw;
     height: 90vh;
     margin: 1rem;
+    margin-top: calc(1rem + 50px);
 
     &__title {
         font-size: vars.$fontSize_dig;
