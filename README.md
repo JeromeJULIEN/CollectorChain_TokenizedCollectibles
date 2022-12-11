@@ -2,7 +2,7 @@
 
 ## Project presentation
 ### Overview
-Collector Chain is a collectibles tokenization platform.
+Collector Chain is a collectibles tokenization platform : https://collector-chain-tokenized-collectibles.vercel.app/
 
 <img src="./imageReadme.png" alt="drawing" width="500"/>
 
