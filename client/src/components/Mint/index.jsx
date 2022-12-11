@@ -12,7 +12,7 @@ import CheckRoundIcon from '@rsuite/icons/CheckRound';
 
 
 
-const Mint = () => {
+const Mint = ({connect}) => {
     //! STORE
     const daoContract = useSelector(state => state.dao.contract)
     const factoryContract = useSelector(state => state.factory.contract)
@@ -24,6 +24,7 @@ const Mint = () => {
     const proposalList = useSelector(state => state.dao.proposalList)
     const proposalMainImage = useSelector(state => state.dao.proposalMainImage)
     const proposalOwnershipImage = useSelector(state=>state.dao.proposalOwnershipImage)
+    const isLogged = useSelector(state=>state.app.isLogged)
 
     //! LOCAL STATE
     const [mintCollection, setMintCollection] = useState(0);
@@ -31,6 +32,8 @@ const Mint = () => {
     const [mintDesc, setMintDesc] = useState('');
     const [mintValue, setMintValue] = useState('');
     const[mintCount,setMintCount] =useState(0);
+    const[userMintProposal,setUserMintProposal]=useState([])
+    // let userMintProposal = []
 
     const daoNameList = daoList.map(item => ({label:item.name, value:item.id}));
 
@@ -66,13 +69,7 @@ const Mint = () => {
         }
     }
 
-    // récupération des demande de Mint de l'utilisateur connecté :
-    let userMintProposal = []
-    proposalList.map(proposal => {
-        if(proposal.owner === accounts[0]) {
-            userMintProposal.push(proposal)
-        }
-    })
+    
 
     // Stockage des IPFSHash
     const changeMainImage = (value) =>{
@@ -88,7 +85,7 @@ const Mint = () => {
   
     //! EVENT
     useEffect(()=> {
-        if(daoContract !== null){
+        if(daoContract !== null && isLogged==true){
             (async () => {
                 // DAO CREATION EVENT
                 let daoCreatedEvents = await daoContract.getPastEvents('daoCreated',{
@@ -178,73 +175,92 @@ const Mint = () => {
             })()
         };
 
-    }, [daoContract, mintCount])
+    }, [daoContract, mintCount,isLogged])
+
+    useEffect(()=>{
+    // récupération des demande de Mint de l'utilisateur connecté :
+        if(isLogged === true){
+            let array = []
+            proposalList.map(proposal => {
+                if(proposal.owner === accounts[0]) {
+                    array.push(proposal)
+                }
+            })
+            setUserMintProposal(array)
+
+        }
+    },[isLogged,accounts,proposalList])
 
 
 
 
     return (
     <div className='mint'>
-        <div className="titleMint">Create your collectible</div>
-        <div className='mintForm'>
-            <p>Whether a manufactured object, a work of Art, or an Antique, click on Mint your collectible to post your new DAO proposal for joining the verified collector chain community.</p>
-            <p> Fill out the form, upload the requested documents, and submit your message to the community.</p>
-           <p className='mintForm__title'>Ask for a mint</p> 
-           <div className="mintForm__panel">
-                <div className="panelLeft">
-                    <div className="panelLeft__item">
-                        <p>Collection</p>
-                        <InputPicker className='panelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection} require/>
+        {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
+        <>
+            <div className="titleMint">Create your collectible</div>
+            <div className='mintForm'>
+                <p>Whether a manufactured object, a work of Art, or an Antique, click on Mint your collectible to post your new DAO proposal for joining the verified collector chain community.</p>
+                <p> Fill out the form, upload the requested documents, and submit your message to the community.</p>
+            <p className='mintForm__title'>Ask for a mint</p> 
+            <div className="mintForm__panel">
+                    <div className="panelLeft">
+                        <div className="panelLeft__item">
+                            <p>Collection</p>
+                            <InputPicker className='panelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection} require/>
 
-                    </div>
-                    <div className="panelLeft__item">
-                        <p>Mint title</p>
-                        <input type="text" id='name' name='name' required value={mintTitle} onChange={handleChangeMintTitle} require/>
+                        </div>
+                        <div className="panelLeft__item">
+                            <p>Mint title</p>
+                            <input type="text" id='name' name='name' required value={mintTitle} onChange={handleChangeMintTitle} require/>
 
+                        </div>
+                        <div className="panelLeft__item">
+                            <p>Object description</p>
+                            <input type="text" id='description' name='description' required value={mintDesc} onChange={handleChangeMintDesc} require/>
+                        </div>
+                        <div className="panelLeft__item">
+                            <p>Estimated value</p>
+                            <input type="text" id='value' name='value' required value={mintValue} onChange={handleChangeMintValue} require/>
+                        </div>
                     </div>
-                    <div className="panelLeft__item">
-                        <p>Object description</p>
-                        <input type="text" id='description' name='description' required value={mintDesc} onChange={handleChangeMintDesc} require/>
+                    <div className="panelRight">
+                        <div className="panelRight__doc">
+                            <p>Upload the main picture of the object</p>
+                            {mainImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeMainImage} />}
+                            <p>Upload your proof of ownership</p>
+                            {ownershipImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeOwnershipImage}/>}
+                        </div>
+                        {(mainImageOK==true && ownershipImageOK==true) ?
+                        <button className='panelRight__btn' onClick={askMint}>Send request</button>
+                        : <p>Please provide the object and ownership proof picture before submit</p>}
                     </div>
-                    <div className="panelLeft__item">
-                        <p>Estimated value</p>
-                        <input type="text" id='value' name='value' required value={mintValue} onChange={handleChangeMintValue} require/>
-                    </div>
-                </div>
-                <div className="panelRight">
-                    <div className="panelRight__doc">
-                        <p>Upload the main picture of the object</p>
-                        {mainImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeMainImage} />}
-                        <p>Upload your proof of ownership</p>
-                        {ownershipImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeOwnershipImage}/>}
-                    </div>
-                    {(mainImageOK==true && ownershipImageOK==true) ?
-                     <button className='panelRight__btn' onClick={askMint}>Send request</button>
-                     : <p>PLease provide the object and ownership proof picture before submit</p>}
-                </div>
 
-           </div>
-        </div>
-        <div className="proposalList">
-            <p className='proposalList__title'>Your minting demands</p>
-            <div className="proposalList__legend">
-                <p className="proposalList__legend__detail">Collection</p>
-                <p className="proposalList__legend__detail">Object</p>
-                <p className="proposalList__legend__detail">Description</p>
-                <p className="proposalList__legend__detail">Status</p>
-                <p className="proposalList__legend__detail">Action</p>
             </div>
-            {userMintProposal.map(proposal => (
-            <div className="proposalList__item">
-                <p className="proposalList__item__detail">{daoList[proposal.daoId].name}</p>
-                <p className="proposalList__item__detail">{proposal.name}</p>
-                <p className="proposalList__item__detail">{proposal.desc.substr(0, 50)}...</p>
-                <p className="proposalList__item__detail">{proposal.status}</p>
-                <button ><Link className="proposalList__item__detail--button" to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
             </div>
-            ))}
+            <div className="proposalList">
+                <p className='proposalList__title'>Your minting demands</p>
+                {console.log('coucou')}
+                <div className="proposalList__legend">
+                    <p className="proposalList__legend__detail">Collection</p>
+                    <p className="proposalList__legend__detail">Object</p>
+                    <p className="proposalList__legend__detail">Description</p>
+                    <p className="proposalList__legend__detail">Status</p>
+                    <p className="proposalList__legend__detail">Action</p>
+                </div>
+                {userMintProposal.map(proposal => (
+                <div className="proposalList__item">
+                    <p className="proposalList__item__detail">{daoList[proposal.daoId].name}</p>
+                    <p className="proposalList__item__detail">{proposal.name}</p>
+                    <p className="proposalList__item__detail">{proposal.desc.substr(0, 50)}...</p>
+                    <p className="proposalList__item__detail">{proposal.status}</p>
+                    <button ><Link className="proposalList__item__detail--button" to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
+                </div>
+                ))}
 
-        </div>
+            </div>
+        </>
+        }
     </div>
   )
 }

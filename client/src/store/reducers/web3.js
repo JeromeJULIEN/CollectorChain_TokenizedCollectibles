@@ -1,4 +1,4 @@
-import { INIT_WEB3 } from "../actions/web3";
+import { CONNECT_ACCOUNTS, INIT_WEB3 } from "../actions/web3";
 
 const initialState = {
     web3: null,
@@ -12,8 +12,13 @@ const web3Reducer = (state = initialState,action={})=>{
             return {
                 ...state,
                 web3:action.web3,
-                accounts: action.accounts,
                 networkID: action.networkID,
+            }
+        }
+        case CONNECT_ACCOUNTS:{
+            return{
+                ...state,
+                accounts:action.payload
             }
         }
         default :

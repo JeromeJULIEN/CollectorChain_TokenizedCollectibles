@@ -5,12 +5,14 @@ import {Link} from 'react-router-dom';
 import './styles.scss'
 import { addCollection, deleteAllCollections } from '../../store/actions/collections';
 
-const Dao = () => {
+const Dao = ({connect}) => {
 
     const daoContract = useSelector(state => state.dao.contract)
     const factoryContract = useSelector(state => state.factory.contract)
     const daoList = useSelector(state => state.dao.daoList)
     const proposalList = useSelector(state => state.dao.proposalList)
+    const isLogged = useSelector(state=>state.app.isLogged)
+
 
     const dispatch = useDispatch();
 
@@ -108,6 +110,8 @@ const Dao = () => {
     )
     return (
     <div className='dao'>
+        {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
+        <>
         <div className="titleDao">DAO</div>
             <p className='dao__title'>Mint proposals :</p> 
             <p className='dao__desc'>Whether a manufactured object, a work of Art, or an Antique, click on Mint your collectible to post your new DAO proposal for joining the verified collector chain community. Fill out the form, upload the requested documents, and submit your message to the community.</p>
@@ -129,6 +133,7 @@ const Dao = () => {
                 </div>
                 ))}
             </div>
+        </>}
     </div>    
   )
 }

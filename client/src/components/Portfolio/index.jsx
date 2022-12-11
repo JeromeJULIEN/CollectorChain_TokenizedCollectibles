@@ -6,13 +6,12 @@ import NftDigitalCard from '../Utils/nftCard/NftDigitalCard/NftDigitalCard';
 import NftPropertyCard from '../Utils/nftCard/NftPropertyCard/NftPropertyCard';
 import './portfolio.scss';
 
-const Portfolio = () => {
+const Portfolio = ({connect}) => {
     //! STORE
     const propertyNfts = useSelector(state =>state.app.propertyNfts);
     const digitalNfts = useSelector(state =>state.app.digitalNfts);
     const marketplaceContract = useSelector(state => state.marketplace.contract);
-    console.log('marketplaceContract', marketplaceContract);
-
+    const isLogged = useSelector(state=>state.app.isLogged)
 
     //! LOCAL STATE
     const [toggle,setToggle] = useState("ownership");
@@ -38,54 +37,59 @@ const Portfolio = () => {
 
     // GET ALL NFTS OF THE USER
     useEffect(()=> {
-        const artifactProperty = require("../../contracts/NftProperty.json");
-        const artifactDigital = require("../../contracts/NftDigital.json");
-        const abiProperty = artifactProperty.abi;
-        const abiDigital = artifactDigital.abi;
-        // set to zero
-        dispatch(deleteAllUserNfts())
-        // loop on each collection
-        collectionList.forEach(async(collection) => {
-            let propertyContractAddress = collection.propertyContractAddress;
-            let digitalContractAddress = collection.digitalContractAddress;
-            let digitalContract = new web3.eth.Contract(abiDigital, digitalContractAddress);
-            let propertyContract = new web3.eth.Contract(abiProperty, propertyContractAddress);
-            // loop on digital subcollection
-            const nbOfDigitalMint = await digitalContract.methods._id().call({from:accounts[0]})
-            let idDigitalArray =[]
-            for (let index = 0; index < nbOfDigitalMint; index++) {
-                idDigitalArray.push(index)
-            }
-            for await (let i of idDigitalArray ) {
-                const owner = await digitalContract.methods.ownerOf(i).call({from:accounts[0]})
-                if(owner === accounts[0]){
-                    const nft = await digitalContract.methods.digitalNfts(i).call({from:accounts[0]})
-                    console.log('digital nft=>', nft);
-                    dispatch(setUserDigitalNfts(nft.collectionId,i,nft.nftName,nft.image))
+        if (accounts != null){
+
+            const artifactProperty = require("../../contracts/NftProperty.json");
+            const artifactDigital = require("../../contracts/NftDigital.json");
+            const abiProperty = artifactProperty.abi;
+            const abiDigital = artifactDigital.abi;
+            // set to zero
+            dispatch(deleteAllUserNfts())
+            // loop on each collection
+            collectionList.forEach(async(collection) => {
+                let propertyContractAddress = collection.propertyContractAddress;
+                let digitalContractAddress = collection.digitalContractAddress;
+                let digitalContract = new web3.eth.Contract(abiDigital, digitalContractAddress);
+                let propertyContract = new web3.eth.Contract(abiProperty, propertyContractAddress);
+                // loop on digital subcollection
+                const nbOfDigitalMint = await digitalContract.methods._id().call({from:accounts[0]})
+                let idDigitalArray =[]
+                for (let index = 0; index < nbOfDigitalMint; index++) {
+                    idDigitalArray.push(index)
                 }
-            }
-            // loop on property subcollection
-            const nbOfPropertylMint = await propertyContract.methods._id().call({from:accounts[0]})
-            let idPropertyArray =[]
-            for (let index = 0; index < nbOfPropertylMint; index++) {
-                idPropertyArray.push(index)
-            }
-            for await (let i of idPropertyArray ) {
-                const approval = await propertyContract.methods.isApprovedForAll(accounts[0],marketplaceContract._address).call({from:accounts[0]})
-                const balance = await propertyContract.methods.balanceOf(accounts[0],i).call({from:accounts[0]})
-                if(balance > 0){
-                    const nft = await propertyContract.methods.propertyNfts(i).call({from:accounts[0]})
-                    dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,nft.minter,balance, approval, nft.image))
+                for await (let i of idDigitalArray ) {
+                    const owner = await digitalContract.methods.ownerOf(i).call({from:accounts[0]})
+                    if(owner === accounts[0]){
+                        const nft = await digitalContract.methods.digitalNfts(i).call({from:accounts[0]})
+                        console.log('digital nft=>', nft);
+                        dispatch(setUserDigitalNfts(nft.collectionId,i,nft.nftName,nft.image))
+                    }
                 }
-            }
-        });
+                // loop on property subcollection
+                const nbOfPropertylMint = await propertyContract.methods._id().call({from:accounts[0]})
+                let idPropertyArray =[]
+                for (let index = 0; index < nbOfPropertylMint; index++) {
+                    idPropertyArray.push(index)
+                }
+                for await (let i of idPropertyArray ) {
+                    const approval = await propertyContract.methods.isApprovedForAll(accounts[0],marketplaceContract._address).call({from:accounts[0]})
+                    const balance = await propertyContract.methods.balanceOf(accounts[0],i).call({from:accounts[0]})
+                    if(balance > 0){
+                        const nft = await propertyContract.methods.propertyNfts(i).call({from:accounts[0]})
+                        dispatch(setUserPropertyNfts(nft.collectionId, nft.nftId, nft.name, nft.value,nft.minter,balance, approval, nft.image))
+                    }
+                }
+            });
+        }
 
     }
-    ,[accounts[0],updater]
+    ,[accounts,updater,isLogged]
     )
   
     return (
     <div className='portfolio'>
+        {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
+        <>
         <div className='title'>My portfolio</div>
         <div className="selector">
             <button className={`selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>
@@ -113,6 +117,8 @@ const Portfolio = () => {
                 <NftDigitalCard name={nft.name} marketplaceContract={marketplaceContract} image={nft.image}/>
             ))}
         </div>
+        }
+        </>
         }
        
     </div>

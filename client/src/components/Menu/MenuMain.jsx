@@ -8,7 +8,7 @@ import logo from '../Utils/image/Logo_Fond_Bleu.png';
 
 
  
-const MenuMain = () => {
+const MenuMain = ({connect,disconnect}) => {
   const isAdmin = useSelector(state => state.app.isAdmin)
 
     return (
@@ -24,7 +24,7 @@ const MenuMain = () => {
           <Link to='/admin' className='menu__navBar--item'>Admin</Link>
           {/* } */}
         </div>
-        <ConnectBtn/>
+        <ConnectBtn connect={connect} disconnect={disconnect}/>
       </div >
     );
     

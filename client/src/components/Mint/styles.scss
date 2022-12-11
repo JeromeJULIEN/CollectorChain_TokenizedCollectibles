@@ -1,5 +1,7 @@
 @use '../../../styles/vars';
 
+
+
 .titleMint {
     font-size: 2rem;
     font-weight: bold;
@@ -170,4 +172,17 @@
 
 .icon {
     color: vars.$color_callToAction;
+}
+
+.connect {
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px vars.$color_black;
+    height: 4rem;
+    width: 15rem;
+    background-color: vars.$color_digitalNft;
+    font-weight: bold;
 }

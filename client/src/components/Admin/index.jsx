@@ -9,7 +9,7 @@ import { addFees, deleteFees, deleteTransactionCount, incrementTransactionCount 
 
 
 
-const Admin = () => {
+const Admin = ({connect}) => {
 
     //! STORE
     const factoryContract = useSelector(state => state.factory.contract);
@@ -21,6 +21,8 @@ const Admin = () => {
     const membersList = useSelector(state=>state.dao.members)
     const transactionCount = useSelector(state => state.marketplace.transactionCount);
     const fees = useSelector(state=>state.marketplace.fees);
+    const isLogged = useSelector(state=>state.app.isLogged)
+
 
     
     //! LOCAL STATE
@@ -151,10 +153,12 @@ const Admin = () => {
   
     return (
     <div className='admin'>
+        {!isLogged ? <button className='connect' onClick={connect}>connect your wallet</button> :
+        <>
         <div className='createCollection'>
             <p>Create a new collection</p>
             <input type="text" placeholder='collection name' value={newValue} onChange={handleValueChange}/>
-            <button onClick={createCollection}>Create</button>
+            <button className='btn' onClick={createCollection}>Create</button>
             {collectionList.length > 0 && 
             <>
                 <p>Existing collections</p>
@@ -165,7 +169,7 @@ const Admin = () => {
         <div className="daoMembers">
             <p>Add a member to the DAO</p>
             <input type="text" placeholder='user address' value={address} onChange={handleSetAddress}/>
-            <button onClick={addMember}>Add</button>
+            <button className='btn' onClick={addMember}>Add</button>
             {membersList.length > 0 && 
             <>
                 <p>Registered members</p>
@@ -179,6 +183,7 @@ const Admin = () => {
             <p>number of transactions : {transactionCount} </p> 
 
         </div>
+        </>}
     </div>
   )
 }

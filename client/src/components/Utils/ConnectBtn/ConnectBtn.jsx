@@ -8,7 +8,7 @@ import './styles.scss'
 import {OffRound} from '@rsuite/icons';
 
 
-const ConnectBtn = () => {
+const ConnectBtn = ({connect,disconnect}) => {
     const[connectedAddress,setConnectedAddress] = useState("");
     const isLogged = useSelector(state => state.app.isLogged);
     const accounts = useSelector(state => state.web3.accounts);
@@ -23,11 +23,7 @@ const ConnectBtn = () => {
     }
     
     const connexion = async() => {
-        setConnectedAddress(formatETHAddress(accounts[0],4));
-        dispatch(login(true));
-        if(accounts[0] == owner) {
-            dispatch(setAdmin(true))
-        }
+        
     }
     
     const disconnexion = () =>{
@@ -39,17 +35,30 @@ const ConnectBtn = () => {
     }
     
     useEffect(()=> {
-        disconnexion()
+        if(accounts){
+            setConnectedAddress(formatETHAddress(accounts[0],4));
+            if(accounts == null){
+                dispatch(login(false));
+                dispatch(setAdmin(false))
+            } else if( accounts[0] == owner){
+                dispatch(login(true));
+                dispatch(setAdmin(true))
+            } else if(accounts[0] != owner && accounts[0] != null){
+                dispatch(login(true));
+                dispatch(setAdmin(false))
+            }
+
+        }
     },[accounts])
 
     return (
         <>
             {isLogged ? (
                 <div className='connectBtn'>
-                    <button className='connectBtn__btn' onClick={disconnexion} ><OffRound className='connectBtn__logo'/>        {connectedAddress}</button>
+                    <button className='connectBtn__btn' onClick={disconnect} ><OffRound className='connectBtn__logo'/>        {connectedAddress}</button>
                 </div>
             ) :(
-                <button className='connectBtn__btn' onClick={connexion}>Connect wallet</button>
+                <button className='connectBtn__btn' onClick={connect}>Connect wallet</button>
             )}
             
         </>

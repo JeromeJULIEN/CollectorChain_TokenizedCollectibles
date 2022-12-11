@@ -10,7 +10,7 @@ import {Routes, Route} from 'react-router-dom';
 import Collection from './components/Collection';
 import Home from './components/HomePage';
 import MenuMain from './components/Menu/MenuMain';
-import { initWeb3 } from './store/actions/web3';
+import { connectAccounts, initWeb3 } from './store/actions/web3';
 import HowItWorks from './components/HowItWorks';
 import Portfolio from './components/Portfolio';
 import Dao from './components/Dao';
@@ -19,19 +19,34 @@ import Admin from './components/Admin';
 import DaoProposal from './components/DaoProposal';
 import { addCollection, deleteAllCollections } from './store/actions/collections';
 import Footer from './components/footer';
+import { login, setAdmin } from './store/actions/app';
 
 function App() {
 
   const marketplaceArtifact = useSelector(state => state.marketplace.artifact);
   const factoryArtifact = useSelector(state => state.factory.artifact);
   const daoArtifact = useSelector(state => state.dao.artifact);
+  const owner = useSelector(state => state.factory.owner);
   const dispatch = useDispatch();
+  // init compte
+  const connect =async()=>{
+    console.log('connect');
+    const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+    const accounts = await web3.eth.requestAccounts();
+    dispatch(connectAccounts(accounts))
+    // dispatch(login(true));
+    // dispatch(setAdmin(false))
+  }
+  const disconnect =()=>{
+    dispatch(connectAccounts(null))
+    dispatch(login(false));
+    dispatch(setAdmin(false))
+  }
   // initialization of marketplace contract
   const initMarketplaceContract = useCallback(
     async marketplaceArtifact => {
       if (marketplaceArtifact) {
         const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-        const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
         const { abi } = marketplaceArtifact;
         let address, contract, owner;
@@ -43,7 +58,7 @@ function App() {
         } catch (err) {
           console.error(err);
         }
-        dispatch(initWeb3(web3, accounts, networkID))
+        dispatch(initWeb3(web3, networkID))
         dispatch(initMarketplace(marketplaceArtifact, contract, owner));
 
       }
@@ -158,18 +173,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MenuMain />
+        <MenuMain connect={connect} disconnect={disconnect}/>
       </header>
         <Routes>
           <Route path="/" element={<Home />}/> 
           <Route path="/marketplace" element={<Marketplace />}/> 
           <Route path="/collection/:id" element={<Collection />}/> 
           <Route path="/howitworks" element={<HowItWorks />}/> 
-          <Route path="/portfolio" element={<Portfolio />}/> 
-          <Route path="/dao" element={<Dao />}/> 
+          <Route path="/portfolio" element={<Portfolio connect={connect}/>}/> 
+          <Route path="/dao" element={<Dao connect={connect}/>}/> 
           <Route path="/daoProposal/:id" element={<DaoProposal />}/> 
-          <Route path="/mint" element={<Mint />}/> 
-          <Route path="/admin" element={<Admin />}/> 
+          <Route path="/mint" element={<Mint connect={connect}/>}/> 
+          <Route path="/admin" element={<Admin connect={connect}/>}/> 
         </Routes>
         <Footer/>
     </div>
