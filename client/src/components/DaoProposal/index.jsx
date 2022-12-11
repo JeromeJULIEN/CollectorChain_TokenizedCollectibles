@@ -42,11 +42,13 @@ const DaoProposal = () => {
 
     //! FUNCTIONS
     const voteYes = async() => {
-        console.log(value);
-        const valueInWei = web3.utils.toBN(web3.utils.toWei(value));
-        console.log(valueInWei);
-        await daoContract.methods.vote(id, valueInWei, 0).call({from :accounts[0] });
-        await daoContract.methods.vote(id, valueInWei, 0).send({from :accounts[0] });
+        if(proposal.owner == accounts[0]){
+            alert("you can't vote for your own proposal")
+        } else{
+            const valueInWei = web3.utils.toBN(web3.utils.toWei(value));
+            await daoContract.methods.vote(id, valueInWei, 0).call({from :accounts[0] });
+            await daoContract.methods.vote(id, valueInWei, 0).send({from :accounts[0] });
+        }
     }
 
     const voteNo = async() => {
