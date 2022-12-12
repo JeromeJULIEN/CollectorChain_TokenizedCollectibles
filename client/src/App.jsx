@@ -131,11 +131,13 @@ function App() {
       initFactoryContract(factoryArtifact);
       initDaoContract(daoArtifact);
     };
+    if(window.ethereum) {
+      events.forEach(e => window.ethereum.on(e, handleChange));
+      return () => {
+        events.forEach(e => window.ethereum.removeListener(e, handleChange));
+      };
 
-    events.forEach(e => window.ethereum.on(e, handleChange));
-    return () => {
-      events.forEach(e => window.ethereum.removeListener(e, handleChange));
-    };
+    }
   }, [initMarketplaceContract, marketplaceArtifact, initFactoryContract, factoryArtifact, initDaoContract, daoArtifact]);
 
    //! :::: GESTION EVENT COLLECTION CREATED :::::
