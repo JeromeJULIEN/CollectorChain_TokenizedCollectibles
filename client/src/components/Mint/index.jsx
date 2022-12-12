@@ -203,35 +203,35 @@ const Mint = ({connect}) => {
                 <p> Fill out the form, upload the requested documents, and submit your message to the community.</p>
             <p className='mintForm__title'>Ask for a mint</p> 
             <div className="mintForm__panel">
-                    <div className="panelLeft">
-                        <div className="panelLeft__item">
+                    <div className="mintPanelLeft">
+                        <div className="mintPanelLeft__item">
                             <p>Collection</p>
-                            <InputPicker className='panelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection} require/>
+                            <InputPicker className='mintPanelLeft__item--inputPicker' data={daoNameList} id='collection' name='collection' required onChange={handleChangeMintCollection} require/>
 
                         </div>
-                        <div className="panelLeft__item">
+                        <div className="mintPanelLeft__item">
                             <p>Mint title</p>
                             <input type="text" id='name' name='name' required value={mintTitle} onChange={handleChangeMintTitle} require/>
 
                         </div>
-                        <div className="panelLeft__item">
+                        <div className="mintPanelLeft__item">
                             <p>Object description</p>
                             <input type="text" id='description' name='description' required value={mintDesc} onChange={handleChangeMintDesc} require/>
                         </div>
-                        <div className="panelLeft__item">
+                        <div className="mintPanelLeft__item">
                             <p>Estimated value</p>
                             <input type="text" id='value' name='value' required value={mintValue} onChange={handleChangeMintValue} require/>
                         </div>
                     </div>
-                    <div className="panelRight">
-                        <div className="panelRight__doc">
+                    <div className="mintPanelRight">
+                        <div className="mintPanelRight__doc">
                             <p>Upload the main picture of the object</p>
                             {mainImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeMainImage} />}
                             <p>Upload your proof of ownership</p>
                             {ownershipImageOK ? <CheckRoundIcon className='icon'/> : <FileUpload changeMainImage={changeOwnershipImage}/>}
                         </div>
                         {(mainImageOK==true && ownershipImageOK==true) ?
-                        <button className='panelRight__btn' onClick={askMint}>Send request</button>
+                        <button className='mintPanelRight__btn' onClick={askMint}>Send request</button>
                         : <p>Please provide the object and ownership proof picture before submit</p>}
                     </div>
 

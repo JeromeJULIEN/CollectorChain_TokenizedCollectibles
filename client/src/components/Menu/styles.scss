@@ -19,6 +19,43 @@
     }
 
     &__navBar {
+        display: none;
+    }
+
+    &__navBarMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &__btn {
+            height: 50px;
+        }
+
+        &--item {
+            display: none;
+        }
+
+        &--item--visible {
+            width: 200%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, .9);
+            font-size: 1.5rem;
+            padding: .5rem 2rem;
+            border-bottom: solid 1px lightgray;
+            color: vars.$color_black;
+        }
+    }
+
+
+
+}
+
+@media (min-width: 1000px) {
+    .menu__navBar {
         display: flex;
         justify-content: center;
         gap: 2rem;
@@ -41,5 +78,7 @@
 
     }
 
-
+    .menu__navBarMobile {
+        display: none;
+    }
 }

@@ -17,6 +17,7 @@
     &__panel {
         // height: 100%;
         display: flex;
+        flex-direction: column;
         // background-color: lightgray;
         box-shadow: 0px 0px 10px lightgray;
         border-radius: 1rem;
@@ -30,7 +31,7 @@
 .panelLeft {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin-right: .5rem;
     color: white;
@@ -167,7 +168,7 @@
 .panelRight {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin-left: .5rem;
 
@@ -211,4 +212,10 @@
 
 
 
+}
+
+@media (min-width: 721px) {
+    .daoProposal__panel {
+        flex-direction: row;
+    }
 }

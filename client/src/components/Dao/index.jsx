@@ -114,21 +114,21 @@ const Dao = ({connect}) => {
         <div className="titleDao">DAO</div>
             <p className='dao__title'>Mint proposals :</p> 
             <p className='dao__desc'>Whether a manufactured object, a work of Art, or an Antique, click on Mint your collectible to post your new DAO proposal for joining the verified collector chain community. Fill out the form, upload the requested documents, and submit your message to the community.</p>
-            <div className='proposalList'>
-                <div className="proposalList__legend">
-                    <p className="proposalList__legend__detail">Collection</p>
-                    <p className="proposalList__legend__detail">Object</p>
-                    <p className="proposalList__legend__detail">Description</p>
-                    <p className="proposalList__legend__detail">Status</p>
-                    <p className="proposalList__legend__detail">Action</p>
+            <div className='dao__proposalList'>
+                <div className="dao__proposalList__legend">
+                    <p className="dao__proposalList__legend__detail">Collection</p>
+                    <p className="dao__proposalList__legend__detail">Object</p>
+                    <p className="dao__proposalList__legend__detail">Description</p>
+                    <p className="dao__proposalList__legend__detail">Status</p>
+                    <p className="dao__proposalList__legend__detail">Action</p>
                 </div>
                 {proposalList.map(proposal => (
-                <div className="proposalList__item">
-                    <p className="proposalList__item__detail">{daoList[proposal.daoId].name}</p>
-                    <p className="proposalList__item__detail">{proposal.name}</p>
-                    <p className="proposalList__item__detail--desc">{proposal.desc.substr(0, 20)}...</p>
-                    <p className="proposalList__item__detail">{proposal.status}</p>
-                    <button ><Link className="proposalList__item__detail--button" to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
+                <div className="dao__proposalList__item">
+                    <p className="dao__proposalList__item__detail">{daoList[proposal.daoId].name}</p>
+                    <p className="dao__proposalList__item__detail">{proposal.name}</p>
+                    <p className="dao__proposalList__item__detail--desc">{proposal.desc.substr(0, 20)}...</p>
+                    <p className="dao__proposalList__item__detail">{proposal.status}</p>
+                    <button ><Link className="dao__proposalList__item__detail--button" to={`/daoProposal/${proposal.proposalId}`}>Detail</Link></button>
                 </div>
                 ))}
             </div>

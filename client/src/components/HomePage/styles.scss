@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: calc(2rem + 50px);
+    margin: 0 1rem;
+    margin-top: calc(2rem + 50px);
 
 }
 
@@ -92,6 +93,11 @@
 }
 
 @media (min-width: 721px) {
+    .home {
+        margin: 0 5rem;
+        margin-top: calc(2rem + 50px);
+    }
+
     .nft {
         flex-direction: row;
 

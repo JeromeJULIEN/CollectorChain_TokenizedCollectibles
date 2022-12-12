@@ -1,6 +1,9 @@
 @use '../../../styles/vars';
 
 .marketplace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
 }
 
@@ -17,20 +20,21 @@
     color: white;
 }
 
-.selector {
+.marketplace__selector {
     display: flex;
     justify-content: center;
+    width: 90%;
     margin: 1rem;
     gap: .5rem;
 
     &__item {
-        width: 15%;
+        width: 100%;
         height: 3rem;
         border-radius: 1rem;
         transition: background-color .5s;
 
         &--active {
-            width: 15%;
+            width: 100%;
             background-color: vars.$color_callToAction;
             color: white;
             border-radius: 1rem;
@@ -71,5 +75,11 @@
 @media (min-width: 1200px) {
     .nftList {
         grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (min-width: 1000px) {
+    .marketplace__selector {
+        width: 50%;
     }
 }

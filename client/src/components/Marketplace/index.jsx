@@ -95,9 +95,9 @@ const Marketplace = () => {
     return (
         <div className='marketplace'>
              <div className='titleMarketplace'>NFTs for sell</div>
-        <div className="selector">
-            <button className={`selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>
-            <button className={`selector__item${toggle === "digital"? "--active":""}`} onClick={handleToggle}>Digital collectible</button>
+        <div className="marketplace__selector">
+            <button className={`marketplace__selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>
+            <button className={`marketplace__selector__item${toggle === "digital"? "--active":""}`} onClick={handleToggle}>Digital collectible</button>
         </div>
         {toggle==='ownership' &&
         <div className="nftList">

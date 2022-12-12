@@ -91,8 +91,8 @@ const Portfolio = ({connect}) => {
         <>
         <div className='title'>My portfolio</div>
         <div className="portfolio__selector">
-            <button className={`selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>
-            <button className={`selector__item${toggle === "digital"? "--active":""}`} onClick={handleToggle}>Digital collectible</button>
+            <button className={`portfolio__selector__item${toggle === "ownership"? "--active":""}`} onClick={handleToggle}>Ownership certificate</button>
+            <button className={`portfolio__selector__item${toggle === "digital"? "--active":""}`} onClick={handleToggle}>Digital collectible</button>
         </div>
         {toggle==='ownership' &&
         <div className="nftList">
