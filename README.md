@@ -40,4 +40,4 @@ Only 'dao' contract fully tested. Others have to be done
 Distributed under the GPL-3.0 License
 
 ## Contact
-Jérôme JULIEN - Twitter @CryptoDje - https://www.linkedin.com/in/jerome-julien-6256a0a/ - https://github.com/JeromeJULIEN/CollectorChain_TokenizedCollectibles
+Jérôme JULIEN - Twitter @jerome_0x_dev - https://www.linkedin.com/in/jerome-0x-dev/ - https://github.com/JeromeJULIEN/CollectorChain_TokenizedCollectibles
