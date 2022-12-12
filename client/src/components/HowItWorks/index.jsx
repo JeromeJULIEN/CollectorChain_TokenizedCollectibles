@@ -25,12 +25,12 @@ const HowItWorks = () => {
         </div>
         <div className="block">
           <div className="block__title"><strong>3.</strong> TRADE TO EARN PASSIVE INCOME ON YOUR 3D 100 FRACTIONALIZED NFTS</div>
-          <p className="block__text">Click on Marketplace Set a price, let the bids roll in, or HODL. You have complete ownership of the Connected Collectible, which is immediately tradable on the blockchain. Each time your NFT fraction is sold on a marketplace after the initial sale, you will receive 2,5% of each future sale.</p>
+          <p className="block__text">Click on Marketplace Set a price, let the bids roll in, or HODL. You have complete ownership of the Connected Collectible, which is immediately tradable on the blockchain. Each time your NFT fraction is sold on a marketplace after the initial sale, you will receive 2% of each future sale.</p>
 
         </div>
         <div className="block">
           <div className="block__title"><strong>4.</strong> RENT TO EARN PASSIVE INCOME ON YOUR UNIQUE 2D NFT DIGITAL ASSET</div>
-          <p className="block__text">Click on Marketplace Set a rental price, let the bids roll in, or HODL. You have complete ownership of the NFT, which is immediately wearable or tradable on the blockchain. Each time your NFT is rented or used, you will receive 102.5% of each future deals</p>
+          <p className="block__text">Click on Marketplace Set a rental price, let the bids roll in, or HODL. You have complete ownership of the NFT, which is immediately wearable or tradable on the blockchain. Each time your NFT is rented or used, you will receive 102% of each future deals</p>
 
         </div>
         <div className="block">

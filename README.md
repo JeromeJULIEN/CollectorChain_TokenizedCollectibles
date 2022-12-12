@@ -33,6 +33,9 @@ Once the request has been accepted and valued by the DAO, two types of NFT from 
 - Web3 JS
 - React suite library
 
+## Test
+Only 'dao' contract fully tested. Others have to be done 
+
 ## Licence
 Distributed under the GPL-3.0 License
 
